@@ -8,6 +8,7 @@ The Right sidebar on the other hand will look different depending on what page w
 The Sidebars are always collapsed by default and will expand upon mouse hover.
 
 -I really dont want to rely on any external third party dependencies or repositories to solve things. Everything MUST be internal
+
 -The Falcon dashboard template MUST be used. 
 
 illustrations made by me and uploaded to Google Drive is the final look of the website. Please check often and work toward it.
