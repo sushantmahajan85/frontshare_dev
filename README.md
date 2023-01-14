@@ -1,8 +1,8 @@
 General information
 __________________________________________________________________________________
 The website is divided into 4 sections:
-Header
-Left sidebar - Body - Right sidebar
+(Header
+Left sidebar - Body - Right sidebar)
 The left sidebar is always the navigation menu.
 The Right sidebar on the other hand is different depending on what page we are on. 
 It can act like a filter menu or a block menu or other things. 
