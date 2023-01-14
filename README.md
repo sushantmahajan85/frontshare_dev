@@ -1,3 +1,4 @@
+__________________________________________________________________________________
 General information
 __________________________________________________________________________________
 The website is divided into 4 sections:
@@ -11,7 +12,7 @@ The Sidebars are always collapsed by default and will expand upon mouse hover.
 
 illustrations made by me and uploaded to Google Drive is the final look of the website. Please check often and work toward it.
 
-
+__________________________________________________________________________________
 Website information
 __________________________________________________________________________________
 
