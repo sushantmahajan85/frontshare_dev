@@ -1,0 +1,1135 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+    <link rel="stylesheet" href="./scss/css/style.css" />
+    <title>Document</title>
+  </head>
+  <style>
+    .social-form {
+      width: 70%;
+      background-color: rgb(25, 25, 50);
+      margin: 1rem auto;
+      padding: 3rem;
+      border-radius: 2rem;
+    }
+    .group {
+      width: 100%;
+      display: block;
+      margin: 0 0 0.5em 0;
+    }
+    .social-input {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border-radius: 1rem;
+      border: none;
+      font-size: inherit;
+      font-family: inherit;
+    }
+    .cover {
+      background: rgba(0, 0, 0, 0);
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      display: none;
+      left: 0;
+      z-index: 2;
+    }
+    .contents {
+      width: 333px;
+      height: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f1f1f1;
+      margin: 30px auto;
+      border: 2px solid #ccc;
+      border-radius: 30px;
+      position: relative;
+      text-align: center;
+    }
+    .close {
+      border: 2px solid #ccc;
+      border-radius: 15px;
+      padding: 5px 15px;
+      position: absolute;
+      bottom: 15px;
+      text-align: center;
+      left: 30%;
+      width: 100px;
+      box-shadow: inset 0px 0px 10px 5px #ccc;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <main class="main">
+      <div
+        class="container"
+        data-layout="container"
+        style="max-width: 100% !important"
+      >
+        <!-- Set .navbar-top-combo class to the navbar top element as describe in step 1 in the responsive behaviours section-->
+        <nav
+          class="navbar navbar-vertical navbar-expand-xl navbar-light navbar-top-combo"
+        >
+          <h3>SNIPFEED</h3>
+          <div class="collapse navbar-collapse">
+            <div
+              class="navbar-vertical-content scrollbar perfect-scrollbar"
+              style="height: 100vh !important"
+            >
+              <!-- Your navbar vertical content-->
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <a class="nav-link" href="#">
+                <div class="d-flex align-items-center">
+                  <span class="nav-link-icon"
+                    ><span class="fas fa-chart-pie"></span
+                  ></span>
+                  <span class="nav-link-text">Dashboard </span>
+                  <span class="badge badge-pill badge-soft-success ml-2"
+                    >New</span
+                  >
+                </div>
+              </a>
+              <!-- Set a unique ID to the navbar vertical element as describe in step 2 in the responsive behaviours section  -->
+              <div class="navbar-nav" id="yourUniqueID">
+                <!-- Nav elements-->
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="content">
+          <!-- Set the unique ID to data-move-target attribute which you added in step 2 as describe in step 3 in the responsive behaviours section -->
+          <nav
+            class="navbar navbar-expand-lg navbar-light navbar-glass sticky-kit navbar-top navbar-top-combo"
+            data-move-target="#yourUniqueID"
+            style="padding: unset !important"
+          >
+            <!-- Your navbar top content here-->
+            <nav
+              class="navbar navbar-expand-lg navbar-light bg-light"
+              style="width: 100% !important"
+            >
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#"
+                      >Home <span class="sr-only">(current)</span></a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Dropdown
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                  </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                  <input
+                    class="form-control mr-sm-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button
+                    class="btn btn-outline-success my-2 my-sm-0"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </form>
+              </div>
+            </nav>
+          </nav>
+
+          <!-- Your page content wil go here-->
+          <div class="d-flex" style="width: 95%; margin: 1rem auto">
+            <div class="input-group" style="width: 55%; margin: 0 1rem">
+              <input
+                class="form-control"
+                type="text"
+                aria-label="Text input
+              with button"
+                id="myInput-1"
+                value="localhost:4000/<%=user.profilelink%>"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-primary shadow-none"
+                  type="button"
+                  onclick="myFunction()"
+                >
+                  Copy
+                </button>
+                <button
+                  class="btn btn-primary shadow-none"
+                  style="border-left: 1px solid black"
+                  type="button"
+                  id="updateLinkButton"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+            <div class="input-group" style="width: 30%; margin: 0 1rem">
+              <!-- <input
+                class="form-control"
+                type="text"
+                aria-label="Text input with button"
+              /> -->
+              <!-- <div class="input-group-append">
+                <button class="btn btn-primary shadow-none" type="button">
+                  QR
+                </button>
+              </div> -->
+              <div class="cover">
+                <div class="contents">
+                  <h1>QR</h1>
+                  <input
+                    type="text"
+                    spellcheck="false"
+                    id="text"
+                    value="http://localhost:4000/<%=user.profilelink%>"
+                    style="display: none; visibility: hidden"
+                  />
+                  <div id="qrcode"></div>
+                  <span class="close">Close</span>
+                </div>
+              </div>
+              <button class="btn btn-primary generate-qr">Generate QR</button>
+            </div>
+            <a
+              href="http://localhost:4000/<%=user.profilelink%>"
+              style="width: 15%; margin: 0 1rem"
+            >
+              <button class="btn btn-primary shadow-none" type="button">
+                Preview
+              </button>
+            </a>
+          </div>
+          <div
+            style="
+              background-color: #bdbcba7a;
+              width: 95%;
+              padding: 1rem;
+              border-radius: 2rem;
+              margin: 0 auto;
+            "
+          >
+            <ul
+              class="nav nav-pills"
+              style="
+                background-color: #f9fafd;
+                margin: 1rem;
+                border-radius: 1rem;
+              "
+            >
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+            </ul>
+            <div class="row profile-area-header">
+              <div
+                style="display: flex; justify-content: space-around; width: 10%"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-trash3-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-eye"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"
+                  />
+                  <path
+                    d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"
+                  />
+                </svg>
+              </div>
+              <div style="display: flex; justify-content: center; width: 80%">
+                <h5>Default Profile</h5>
+              </div>
+            </div>
+            <div class="row profile-area">
+              <div class="col-4 d-flex flex-column align-items-center">
+                <div class="row justify-content-center m-2 w-100">
+                  <% if(user.photo){ %>
+                  <img
+                    class="display-image m-auto"
+                    src="/img/users/<%= user.photo %>"
+                    alt="Mazen EL Kadi"
+                    id="userImage"
+                  />
+                  <% } else { %>
+                  <img
+                    class="display-image m-auto"
+                    src="https://elkadi.ca/wp-content/uploads/2022/05/Screenshot-2022-05-20-145830.png"
+                    alt="Mazen EL Kadi"
+                    id="userImage"
+                  />
+                  <% } %>
+                </div>
+                <div class="row justify-content-center m-2 w-100">
+                  <label
+                    class="px-1 py-2 profile-photo-button"
+                    style="text-align: center"
+                  >
+                    <input
+                      type="file"
+                      name="my-photo"
+                      id="photo"
+                      accept="image/*"
+                      style="display: none"
+                      onchange="readURL(this)"
+                    />Upload</label
+                  >
+                </div>
+                <div class="row justify-content-center m-2 w-100">
+                  <button
+                    id="delete-btn"
+                    class="px-1 py-2 profile-photo-button"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+              <div class="col-8 d-flex flex-column align-items-center">
+                <div class="row justify-content-center m-2 w-100">
+                  <input
+                    class="nameInput w-100"
+                    placeholder="Enter Name"
+                    value="<%= user.name %>"
+                    id="usernameInput"
+                  />
+                </div>
+                <div class="row justify-content-center m-2 w-100">
+                  <textarea
+                    class="bioInput w-100"
+                    placeholder="Enter your Bio"
+                    id="bioInput"
+                  >
+<%= user.bio %></textarea
+                  >
+                </div>
+              </div>
+              <button
+                class="btn btn-primary rounded-pill"
+                style="margin: 0 auto; width: 100%"
+                type="submit"
+                name="submit"
+                id="upload-btn"
+              >
+                Save
+              </button>
+            </div>
+            <!-- Social Links -->
+            <% if(user.social_links){ %>
+            <form
+              style="
+                width: 100%;
+                background-color: #f9fafd;
+                padding: 2rem;
+                margin: 1rem auto !important;
+                border-radius: 2rem;
+              "
+              id="socialLinkForm"
+            >
+              <div class="card-header" style="background-color: #f9fafd">
+                <h5 class="mb-0">Social Links</h5>
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control rounded-pill"
+                  id="instagram"
+                  type="text"
+                  placeholder="Instagram Link"
+                  value="<%= user.social_links.instagram %>"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control rounded-pill"
+                  id="facebook"
+                  type="text"
+                  placeholder="Facebook Link"
+                  value="<%= user.social_links.facebook %>"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control rounded-pill"
+                  id="twitter"
+                  type="text"
+                  placeholder="Twitter Link"
+                  value="<%= user.social_links.twitter %>"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control rounded-pill"
+                  id="tiktok"
+                  type="text"
+                  placeholder="TikTok Link"
+                  value="<%= user.social_links.tiktok %>"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control rounded-pill"
+                  id="snapchat"
+                  type="text"
+                  placeholder="Snapchat Link"
+                  value="<%= user.social_links.snapchat %>"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control rounded-pill"
+                  id="youtube"
+                  type="text"
+                  placeholder="Youtube Link"
+                  value="<%= user.social_links.youtube %>"
+                />
+              </div>
+              <button
+                class="btn btn-primary rounded-pill"
+                style="margin: 0 auto; width: 100%"
+                type="submit"
+                name="submit"
+              >
+                Save
+              </button>
+            </form>
+            <% } %> <% if (user.custom_link) { %>
+            <form
+              style="
+                width: 100%;
+                background-color: #f9fafd;
+                padding: 2rem;
+                margin: 1rem auto !important;
+                border-radius: 2rem;
+              "
+              id="customLinkForm"
+            >
+              <div class="card-header" style="background-color: #f9fafd">
+                <h5 class="mb-0">Custom Link</h5>
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control rounded-pill"
+                  id="url"
+                  type="text"
+                  placeholder="Custom Link"
+                  value="<%= user.custom_link.url %>"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control rounded-pill"
+                  id="title"
+                  type="text"
+                  placeholder="Title"
+                  value="<%= user.custom_link.title %>"
+                />
+              </div>
+              <textarea
+                class="form-control rounded-sm mb-2"
+                id="description"
+                rows="3"
+                placeholder="Description"
+              >
+<%= user.custom_link.description %></textarea
+              >
+              <button
+                class="btn btn-primary rounded-pill"
+                style="margin: 0 auto; width: 100%"
+                type="submit"
+                name="submit"
+              >
+                Save
+              </button>
+            </form>
+            <% } %> <% if(user.custom_text){ %>
+            <form
+              style="
+                width: 100%;
+                background-color: #f9fafd;
+                padding: 2rem;
+                margin: 1rem auto !important;
+                border-radius: 2rem;
+              "
+              id="customTextForm"
+            >
+              <div class="card-header">
+                <h5 class="mb-0">Custom Text</h5>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1"
+                  >Add any custom text you wish to display on your page</label
+                >
+                <textarea class="form-control" id="customText" rows="5">
+<%= user.custom_text.text %></textarea
+                >
+              </div>
+
+              <button
+                class="btn btn-primary rounded-pill"
+                style="margin: 0 auto; width: 100%"
+                type="submit"
+                name="submit"
+              >
+                Save
+              </button>
+            </form>
+            <% } %>
+            <form
+              style="
+                width: 100%;
+                background-color: #f9fafd;
+                padding: 2rem;
+                margin: 1rem auto !important;
+                border-radius: 2rem;
+              "
+              id="videoPreviewForm"
+            >
+              <div class="card-header" style="background-color: #f9fafd">
+                <h5 class="mb-0">Video Preview</h5>
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control rounded-pill"
+                  id="vidLink"
+                  type="text"
+                  placeholder="Video Link"
+                  value="<%= user.video_preview.vidLink %>"
+                />
+              </div>
+              <button
+                class="btn btn-primary rounded-pill"
+                style="margin: 0 auto; width: 100%"
+                type="submit"
+                name="submit"
+              >
+                Save
+              </button>
+            </form>
+
+            <form
+              style="
+                width: 100%;
+                background-color: #f9fafd;
+                padding: 2rem;
+                margin: 1rem auto !important;
+                border-radius: 2rem;
+              "
+              id="newsLetterForm"
+            >
+              <div style="margin: 1rem 1.5rem">
+                <h5 class="mb-0">Newsletter</h5>
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control rounded-pill"
+                  id="newsLetterTitle"
+                  type="text"
+                  placeholder="Title"
+                  value="<%= user.newsletter.title %>"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control rounded-pill"
+                  id="btnText"
+                  type="text"
+                  placeholder="Button Text"
+                  value="<%= user.newsletter.btnText %>"
+                />
+              </div>
+              <button
+                class="btn btn-primary rounded-pill"
+                style="margin: 0 auto; width: 100%"
+                type="submit"
+                name="submit"
+              >
+                Save
+              </button>
+            </form>
+          </div>
+          <!-- slider to add more blocks -->
+          <div
+            class="slider_for_boxes"
+            style="background-color: #f9fafd; width: 95%; margin: 1rem auto"
+          >
+            <div class="card-header">
+              <h5 style="text-align: center">Add more Blocks</h5>
+            </div>
+            <div class="wrapper">
+              <!-- Контент -->
+
+              <div class="slider">
+                <div class="slider__item" style="height: 6.55rem">
+                  <div
+                    style="
+                      background-color: rgb(219, 226, 226);
+                      height: 100%;
+                      width: 100%;
+                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
+                      display: flex;
+                      text-align: center;
+                      align-items: center;
+                    "
+                  >
+                    <h4 style="width: 100%">Video Preview</h4>
+                  </div>
+                  <!-- <img
+                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
+                    alt=""
+                  /> -->
+                </div>
+                <div class="slider__item" style="height: 6.55rem">
+                  <div
+                    style="
+                      background-color: rgb(219, 226, 226);
+                      height: 100%;
+                      width: 100%;
+                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
+                      display: flex;
+                      text-align: center;
+                      align-items: center;
+                    "
+                  >
+                    <h4 style="width: 100%">Video Preview</h4>
+                  </div>
+                  <!-- <img
+                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
+                    alt=""
+                  /> -->
+                </div>
+                <div class="slider__item" style="height: 6.55rem">
+                  <div
+                    style="
+                      background-color: rgb(219, 226, 226);
+                      height: 100%;
+                      width: 100%;
+                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
+                      display: flex;
+                      text-align: center;
+                      align-items: center;
+                    "
+                  >
+                    <h4 style="width: 100%">Newsletter</h4>
+                  </div>
+                  <!-- <img
+                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
+                    alt=""
+                  /> -->
+                </div>
+                <div class="slider__item" style="height: 6.55rem">
+                  <div
+                    style="
+                      background-color: rgb(219, 226, 226);
+                      height: 100%;
+                      width: 100%;
+                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
+                      display: flex;
+                      text-align: center;
+                      align-items: center;
+                    "
+                  >
+                    <h4 style="width: 100%">Social Links</h4>
+                  </div>
+                  <!-- <img
+                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
+                    alt=""
+                  /> -->
+                </div>
+                <div class="slider__item" style="height: 6.55rem">
+                  <div
+                    style="
+                      background-color: rgb(219, 226, 226);
+                      height: 100%;
+                      width: 100%;
+                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
+                      display: flex;
+                      text-align: center;
+                      align-items: center;
+                    "
+                  >
+                    <h4 style="width: 100%">Link</h4>
+                  </div>
+                  <!-- <img
+                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
+                    alt=""
+                  /> -->
+                </div>
+                <div class="slider__item" style="height: 6.55rem">
+                  <div
+                    style="
+                      background-color: rgb(219, 226, 226);
+                      height: 100%;
+                      width: 100%;
+                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
+                      display: flex;
+                      text-align: center;
+                      align-items: center;
+                    "
+                  >
+                    <h4 style="width: 100%">Text</h4>
+                  </div>
+                  <!-- <img
+                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
+                    alt=""
+                  /> -->
+                </div>
+                <div class="slider__item" style="height: 6.55rem">
+                  <div
+                    style="
+                      background-color: rgb(219, 226, 226);
+                      height: 100%;
+                      width: 100%;
+                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
+                      display: flex;
+                      text-align: center;
+                      align-items: center;
+                    "
+                  >
+                    <h4 style="width: 100%">Video</h4>
+                  </div>
+                  <!-- <img
+                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
+                    alt=""
+                  /> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      $(function () {
+        $(".generate-qr").click(function () {
+          console.log("hiiiii");
+          $(".cover").fadeIn("300");
+        });
+        $(".cover,.close").click(function () {
+          $(".cover").fadeOut("300");
+        });
+        $(".contents").click(function (e) {
+          e.stopPropagation();
+        });
+      });
+    </script>
+    <script>
+      var myInput = document.getElementById("input_1");
+      var myText = document.getElementById("textarea_1");
+
+      var myDiv = document.querySelector(".live");
+      var myh2 = document.querySelector(".live h2");
+      var myp = document.querySelector(".live p");
+
+      // myInput.onkeyup = function () {
+      //   "use strict";
+      //   myh2.textContent = this.value;
+      // };
+
+      // myText.onkeyup = function () {
+      //   "use strict";
+      //   myp.textContent = this.value;
+      // };
+    </script>
+    <script src="/js/qr.min.js"></script>
+    <script>
+      const qrcode = document.getElementById("qrcode");
+      const textInput = document.getElementById("text");
+
+      const qr = new QRCode(qrcode);
+
+      textInput.oninput = (e) => {
+        qr.makeCode(e.target.value.trim());
+      };
+
+      qr.makeCode(textInput.value.trim());
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".slider").slick({
+          arrows: true,
+          dots: false,
+          slidesToShow: 6,
+          //   autoplay: true,
+          speed: 900,
+          autoplaySpeed: 700,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            {
+              breakpoint: 550,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+          ],
+        });
+      });
+    </script>
+    <script>
+      function myFunction() {
+        // Get the text field
+        var copyText = document.getElementById("myInput-1");
+        console.log("copy");
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        navigator.clipboard.writeText(copyText.value);
+      }
+    </script>
+    <script>
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $("#userImage").attr("src", e.target.result);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>
