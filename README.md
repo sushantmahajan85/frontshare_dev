@@ -12,6 +12,3 @@ The Sidebars are always collapsed by default and will expand upon mouse hover.
 -The Falcon dashboard template MUST be used. 
 
 -illustrations made by me and uploaded to Google Drive is the final look of the website. Please check often and work toward it.
-__________________________________________________________________________________
-Other information:
-__________________________________________________________________________________
