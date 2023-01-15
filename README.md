@@ -2,7 +2,9 @@
 
 > The website is divided into 4 sections:
 **(Header - Left sidebar - Body - Right sidebar)**
+
 The **left sidebar** is always the navigation menu.
+
 The **Right sidebar** on the other hand will look different depending on what page we are on. It can act like a filter menu or blocks container or other things. 
 The Sidebars are always collapsed by default and will expand upon mouse hover.
 
