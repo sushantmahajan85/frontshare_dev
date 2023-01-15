@@ -1,7 +1,7 @@
 # General information:
 
 > The website is divided into 4 sections:
-**(Header - Left sidebar - Body - Right sidebar)**
+**(Header - Left sidebar - Body - Right sidebar)** on all pages.
 
 > The **left sidebar** is always the navigation menu.
 
