@@ -1,4 +1,4 @@
-General information
+# General information 
 > Each page is divided into 4 sections: **Header - Left sidebar - Body - Right sidebar**
 
 > The **left sidebar** is always the Navigation menu.
@@ -9,4 +9,5 @@ General information
 
 > I don't want to rely on any external third-party dependencies or repositories to solve things. Everything **MUST** be internal.
 
-> The Falcon dashboard template provided **MUST** be used. No workaround. Template files in https://github.com/Zatacka/FrontShare/tree/main/Falcon%20Dashboard%20Template%20Files
+> The Falcon dashboard template provided **MUST** be used. No workaround. Template files in [Falcon Dashboard Template Files](https://github.com/Zatacka/FrontShare/tree/main/Falcon%20Dashboard%20Template%20Files)
+
