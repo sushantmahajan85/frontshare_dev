@@ -1,7 +1,7 @@
 {
-  "name": "snipfeed",
+  "name": "FrontShare",
   "version": "1.0.0",
-  "description": "snipfeed clone",
+  "description": "FrontShare Website",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sushantmahajan85/snipfeed_clone.git"
+    "url": "git+https://github.com/sushantmahajan85/FrontShare.git"
   },
   "author": "smnj",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sushantmahajan85/snipfeed_clone/issues"
+    "url": "https://github.com/sushantmahajan85/FrontShare/issues"
   },
-  "homepage": "https://github.com/sushantmahajan85/snipfeed_clone#readme",
+  "homepage": "https://github.com/sushantmahajan85/FrontShare#readme",
   "dependencies": {
     "axios": "^1.2.1",
     "bcrypt": "^5.1.0",

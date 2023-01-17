@@ -3,7 +3,7 @@
 -----------------------------------------------*/
 
 const storage = {
-  isDark: false,
+  isDark: true,
 };
 
 export default storage;
