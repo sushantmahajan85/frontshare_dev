@@ -126,6 +126,10 @@
                     <span class="badge badge-pill badge-soft-Warning ml-2">New</span>
                   </div>
                 </a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Recommendations</a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Tutorials</a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Workshop</a>
+
                 <a class="nav-link dropdown-indicator collapsed" href="#" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Analytics">
                   <div class="d-flex align-items-center">
                     <span class="nav-link-icon"><svg class="svg-inline--fa fa-envelope-open fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"></path></svg><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span>
@@ -201,10 +205,10 @@
             </div>
             <div class="d-flex" style="width: 95%; margin: 1rem auto">
               <div class="input-group" style="width: 55%; margin: 0 1rem">
-                <input class="form-control" type="text" aria-label="Text input with button" id="myInput-1" value="localhost:4000/<%=user.profilelink%>"/>
+                <input class="form-control rounded-pill" type="text" aria-label="Text input with button" id="myInput-1" value="localhost:4000/<%=user.profilelink%>"/>
                 <div class="input-group-append">
-                  <button class="btn btn-primary shadow-none" type="button" onclick="myFunction()">Copy</button>
-                  <button class="btn btn-primary shadow-none" style="border-left: 1px solid black" type="button" id="updateLinkButton">Save</button>
+                  <button class="btn btn-primary shadow-none rounded-pill" type="button" onclick="myFunction()">Copy</button>
+                  <button class="btn btn-primary shadow-none  rounded-pill" style="border-left: 1px solid black" type="button" id="updateLinkButton">Save</button>
                 </div>
               </div>
               <div class="input-group" style="width: 30%; margin: 0 1rem">
@@ -226,13 +230,13 @@
                     <span class="close">Close</span>
                   </div>
                 </div>
-                <button class="btn btn-primary generate-qr">Generate QR</button>
+                <button class="btn btn-primary generate-qr rounded-pill">Generate QR</button>
               </div>
               <a
                 href="http://localhost:4000/<%=user.profilelink%>"
                 style="width: 15%; margin: 0 1rem"
               >
-                <button class="btn btn-secondary shadow-none" type="button">
+                <button class="btn btn-secondary shadow-5 rounded-pill" type="button">
                   Preview
                 </button>
               </a>
@@ -242,14 +246,7 @@
 
           <!-- Your page content wil go here-->
           
-          <div
-            style="
-              width: 95%;
-              padding: 1rem;
-              border-radius: 2rem;
-              margin: 0 auto;
-            "
-          >
+          <div style="width: 95%;padding: 1rem;border-radius: 2rem;margin: 0 auto;">
             <div class="row profile-area-header">
               <div
                 style="display: flex; justify-content: space-around; width: 10%"
@@ -558,151 +555,6 @@
                 Save
               </button>
             </form>
-          </div>
-          <!-- slider to add more blocks -->
-          <div class="slider_for_boxes" style="background-color: #f9fafd; width: 95%; margin: 1rem auto">
-            <div class="card-header">
-              <h5 style="text-align: center">Add more Blocks</h5>
-            </div>
-            <div class="wrapper">
-              <!-- Контент -->
-
-              <div class="slider">
-                <div class="slider__item" style="height: 6.55rem">
-                  <div
-                    style="
-                      background-color: rgb(219, 226, 226);
-                      height: 100%;
-                      width: 100%;
-                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
-                      display: flex;
-                      text-align: center;
-                      align-items: center;
-                    "
-                  >
-                    <h4 style="width: 100%">Video Preview</h4>
-                  </div>
-                  <!-- <img
-                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
-                    alt=""
-                  /> -->
-                </div>
-                <div class="slider__item" style="height: 6.55rem">
-                  <div
-                    style="
-                      background-color: rgb(219, 226, 226);
-                      height: 100%;
-                      width: 100%;
-                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
-                      display: flex;
-                      text-align: center;
-                      align-items: center;
-                    "
-                  >
-                    <h4 style="width: 100%">Video Preview</h4>
-                  </div>
-                  <!-- <img
-                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
-                    alt=""
-                  /> -->
-                </div>
-                <div class="slider__item" style="height: 6.55rem">
-                  <div
-                    style="
-                      background-color: rgb(219, 226, 226);
-                      height: 100%;
-                      width: 100%;
-                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
-                      display: flex;
-                      text-align: center;
-                      align-items: center;
-                    "
-                  >
-                    <h4 style="width: 100%">Newsletter</h4>
-                  </div>
-                  <!-- <img
-                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
-                    alt=""
-                  /> -->
-                </div>
-                <div class="slider__item" style="height: 6.55rem">
-                  <div
-                    style="
-                      background-color: rgb(219, 226, 226);
-                      height: 100%;
-                      width: 100%;
-                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
-                      display: flex;
-                      text-align: center;
-                      align-items: center;
-                    "
-                  >
-                    <h4 style="width: 100%">Social Links</h4>
-                  </div>
-                  <!-- <img
-                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
-                    alt=""
-                  /> -->
-                </div>
-                <div class="slider__item" style="height: 6.55rem">
-                  <div
-                    style="
-                      background-color: rgb(219, 226, 226);
-                      height: 100%;
-                      width: 100%;
-                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
-                      display: flex;
-                      text-align: center;
-                      align-items: center;
-                    "
-                  >
-                    <h4 style="width: 100%">Link</h4>
-                  </div>
-                  <!-- <img
-                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
-                    alt=""
-                  /> -->
-                </div>
-                <div class="slider__item" style="height: 6.55rem">
-                  <div
-                    style="
-                      background-color: rgb(219, 226, 226);
-                      height: 100%;
-                      width: 100%;
-                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
-                      display: flex;
-                      text-align: center;
-                      align-items: center;
-                    "
-                  >
-                    <h4 style="width: 100%">Text</h4>
-                  </div>
-                  <!-- <img
-                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
-                    alt=""
-                  /> -->
-                </div>
-                <div class="slider__item" style="height: 6.55rem">
-                  <div
-                    style="
-                      background-color: rgb(219, 226, 226);
-                      height: 100%;
-                      width: 100%;
-                      box-shadow: 3px 2px 1px rgba(185, 185, 185, 0.653);
-                      display: flex;
-                      text-align: center;
-                      align-items: center;
-                    "
-                  >
-                    <h4 style="width: 100%">Video</h4>
-                  </div>
-                  <!-- <img
-                    src="https://i.etsystatic.com/9970942/d/il/3eb7fe/1455383965/il_340x270.1455383965_t5ez.jpg?version=0"
-                    alt=""
-                  /> -->
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
