@@ -72,123 +72,427 @@
   </style>
   <body>
     <main class="main">
-      <div class="container" data-layout="container" style="max-width: 100% !important">
+      <div
+        class="container"
+        data-layout="container"
+        style="max-width: 100% !important"
+      >
         <!-- Set .navbar-top-combo class to the navbar top element as describe in step 1 in the responsive behaviours section-->
-        <nav class="navbar navbar-light navbar-vertical navbar-expand-xl navbar-top-combo" id="navbarVerticalCollapse">
-
+        <nav
+          class="navbar navbar-light navbar-vertical navbar-expand-xl navbar-top-combo"
+          id="navbarVerticalCollapse"
+        >
           <div class="d-flex align-items-center">
             <a class="navbar-brand" href="#">
               <div class="d-flex align-items-center py-2">
-                <img class="ml-3 mt-3" src="/img/FrontShare Logo.png" alt="" width="150px">
+                <img
+                  class="ml-3 mt-3"
+                  src="/img/FrontShare Logo.png"
+                  alt=""
+                  width="150px"
+                />
               </div>
             </a>
           </div>
           <div class="collapse navbar-collapse">
             <div
               class="navbar-vertical-content scrollbar perfect-scrollbar"
-              style="width:210px;height: 100vh !important"
+              style="width: 210px; height: 100vh !important"
             >
               <!-- Your navbar vertical content-->
-            <ul>
-              <li class="nav-item">
-                <div class="row navbar-vertical-label-wrapper mt-3 mb-2">
-                  <div class="col-auto navbar-vertical-label">User</div>
-                  <div class="col ps-0">
-                    <hr class="mb-0 navbar-vertical-divider">
+              <ul>
+                <li class="nav-item">
+                  <div class="row navbar-vertical-label-wrapper mt-3 mb-2">
+                    <div class="col-auto navbar-vertical-label">User</div>
+                    <div class="col ps-0">
+                      <hr class="mb-0 navbar-vertical-divider" />
+                    </div>
                   </div>
-                </div>
-                <a class="nav-link dropdown-indicator collapsed" href="#" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Home">
-                  <div class="d-flex align-items-center">
-                    <span class="nav-link-icon"><svg class="svg-inline--fa fa-envelope-open fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"></path></svg><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span>
-                    <span class="nav-link-text ps-1">Home</span>
-                    <span class="badge badge-pill badge-soft-Danger ml-2">New</span>
-                  </div>
-                </a>
-                <a class="nav-link dropdown-indicator collapsed" href="#" role="button" data-bs-toggle="collapse" aria-expanded="true" aria-controls="Profile">
-                  <div class="d-flex align-items-center">
-                    <span class="nav-link-icon"><svg class="svg-inline--fa fa-envelope-open fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"></path></svg><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span>
-                    <span class="nav-link-text ps-1">Profile</span>
-                  </div>
-                </a>
-                <a class="nav-link active" aria-current="page" href="#">Canvas</a>
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Settings</a>
-                
-                <a class="nav-link dropdown-indicator collapsed" href="#" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Referral">
-                  <div class="d-flex align-items-center">
-                    <span class="nav-link-icon"><svg class="svg-inline--fa fa-envelope-open fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"></path></svg><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span>
-                    <span class="nav-link-text ps-1">Referral</span>
-                  </div>
-                </a>
-                <a class="nav-link dropdown-indicator collapsed" href="#" role="button" data-bs-toggle="collapse" aria-expanded="true" aria-controls="Recources">
-                  <div class="d-flex align-items-center">
-                    <span class="nav-link-icon"><svg class="svg-inline--fa fa-envelope-open fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"></path></svg><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span>
-                    <span class="nav-link-text ps-1">Recources</span>
-                    <span class="badge badge-pill badge-soft-Warning ml-2">New</span>
-                  </div>
-                </a>
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Recommendations</a>
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Tutorials</a>
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Workshop</a>
+                  <a
+                    class="nav-link dropdown-indicator collapsed"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                    aria-controls="Home"
+                  >
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><svg
+                          class="svg-inline--fa fa-envelope-open fa-w-16"
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="envelope-open"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"
+                          ></path></svg
+                        ><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span
+                      >
+                      <span class="nav-link-text ps-1">Home</span>
+                      <span class="badge badge-pill badge-soft-Danger ml-2"
+                        >New</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    class="nav-link dropdown-indicator collapsed"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="true"
+                    aria-controls="Profile"
+                  >
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><svg
+                          class="svg-inline--fa fa-envelope-open fa-w-16"
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="envelope-open"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"
+                          ></path></svg
+                        ><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span
+                      >
+                      <span class="nav-link-text ps-1">Profile</span>
+                    </div>
+                  </a>
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Canvas</a
+                  >
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                    >Settings</a
+                  >
 
-                <a class="nav-link dropdown-indicator collapsed" href="#" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Analytics">
-                  <div class="d-flex align-items-center">
-                    <span class="nav-link-icon"><svg class="svg-inline--fa fa-envelope-open fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"></path></svg><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span>
-                    <span class="nav-link-text ps-1">Analytics</span>
+                  <a
+                    class="nav-link dropdown-indicator collapsed"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                    aria-controls="Referral"
+                  >
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><svg
+                          class="svg-inline--fa fa-envelope-open fa-w-16"
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="envelope-open"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"
+                          ></path></svg
+                        ><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span
+                      >
+                      <span class="nav-link-text ps-1">Referral</span>
+                    </div>
+                  </a>
+                  <a
+                    class="nav-link dropdown-indicator collapsed"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="true"
+                    aria-controls="Recources"
+                  >
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><svg
+                          class="svg-inline--fa fa-envelope-open fa-w-16"
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="envelope-open"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"
+                          ></path></svg
+                        ><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span
+                      >
+                      <span class="nav-link-text ps-1">Recources</span>
+                      <span class="badge badge-pill badge-soft-Warning ml-2"
+                        >New</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                    >Recommendations</a
+                  >
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                    >Tutorials</a
+                  >
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                    >Workshop</a
+                  >
+
+                  <a
+                    class="nav-link dropdown-indicator collapsed"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                    aria-controls="Analytics"
+                  >
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><svg
+                          class="svg-inline--fa fa-envelope-open fa-w-16"
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="envelope-open"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"
+                          ></path></svg
+                        ><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span
+                      >
+                      <span class="nav-link-text ps-1">Analytics</span>
+                    </div>
+                  </a>
+                  <a
+                    class="nav-link dropdown-indicator collapsed"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                    aria-controls="Calendar"
+                  >
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><svg
+                          class="svg-inline--fa fa-envelope-open fa-w-16"
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="envelope-open"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"
+                          ></path></svg
+                        ><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span
+                      >
+                      <span class="nav-link-text ps-1">Calendar</span>
+                      <span class="badge badge-pill badge-soft-Success ml-2"
+                        >New</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    class="nav-link dropdown-indicator collapsed"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="true"
+                    aria-controls="Help"
+                  >
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><svg
+                          class="svg-inline--fa fa-envelope-open fa-w-16"
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="envelope-open"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"
+                          ></path></svg
+                        ><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span
+                      >
+                      <span class="nav-link-text ps-1">Help</span>
+                    </div>
+                  </a>
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                    >FAQ</a
+                  >
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                    >Policies</a
+                  >
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                    >Ticket</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <div class="row navbar-vertical-label-wrapper mt-3 mb-2">
+                    <div class="col-auto navbar-vertical-label">Employee</div>
+                    <div class="col ps-0">
+                      <hr class="mb-0 navbar-vertical-divider" />
+                    </div>
                   </div>
-                </a>
-                <a class="nav-link dropdown-indicator collapsed" href="#" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Calendar">
-                  <div class="d-flex align-items-center">
-                    <span class="nav-link-icon"><svg class="svg-inline--fa fa-envelope-open fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"></path></svg><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span>
-                    <span class="nav-link-text ps-1">Calendar</span>
-                    <span class="badge badge-pill badge-soft-Success ml-2">New</span>
+                  <a
+                    class="nav-link dropdown-indicator collapsed"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                    aria-controls="Support Desk"
+                  >
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><svg
+                          class="svg-inline--fa fa-envelope-open fa-w-16"
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="envelope-open"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"
+                          ></path></svg
+                        ><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span
+                      >
+                      <span class="nav-link-text ps-1">Support Desk</span>
+                      <span class="badge badge-pill badge-soft-Info ml-2"
+                        >New</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <div class="row navbar-vertical-label-wrapper mt-3 mb-2">
+                    <div class="col-auto navbar-vertical-label">Admin</div>
+                    <div class="col ps-0">
+                      <hr class="mb-0 navbar-vertical-divider" />
+                    </div>
                   </div>
-                </a>
-                <a class="nav-link dropdown-indicator collapsed" href="#" role="button" data-bs-toggle="collapse" aria-expanded="true" aria-controls="Help">
-                  <div class="d-flex align-items-center">
-                    <span class="nav-link-icon"><svg class="svg-inline--fa fa-envelope-open fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"></path></svg><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span>
-                    <span class="nav-link-text ps-1">Help</span>
-                  </div>
-                </a>
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">FAQ</a>
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Policies</a>
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Ticket</a>
-              </li>
-              <li class="nav-item">
-                <div class="row navbar-vertical-label-wrapper mt-3 mb-2">
-                  <div class="col-auto navbar-vertical-label">Employee</div>
-                  <div class="col ps-0">
-                    <hr class="mb-0 navbar-vertical-divider">
-                  </div>
-                </div>
-                <a class="nav-link dropdown-indicator collapsed" href="#" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Support Desk">
-                  <div class="d-flex align-items-center">
-                    <span class="nav-link-icon"><svg class="svg-inline--fa fa-envelope-open fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"></path></svg><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span>
-                    <span class="nav-link-text ps-1">Support Desk</span>
-                    <span class="badge badge-pill badge-soft-Info ml-2">New</span>
-                  </div>
-                </a>
-              </li>
-              <li class="nav-item">
-                <div class="row navbar-vertical-label-wrapper mt-3 mb-2">
-                  <div class="col-auto navbar-vertical-label">Admin</div>
-                  <div class="col ps-0">
-                    <hr class="mb-0 navbar-vertical-divider">
-                  </div>
-                </div>
-                <a class="nav-link dropdown-indicator collapsed" href="#" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Dashboard">
-                  <div class="d-flex align-items-center">
-                    <span class="nav-link-icon"><svg class="svg-inline--fa fa-envelope-open fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"></path></svg><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span>
-                    <span class="nav-link-text ps-1">Dashboard</span>
-                  </div>
-                </a>
-                <a class="nav-link dropdown-indicator collapsed" href="#" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Database">
-                  <div class="d-flex align-items-center">
-                    <span class="nav-link-icon"><svg class="svg-inline--fa fa-envelope-open fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope-open" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"></path></svg><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span>
-                    <span class="nav-link-text ps-1">Database</span>
-                  </div>
-                </a>
-              </li><br><br><br><br>
-            </ul>
+                  <a
+                    class="nav-link dropdown-indicator collapsed"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                    aria-controls="Dashboard"
+                  >
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><svg
+                          class="svg-inline--fa fa-envelope-open fa-w-16"
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="envelope-open"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"
+                          ></path></svg
+                        ><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span
+                      >
+                      <span class="nav-link-text ps-1">Dashboard</span>
+                    </div>
+                  </a>
+                  <a
+                    class="nav-link dropdown-indicator collapsed"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                    aria-controls="Database"
+                  >
+                    <div class="d-flex align-items-center">
+                      <span class="nav-link-icon"
+                        ><svg
+                          class="svg-inline--fa fa-envelope-open fa-w-16"
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="envelope-open"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                          data-fa-i2svg=""
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M512 464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V200.724a48 48 0 0 1 18.387-37.776c24.913-19.529 45.501-35.365 164.2-121.511C199.412 29.17 232.797-.347 256 .003c23.198-.354 56.596 29.172 73.413 41.433 118.687 86.137 139.303 101.995 164.2 121.512A48 48 0 0 1 512 200.724V464zm-65.666-196.605c-2.563-3.728-7.7-4.595-11.339-1.907-22.845 16.873-55.462 40.705-105.582 77.079-16.825 12.266-50.21 41.781-73.413 41.43-23.211.344-56.559-29.143-73.413-41.43-50.114-36.37-82.734-60.204-105.582-77.079-3.639-2.688-8.776-1.821-11.339 1.907l-9.072 13.196a7.998 7.998 0 0 0 1.839 10.967c22.887 16.899 55.454 40.69 105.303 76.868 20.274 14.781 56.524 47.813 92.264 47.573 35.724.242 71.961-32.771 92.263-47.573 49.85-36.179 82.418-59.97 105.303-76.868a7.998 7.998 0 0 0 1.839-10.967l-9.071-13.196z"
+                          ></path></svg
+                        ><!-- <span class="fas fa-envelope-open"></span> Font Awesome fontawesome.com --></span
+                      >
+                      <span class="nav-link-text ps-1">Database</span>
+                    </div>
+                  </a>
+                </li>
+                <br /><br /><br /><br />
+              </ul>
               <!-- Set a unique ID to the navbar vertical element as describe in step 2 in the responsive behaviours section  -->
               <div class="navbar-nav" id="yourUniqueID">
                 <!-- Nav elements-->
@@ -199,62 +503,115 @@
         <div class="content">
           <!-- Set the unique ID to data-move-target attribute which you added in step 2 as describe in step 3 in the responsive behaviours section -->
           <nav
-            class="navbar navbar-expand-lg navbar-light navbar-glass sticky-kit navbar-top navbar-top-combo" data-move-target="#yourUniqueID" style="padding: unset !important">
+            class="navbar navbar-expand-lg navbar-light navbar-glass sticky-kit navbar-top navbar-top-combo"
+            data-move-target="#yourUniqueID"
+            style="padding: unset !important"
+          >
             <!-- Your navbar top content here-->
-            <nav class="navbar navbar-expand-lg navbar-light" style="width: 100% !important">
-            <div class="search-box">
-              <form class="position-relative show" data-bs-toggle="search" data-bs-display="static" aria-expanded="true"><input class="form-control search-input fuzzy-search" type="search" placeholder="Search..." aria-label="Search">
-              </form>
-            </div>
-            <div class="d-flex" style="width: 95%; margin: 1rem auto">
-              <div class="input-group" style="width: 55%; margin: 0 1rem">
-                <input class="form-control rounded-pill" type="text" aria-label="Text input with button" id="myInput-1" value="localhost:4000/<%=user.profilelink%>"/>
-                <div class="input-group-append">
-                  <button class="btn btn-primary shadow-none rounded-pill" type="button" onclick="myFunction()">Copy</button>
-                  <button class="btn btn-primary shadow-none  rounded-pill" style="border-left: 1px solid black" type="button" id="updateLinkButton">Save</button>
-                </div>
+            <nav
+              class="navbar navbar-expand-lg navbar-light"
+              style="width: 100% !important"
+            >
+              <div class="search-box">
+                <form
+                  class="position-relative show"
+                  data-bs-toggle="search"
+                  data-bs-display="static"
+                  aria-expanded="true"
+                >
+                  <input
+                    class="form-control search-input fuzzy-search"
+                    type="search"
+                    placeholder="Search..."
+                    aria-label="Search"
+                  />
+                </form>
               </div>
-              <div class="input-group" style="width: 30%; margin: 0 1rem">
-                <!-- <input
+              <div class="d-flex" style="width: 95%; margin: 1rem auto">
+                <div class="input-group" style="width: 55%; margin: 0 1rem">
+                  <input
+                    class="form-control rounded-pill"
+                    type="text"
+                    aria-label="Text input with button"
+                    id="myInput-1"
+                    value="localhost:4000/<%=user.profilelink%>"
+                  />
+                  <div class="input-group-append">
+                    <button
+                      class="btn btn-primary shadow-none rounded-pill"
+                      type="button"
+                      onclick="myFunction()"
+                    >
+                      Copy
+                    </button>
+                    <button
+                      class="btn btn-primary shadow-none rounded-pill"
+                      style="border-left: 1px solid black"
+                      type="button"
+                      id="updateLinkButton"
+                    >
+                      Save
+                    </button>
+                  </div>
+                </div>
+                <div class="input-group" style="width: 30%; margin: 0 1rem">
+                  <!-- <input
                   class="form-control"
                   type="text"
                   aria-label="Text input with button"
                 /> -->
-                <!-- <div class="input-group-append">
+                  <!-- <div class="input-group-append">
                   <button class="btn btn-primary shadow-none" type="button">
                     QR
                   </button>
                 </div> -->
-                <div class="cover">
-                  <div class="contents">
-                    <h1>QR</h1>
-                    <input type="text" spellcheck="false" id="text" value="http://localhost:4000/<%=user.profilelink%>" style="display: none; visibility: hidden"/>
-                    <div id="qrcode"></div>
-                    <span class="close">Close</span>
+                  <div class="cover">
+                    <div class="contents">
+                      <h1>QR</h1>
+                      <input
+                        type="text"
+                        spellcheck="false"
+                        id="text"
+                        value="http://localhost:4000/<%=user.profilelink%>"
+                        style="display: none; visibility: hidden"
+                      />
+                      <div id="qrcode"></div>
+                      <span class="close">Close</span>
+                    </div>
                   </div>
+                  <button class="btn btn-primary generate-qr rounded-pill">
+                    Generate QR
+                  </button>
                 </div>
-                <button class="btn btn-primary generate-qr rounded-pill">Generate QR</button>
+                <a
+                  href="http://localhost:4000/<%=user.profilelink%>"
+                  style="width: 15%; margin: 0 1rem"
+                >
+                  <button
+                    class="btn btn-secondary shadow-5 rounded-pill"
+                    type="button"
+                  >
+                    Preview
+                  </button>
+                </a>
               </div>
-              <a
-                href="http://localhost:4000/<%=user.profilelink%>"
-                style="width: 15%; margin: 0 1rem"
-              >
-                <button class="btn btn-secondary shadow-5 rounded-pill" type="button">
-                  Preview
-                </button>
-              </a>
-            </div>
             </nav>
           </nav>
 
           <!-- Your page content wil go here-->
-          
-          <div style="width: 95%;padding: 1rem;border-radius: 2rem;margin: 0 auto;">
+
+          <div
+            style="
+              width: 95%;
+              padding: 1rem;
+              border-radius: 2rem;
+              margin: 0 auto;
+            "
+          >
             <div class="row profile-area-header">
               <div
                 style="display: flex; justify-content: space-around; width: 10%"
-              >
-              </div>
+              ></div>
             </div>
             <div class="row profile-area">
               <div class="col-4 d-flex flex-column align-items-center">
@@ -314,7 +671,8 @@
                     placeholder="Enter your Bio"
                     id="bioInput"
                   >
-                  <%= user.bio %></textarea>
+                  <%= user.bio %></textarea
+                  >
                 </div>
               </div>
               <button
@@ -395,6 +753,7 @@
                   placeholder="Youtube Link"
                   value="<%= user.social_links.youtube %>"
                 />
+                //
               </div>
               <button
                 class="btn btn-primary rounded-pill"
@@ -443,7 +802,8 @@
                 rows="3"
                 placeholder="Description"
               >
-              <%= user.custom_link.description %></textarea>
+              <%= user.custom_link.description %></textarea
+              >
               <button
                 class="btn btn-primary rounded-pill"
                 style="margin: 0 auto; width: 100%"
@@ -562,7 +922,7 @@
         </div>
       </div>
     </main>
-    
+
     <script>
       $(function () {
         $(".generate-qr").click(function () {
