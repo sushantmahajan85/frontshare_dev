@@ -7,13 +7,14 @@ const compression = require("compression");
 const viewRoutes = require("./routes/view_routes");
 const userRoutes = require("./routes/user_routes");
 const blockRoutes = require("./routes/block_routes");
+const bookingRoutes = require("./routes/booking_routes");
 //   (methodOverride = require("method-override")),
 //   (bodyParser = require("body-parser")),
 //   ({ check, validationResult } = require("express-validator")),
 
-app.get('/', function(req, res) {
-  res.render('landing');
-  });
+app.get("/", function (req, res) {
+  res.render("landing");
+});
 
 app.use(express.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
@@ -50,7 +51,7 @@ app.use("/", viewRoutes);
 // app.use("/api/v1/deals", dealRoute);
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/blocks", blockRoutes);
-// app.use("/api/recruit", apiroutes);
+app.use("/api/v1/bookings", bookingRoutes);
 
 const port = process.env.PORT || 4000;
 
