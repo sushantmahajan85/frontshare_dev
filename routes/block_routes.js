@@ -50,4 +50,6 @@ router
   .patch(blockController.updateCustomLink)
   .delete(blockController.deleteCustomLink);
 
+router.route("/canvas").post(blockController.updateCanvas);
+
 module.exports = router;

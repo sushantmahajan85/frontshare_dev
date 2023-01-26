@@ -21,6 +21,8 @@ const newsLetterSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    columnNo: Number,
+    rowNo: Number,
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );

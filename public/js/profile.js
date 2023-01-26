@@ -209,6 +209,92 @@ deleteButton.addEventListener("click", (e) => {
   passValueDelete();
 });
 
+var sociallinks = 0;
+var customlink = 0;
+var customtext = 0;
+var videopreview = 0;
+var newsletter = 0;
+
+var blocks = {
+  sociallinks: 0,
+  customlink: 0,
+  customtext: 0,
+  videopreview: 0,
+  newsletter: 0,
+};
+
+$(document).on("click", ".add-block-btn", (e) => {
+  e.preventDefault();
+
+  blocks[e.target.dataset.block]++;
+  console.log(blocks[e.target.dataset.block]);
+
+  var kanbanItem = document.createElement("div");
+  kanbanItem.className = "kanban-item";
+  kanbanItem.dataset.block =
+    e.target.dataset.block + "-" + blocks[e.target.dataset.block];
+
+  var cardItem = document.createElement("div");
+  cardItem.className = "card kanban-item-card hover-actions-trigger";
+
+  var cardBody = document.createElement("div");
+  cardBody.className = "card-body position-relative";
+
+  var cardContent = document.createElement("p");
+  cardContent.className = "mb-0 font-weight-medium text-sans-serif";
+
+  cardContent.innerHTML =
+    "This is " +
+    e.target.dataset.block +
+    " block " +
+    blocks[e.target.dataset.block] +
+    "<br>👌 Drag cards to any list and place anywhere in the list";
+
+  $(cardItem).appendTo(kanbanItem);
+  $(cardBody).appendTo(cardItem);
+  $(cardContent).appendTo(cardBody);
+  $(kanbanItem).appendTo("#addCards2");
+
+  console.log(cardItem);
+
+  c2.push({
+    block: e.target.dataset.block,
+    content: blocks[e.target.dataset.block],
+    id: e.target.dataset.block + "-" + blocks[e.target.dataset.block],
+  });
+
+  console.log(c2);
+});
+
+const passValueSaveCards = async (c1, c2, c3) => {
+  try {
+    const result = await axios({
+      method: "POST",
+      url: "/api/v1/blocks/canvas",
+      data: {
+        c1,
+        c2,
+        c3,
+      },
+    });
+    if (result.data.status === "success") {
+      window.alert("YES");
+    }
+  } catch (err) {
+    window.alert("NO");
+    console.log(err);
+  }
+};
+
+const saveCardsButton = document.querySelector("#save-cards-btn");
+saveCardsButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log(c1);
+  console.log(c2);
+  console.log(c3);
+  passValueSaveCards(c1, c2, c3);
+});
+
 const updateLinkButton = document.querySelector("#updateLinkButton");
 updateLinkButton.addEventListener("click", (e) => {
   e.preventDefault();
