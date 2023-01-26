@@ -126,13 +126,13 @@ module.exports = class Email {
       html: html,
       text: convert(html),
     };
-    console.log(mailOptions);
+    // console.log(mailOptions);
 
     await this.newTransport().sendMail(mailOptions);
   }
 
   async sendWelcome() {
-    console.log("inside");
+    console.log("email sent");
     await this.send("welcome", "Welcome To Natours");
   }
 
