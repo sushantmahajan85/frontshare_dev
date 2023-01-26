@@ -15,10 +15,9 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   // 2) Create checkout session
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
-    // success_url: `${req.protocol}://${req.get('host')}/my-tours/?tour=${
-    //   req.params.tourId
-    // }&user=${req.user.id}&price=${tour.price}`,
-    success_url: `${req.protocol}://${req.get("host")}/`,
+    success_url: `${req.protocol}://${req.get("host")}/?user=${
+      req.user.id
+    }&price=100`,
     cancel_url: `${req.protocol}://${req.get("host")}/login`,
     customer_email: req.user.email,
     mode: "payment",
@@ -27,8 +26,9 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
       {
         price_data: {
           product_data: {
-            name: "Pro Plan",
-            description: "Buy Pro Plan",
+            name: "Pro Plan Membership",
+            description:
+              "Please do not press the back button while making a payment...",
             images: [
               `${req.protocol}://${req.get("host")}/public/img/users/${
                 req.user.photo
@@ -52,12 +52,22 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   });
 });
 
-const createBookingCheckout = async (session) => {
-  const tour = session.client_reference_id;
-  const user = (await User.findOne({ email: session.customer_email })).id;
-  const price = session.display_items[0].amount / 100;
-  await Booking.create({ tour, user, price });
-};
+// const createBookingCheckout = async (session) => {
+// const tour = session.client_reference_id;
+// const user = (await User.findOne({ email: session.customer_email })).id;
+// console.log(user);
+// const price = session.display_items[0].amount / 100;
+// await Booking.create({ user, price });
+// };
+
+exports.createBookingCheckout = catchAsync(async (req, res, next) => {
+  const { user, price } = req.query;
+
+  if (!user && !price) return next();
+  await Booking.create({ user, price });
+  await User.findByIdAndUpdate(user, { plan: "pro" });
+  res.redirect(req.originalUrl.split("?")[0]);
+});
 
 exports.webhookCheckout = (req, res, next) => {
   const signature = req.headers["stripe-signature"];

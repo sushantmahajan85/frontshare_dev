@@ -79,6 +79,10 @@ const userSchema = new mongoose.Schema(
       type: mongoose.Schema.ObjectId,
       ref: "NewsLetter",
     },
+    plan: {
+      type: String,
+      default: "basic",
+    },
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );

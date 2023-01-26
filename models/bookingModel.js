@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bookingSchema = new mongoose.Schema({
   plan: {
     type: String,
+    default: "pro",
   },
   user: {
     type: mongoose.Schema.ObjectId,

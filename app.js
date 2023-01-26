@@ -12,10 +12,6 @@ const bookingRoutes = require("./routes/booking_routes");
 //   (bodyParser = require("body-parser")),
 //   ({ check, validationResult } = require("express-validator")),
 
-app.get("/", function (req, res) {
-  res.render("landing");
-});
-
 app.use(express.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 

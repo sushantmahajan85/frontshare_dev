@@ -8,7 +8,7 @@ router.use(authController.protect);
 
 router.get("/checkout-session/", bookingController.getCheckoutSession);
 
-router.use(authController.restrictTo("admin", "lead-guide"));
+// router.use(authController.restrictTo("admin", "lead-guide"));
 
 router
   .route("/")

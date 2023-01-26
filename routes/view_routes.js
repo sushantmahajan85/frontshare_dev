@@ -7,6 +7,7 @@ var router = express.Router();
 var User = require("../models/userModel");
 // var LikedDeal = require("../models/likedDealModel");
 var authController = require("../controllers/authController");
+var bookingController = require("../controllers/bookingController");
 // const recruit = require("../models/recruit");
 const { check, validationResult } = require("express-validator");
 
@@ -111,6 +112,12 @@ router.post(
 
 router.get("/signup", function (req, res) {
   res.render("signup");
+});
+router.get("/", bookingController.createBookingCheckout, function (req, res) {
+  res.render("landing");
+});
+router.get("/pricing", function (req, res) {
+  res.render("pricing");
 });
 router.get("/login", function (req, res) {
   res.render("login");
