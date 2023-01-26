@@ -14,6 +14,8 @@ const videoPreviewSchema = new mongoose.Schema(
       default: true,
     },
     vidLink: String,
+    columnNo: Number,
+    rowNo: Number,
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );

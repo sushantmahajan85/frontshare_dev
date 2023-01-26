@@ -59,26 +59,39 @@ const userSchema = new mongoose.Schema(
     verification_token_time: {
       type: Date,
     },
-    social_links: {
-      type: mongoose.Schema.ObjectId,
-      ref: "SocialLink",
-    },
-    custom_link: {
-      type: mongoose.Schema.ObjectId,
-      ref: "CustomLink",
-    },
-    custom_text: {
-      type: mongoose.Schema.ObjectId,
-      ref: "CustomText",
-    },
-    video_preview: {
-      type: mongoose.Schema.ObjectId,
-      ref: "VideoPreview",
-    },
-    newsletter: {
-      type: mongoose.Schema.ObjectId,
-      ref: "NewsLetter",
-    },
+    social_links: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: "SocialLink",
+      },
+    ],
+    custom_link: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: "CustomLink",
+      },
+    ],
+    custom_text: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: "CustomText",
+      },
+    ],
+    video_preview: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: "VideoPreview",
+      },
+    ],
+    newsletter: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: "NewsLetter",
+      },
+    ],
+    c1: [String],
+    c2: [String],
+    c3: [String],
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
