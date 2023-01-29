@@ -14,7 +14,7 @@ var col2 = [];
 var col3 = [];
 exports.updateCanvas = catchAsync(async (req, res, next) => {
   const { c1, c2, c3 } = req.body;
-
+  // drag start here
   c1.forEach(async (c) => {
     const { block } = c;
     console.log(block, "blk");
