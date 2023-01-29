@@ -810,7 +810,6 @@
               </div>
             </div>
             <!-- Social Links -->
-            <% if(user.social_links){ %>
             <form
               style="
                 width: 100%;
@@ -830,7 +829,6 @@
                   id="instagram"
                   type="text"
                   placeholder="Instagram Link"
-                  value="<%= user.social_links.instagram %>"
                 />
               </div>
               <div class="form-group">
@@ -839,7 +837,6 @@
                   id="facebook"
                   type="text"
                   placeholder="Facebook Link"
-                  value="<%= user.social_links.facebook %>"
                 />
               </div>
               <div class="form-group">
@@ -848,7 +845,6 @@
                   id="twitter"
                   type="text"
                   placeholder="Twitter Link"
-                  value="<%= user.social_links.twitter %>"
                 />
               </div>
               <div class="form-group">
@@ -857,7 +853,6 @@
                   id="tiktok"
                   type="text"
                   placeholder="TikTok Link"
-                  value="<%= user.social_links.tiktok %>"
                 />
               </div>
               <div class="form-group">
@@ -866,7 +861,6 @@
                   id="snapchat"
                   type="text"
                   placeholder="Snapchat Link"
-                  value="<%= user.social_links.snapchat %>"
                 />
               </div>
               <div class="form-group">
@@ -875,9 +869,7 @@
                   id="youtube"
                   type="text"
                   placeholder="Youtube Link"
-                  value="<%= user.social_links.youtube %>"
                 />
-                //
               </div>
               <button
                 class="btn btn-primary rounded-pill"
@@ -888,7 +880,6 @@
                 Save
               </button>
             </form>
-            <% } %> <% if (user.custom_link) { %>
             <form
               style="
                 width: 100%;
@@ -908,7 +899,6 @@
                   id="url"
                   type="text"
                   placeholder="Custom Link"
-                  value="<%= user.custom_link.url %>"
                 />
               </div>
               <div class="form-group">
@@ -917,7 +907,6 @@
                   id="title"
                   type="text"
                   placeholder="Title"
-                  value="<%= user.custom_link.title %>"
                 />
               </div>
               <textarea
@@ -926,8 +915,7 @@
                 rows="3"
                 placeholder="Description"
               >
-              <%= user.custom_link.description %></textarea
-              >
+              </textarea>
               <button
                 class="btn btn-primary rounded-pill"
                 style="margin: 0 auto; width: 100%"
@@ -937,7 +925,6 @@
                 Save
               </button>
             </form>
-            <% } %> <% if(user.custom_text){ %>
             <form
               style="
                 width: 100%;
@@ -956,8 +943,7 @@
                   >Add any custom text you wish to display on your page</label
                 >
                 <textarea class="form-control" id="customText" rows="5">
-                <%= user.custom_text.text %></textarea
-                >
+                </textarea>
               </div>
 
               <button
@@ -969,7 +955,6 @@
                 Save
               </button>
             </form>
-            <% } %>
             <form
               style="
                 width: 100%;
@@ -989,7 +974,6 @@
                   id="vidLink"
                   type="text"
                   placeholder="Video Link"
-                  value="<%= user.video_preview.vidLink %>"
                 />
               </div>
               <button
@@ -1021,7 +1005,6 @@
                   id="newsLetterTitle"
                   type="text"
                   placeholder="Title"
-                  value="<%= user.newsletter.title %>"
                 />
               </div>
               <div class="form-group">
@@ -1030,7 +1013,6 @@
                   id="btnText"
                   type="text"
                   placeholder="Button Text"
-                  value="<%= user.newsletter.btnText %>"
                 />
               </div>
               <button

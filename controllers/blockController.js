@@ -9,144 +9,223 @@ const catchAsync = require("./../utils/catchAsync");
 const appError = require("./../utils/appError");
 const factory = require("./handlerFactory");
 
+var col1 = [];
+var col2 = [];
+var col3 = [];
 exports.updateCanvas = catchAsync(async (req, res, next) => {
   console.log(req.body);
   const { c1, c2, c3 } = req.body;
 
-  c1.forEach(() => {
-    const { block } = c1;
-    if (block == "sociallinks") {
-      console.log("in this");
-      this.createSocialLink1();
-    } else if (block == "customlink") {
-    } else if (block == "customtext") {
-    } else if (block == "videopreview") {
-    } else if (block == "newsletter") {
-    }
-  });
-  c2.forEach((c) => {
+  c1.forEach(async (c) => {
     const { block } = c;
-    console.log(block);
+    console.log(block, "blk");
     if (block == "sociallinks") {
-      console.log("in this");
-      this.createSocialLink(req);
+      console.log(new Date().getMilliseconds());
+      setTimeout(() => {
+        this.createSocialLink(req, 1);
+      }, 1000);
     } else if (block == "customlink") {
+      console.log(new Date().getMilliseconds());
+      setTimeout(() => {
+        this.createCustomLink(req, 1);
+      }, 1000);
     } else if (block == "customtext") {
+      this.createCustomText(req, 1);
     } else if (block == "videopreview") {
+      this.createVideoPreview(req, 1);
     } else if (block == "newsletter") {
+      this.createNewsLetter(req, 1);
     }
   });
-  c3.forEach(() => {
-    const { block } = c3;
-    if (block == "sociallinks") {
-      console.log("in this");
-      this.createSocialLink1();
-    } else if (block == "customlink") {
-    } else if (block == "customtext") {
-    } else if (block == "videopreview") {
-    } else if (block == "newsletter") {
-    }
-  });
+  setTimeout(() => {
+    c2.forEach(async (c) => {
+      const { block } = c;
+
+      if (block == "sociallinks") {
+        await this.createSocialLink(req, 2);
+      } else if (block == "customlink") {
+        await this.createCustomLink(req, 2);
+      } else if (block == "customtext") {
+        this.createCustomText(req, 2);
+      } else if (block == "videopreview") {
+        this.createVideoPreview(req, 2);
+      } else if (block == "newsletter") {
+        this.createNewsLetter(req, 2);
+      }
+    });
+  }, 2500);
+  setTimeout(() => {
+    c3.forEach(async (c) => {
+      const { block } = c;
+
+      if (block == "sociallinks") {
+        await this.createSocialLink(req, 3);
+      } else if (block == "customlink") {
+        await this.createCustomLink(req, 3);
+      } else if (block == "customtext") {
+        this.createCustomText(req, 3);
+      } else if (block == "videopreview") {
+        this.createVideoPreview(req, 3);
+      } else if (block == "newsletter") {
+        this.createNewsLetter(req, 3);
+      }
+    });
+  }, 5000);
+
+  col1 = [];
+  col2 = [];
+  col3 = [];
+  res.status(200).json({ status: "success" });
 });
 
-exports.createSocialLink1 = catchAsync(async (req, res, next) => {
-  console.log("yahan hun");
-});
-
-exports.createSocialLink = catchAsync(async (req, res, next) => {
+exports.createSocialLink = catchAsync(async (req, col) => {
   const socialLinkDoc = await SocialLink.create({
     columnNo: 2,
   });
-  console.log(socialLinkDoc);
 
+  if (col == 2) {
+    col2.push(socialLinkDoc.id);
+  }
+  if (col == 1) {
+    col1.push(socialLinkDoc.id);
+  }
+  if (col == 3) {
+    col3.push(socialLinkDoc.id);
+  }
+
+  console.log(col1, "col1_slink");
+  console.log(col2, "col2_slink");
+  console.log(col3, "col3_slink");
   const doc = await User.findByIdAndUpdate(
     req.logged.id,
-    { $push: { social_links: socialLinkDoc.id } },
+    { $push: { social_links: socialLinkDoc.id }, c1: col1, c2: col2, c3: col3 },
+
     {
       new: true,
       runValidators: true,
     }
   );
 
-  if (!doc) {
-    return next(new appError("No Document With That Id", 404));
-  }
+  // if (!doc) {
+  //   return next(new appError("No Document With That Id", 404));
+  // }
 
   // res.status(200).json({ status: "success", data: { data: doc } });
 });
 
-exports.createCustomText = catchAsync(async (req, res, next) => {
-  const customTextDoc = await CustomText.create(req.body);
-
+exports.createCustomText = catchAsync(async (req, col) => {
+  const customTextDoc = await CustomText.create({ columnNo: 2 });
+  if (col == 2) {
+    col2.push(customTextDoc.id);
+  }
+  if (col == 1) {
+    col1.push(customTextDoc.id);
+  }
+  if (col == 3) {
+    col3.push(customTextDoc.id);
+  }
+  // console.log(col2, "colllllllllllnjjlll");
   const doc = await User.findByIdAndUpdate(
-    req.user.id,
-    { custom_text: customTextDoc.id },
+    req.logged.id,
+    { $push: { custom_text: customTextDoc.id }, c1: col1, c2: col2, c3: col3 },
     {
       new: true,
       runValidators: true,
     }
   );
 
-  if (!doc) {
-    return next(new appError("No Document With That Id", 404));
-  }
+  // if (!doc) {
+  //   return next(new appError("No Document With That Id", 404));
+  // }
 
   // res.status(200).json({ status: "success", data: { data: doc } });
 });
 
-exports.createCustomLink = catchAsync(async (req, res, next) => {
-  const customLinkDoc = await CustomLink.create(req.body);
-
+exports.createCustomLink = catchAsync(async (req, col) => {
+  const customLinkDoc = await CustomLink.create({ columnNo: 2 });
+  if (col == 2) {
+    col2.push(customLinkDoc.id);
+  }
+  if (col == 1) {
+    col1.push(customLinkDoc.id);
+  }
+  if (col == 3) {
+    col3.push(customLinkDoc.id);
+  }
+  console.log(col1, "col1_clink");
+  console.log(col2, "col2_clink");
+  console.log(col3, "col3_clink");
   const doc = await User.findByIdAndUpdate(
-    req.user.id,
-    { custom_link: customLinkDoc.id },
+    req.logged.id,
+    { $push: { custom_link: customLinkDoc.id }, c1: col1, c2: col2, c3: col3 },
     {
       new: true,
       runValidators: true,
     }
   );
 
-  if (!doc) {
-    return next(new appError("No Document With That Id", 404));
-  }
+  // if (!doc) {
+  //   return next(new appError("No Document With That Id", 404));
+  // }
 
   // res.status(200).json({ status: "success", data: { data: doc } });
 });
 
-exports.createVideoPreview = catchAsync(async (req, res, next) => {
-  const videoPreviewDoc = await VideoPreview.create(req.body);
-
+exports.createVideoPreview = catchAsync(async (req, col) => {
+  const videoPreviewDoc = await VideoPreview.create({ columnNo: 2 });
+  if (col == 2) {
+    col2.push(videoPreviewDoc.id);
+  }
+  if (col == 1) {
+    col1.push(videoPreviewDoc.id);
+  }
+  if (col == 3) {
+    col3.push(videoPreviewDoc.id);
+  }
   const doc = await User.findByIdAndUpdate(
-    req.user.id,
-    { video_preview: videoPreviewDoc.id },
+    req.logged.id,
+    {
+      $push: { video_preview: videoPreviewDoc.id },
+      c1: col1,
+      c2: col2,
+      c3: col3,
+    },
     {
       new: true,
       runValidators: true,
     }
   );
 
-  if (!doc) {
-    return next(new appError("No Document With That Id", 404));
-  }
+  // if (!doc) {
+  //   return next(new appError("No Document With That Id", 404));
+  // }
 
   // res.status(200).json({ status: "success", data: { data: doc } });
 });
 
-exports.createNewsLetter = catchAsync(async (req, res, next) => {
-  const newsLetterDoc = await NewsLetter.create(req.body);
-
+exports.createNewsLetter = catchAsync(async (req, col) => {
+  const newsLetterDoc = await NewsLetter.create({ columnNo: 2 });
+  if (col == 2) {
+    col2.push(newsLetterDoc.id);
+  }
+  if (col == 1) {
+    col1.push(newsLetterDoc.id);
+  }
+  if (col == 3) {
+    col3.push(newsLetterDoc.id);
+  }
   const doc = await User.findByIdAndUpdate(
-    req.user.id,
-    { newsletter: newsLetterDoc.id },
+    req.logged.id,
+    { $push: { newsletter: newsLetterDoc.id }, c1: col1, c2: col2, c3: col3 },
     {
       new: true,
       runValidators: true,
     }
   );
 
-  if (!doc) {
-    return next(new appError("No Document With That Id", 404));
-  }
+  // if (!doc) {
+  //   return next(new appError("No Document With That Id", 404));
+  // }
 
   // res.status(200).json({ status: "success", data: { data: doc } });
 });

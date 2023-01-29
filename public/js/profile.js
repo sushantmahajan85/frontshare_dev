@@ -279,6 +279,7 @@ const passValueSaveCards = async (c1, c2, c3) => {
     });
     if (result.data.status === "success") {
       window.alert("YES");
+      // window.location.assign("/login");
     }
   } catch (err) {
     window.alert("NO");
