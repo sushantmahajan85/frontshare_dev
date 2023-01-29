@@ -287,12 +287,13 @@ const passValueSaveCards = async (c1, c2, c3) => {
   }
 };
 
-const saveCardsButton = document.querySelector("#save-cards-btn");
+const saveCardsButton = document.getElementById("save-cards-btn");
 saveCardsButton.addEventListener("click", (e) => {
   e.preventDefault();
   console.log(c1);
   console.log(c2);
   console.log(c3);
+  console.log("hiiiiiiiiiiii");
   passValueSaveCards(c1, c2, c3);
 });
 
