@@ -5,6 +5,11 @@ const catchAsync = require("../utils/catchAsync");
 var router = express.Router();
 // var Deal = require("../models/dealModel");
 var User = require("../models/userModel");
+const SocialLink = require("../models/socialLinkModel");
+const CustomText = require("../models/customTextModel");
+const CustomLink = require("../models/customLinkModel");
+const VideoPreview = require("../models/videoPreviewModel");
+const NewsLetter = require("../models/newsLetterModel");
 // var LikedDeal = require("../models/likedDealModel");
 var authController = require("../controllers/authController");
 var bookingController = require("../controllers/bookingController");
@@ -125,6 +130,25 @@ router.get("/login", function (req, res) {
 
 router.get("/profile", authController.isLoggedIn, function (req, res) {
   res.render("profile");
+  // console.log(req.logged);
+
+  let c1elements = req.logged.c1;
+
+  c1elements.sort((a, b) => {
+    return a.createdAt - b.createdAt;
+  });
+
+  let c2elements = req.logged.c2;
+
+  c2elements.sort((a, b) => {
+    return a.createdAt - b.createdAt;
+  });
+
+  let c3elements = req.logged.c3;
+
+  c3elements.sort((a, b) => {
+    return a.createdAt - b.createdAt;
+  });
 });
 
 router.get(

@@ -73,14 +73,14 @@ exports.createSocialLink = catchAsync(async (req, col, createdAt) => {
     createdAt: createdAt,
   });
 
-  if (col == 2) {
-    col2.push(socialLinkDoc.id);
-  }
   if (col == 1) {
-    col1.push(socialLinkDoc.id);
+    col1.push(socialLinkDoc);
+  }
+  if (col == 2) {
+    col2.push(socialLinkDoc);
   }
   if (col == 3) {
-    col3.push(socialLinkDoc.id);
+    col3.push(socialLinkDoc);
   }
 
   console.log(col1, "col1_slink");
@@ -106,14 +106,14 @@ exports.createSocialLink = catchAsync(async (req, col, createdAt) => {
 exports.createCustomText = catchAsync(async (req, col, createdAt) => {
   console.log(createdAt);
   const customTextDoc = await CustomText.create({ createdAt: createdAt });
-  if (col == 2) {
-    col2.push(customTextDoc.id);
-  }
   if (col == 1) {
-    col1.push(customTextDoc.id);
+    col1.push(customTextDoc);
+  }
+  if (col == 2) {
+    col2.push(customTextDoc);
   }
   if (col == 3) {
-    col3.push(customTextDoc.id);
+    col3.push(customTextDoc);
   }
   // console.log(col2, "colllllllllllnjjlll");
   const doc = await User.findByIdAndUpdate(
@@ -135,14 +135,14 @@ exports.createCustomText = catchAsync(async (req, col, createdAt) => {
 exports.createCustomLink = catchAsync(async (req, col, createdAt) => {
   console.log(createdAt);
   const customLinkDoc = await CustomLink.create({ createdAt: createdAt });
-  if (col == 2) {
-    col2.push(customLinkDoc.id);
-  }
   if (col == 1) {
-    col1.push(customLinkDoc.id);
+    col1.push(customLinkDoc);
+  }
+  if (col == 2) {
+    col2.push(customLinkDoc);
   }
   if (col == 3) {
-    col3.push(customLinkDoc.id);
+    col3.push(customLinkDoc);
   }
   console.log(col1, "col1_clink");
   console.log(col2, "col2_clink");
@@ -165,14 +165,14 @@ exports.createCustomLink = catchAsync(async (req, col, createdAt) => {
 
 exports.createVideoPreview = catchAsync(async (req, col, createdAt) => {
   const videoPreviewDoc = await VideoPreview.create({ createdAt: createdAt });
-  if (col == 2) {
-    col2.push(videoPreviewDoc.id);
-  }
   if (col == 1) {
-    col1.push(videoPreviewDoc.id);
+    col1.push(videoPreviewDoc);
+  }
+  if (col == 2) {
+    col2.push(videoPreviewDoc);
   }
   if (col == 3) {
-    col3.push(videoPreviewDoc.id);
+    col3.push(videoPreviewDoc);
   }
   const doc = await User.findByIdAndUpdate(
     req.logged.id,
@@ -197,14 +197,14 @@ exports.createVideoPreview = catchAsync(async (req, col, createdAt) => {
 
 exports.createNewsLetter = catchAsync(async (req, col, createdAt) => {
   const newsLetterDoc = await NewsLetter.create({ createdAt: createdAt });
-  if (col == 2) {
-    col2.push(newsLetterDoc.id);
-  }
   if (col == 1) {
-    col1.push(newsLetterDoc.id);
+    col1.push(newsLetterDoc);
+  }
+  if (col == 2) {
+    col2.push(newsLetterDoc);
   }
   if (col == 3) {
-    col3.push(newsLetterDoc.id);
+    col3.push(newsLetterDoc);
   }
   const doc = await User.findByIdAndUpdate(
     req.logged.id,

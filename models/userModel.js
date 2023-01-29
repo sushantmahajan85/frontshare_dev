@@ -89,9 +89,9 @@ const userSchema = new mongoose.Schema(
         ref: "NewsLetter",
       },
     ],
-    c1: [String],
-    c2: [String],
-    c3: [String],
+    c1: [Object],
+    c2: [Object],
+    c3: [Object],
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
