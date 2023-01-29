@@ -1681,10 +1681,6 @@ utils.$document.ready(function () {
 |   Draggable
 -----------------------------------------------*/
 
-var c1 = [];
-var c2 = [];
-var c3 = [];
-
 utils.$document.ready(function () {
   var Selectors = {
     BODY: "body",
@@ -1744,14 +1740,30 @@ utils.$document.ready(function () {
       console.log($itemContainer);
 
       if (from == "1" && to != "1") {
-        c1 = c1.filter(function (obj) {
-          return obj.id !== item;
+        // c1 = c1.filter(function (obj) {
+        //   return obj.id !== item;
+        // });
+        c1 = [];
+        e.sourceContainer.childNodes.forEach((c) => {
+          if (
+            c.className != "kanban-item draggable--original" &&
+            c.nodeName != "#text"
+          ) {
+            c1.push({
+              block: c.dataset.block.split("-")[0],
+              content: c.dataset.block.split("-")[1],
+              id: c.dataset.block,
+            });
+          }
         });
       }
       if (to == "1") {
         c1 = [];
         $itemContainer[0].childNodes.forEach((c) => {
-          if (c.className != "kanban-item draggable--original") {
+          if (
+            c.className != "kanban-item draggable--original" &&
+            c.nodeName != "#text"
+          ) {
             c1.push({
               block: c.dataset.block.split("-")[0],
               content: c.dataset.block.split("-")[1],
@@ -1761,14 +1773,30 @@ utils.$document.ready(function () {
         });
       }
       if (from == "2" && to != "2") {
-        c2 = c2.filter(function (obj) {
-          return obj.id !== item;
+        // c2 = c2.filter(function (obj) {
+        //   return obj.id !== item;
+        // });
+        c2 = [];
+        e.sourceContainer.childNodes.forEach((c) => {
+          if (
+            c.className != "kanban-item draggable--original" &&
+            c.nodeName != "#text"
+          ) {
+            c2.push({
+              block: c.dataset.block.split("-")[0],
+              content: c.dataset.block.split("-")[1],
+              id: c.dataset.block,
+            });
+          }
         });
       }
       if (to == "2") {
         c2 = [];
         $itemContainer[0].childNodes.forEach((c) => {
-          if (c.className != "kanban-item draggable--original") {
+          if (
+            c.className != "kanban-item draggable--original" &&
+            c.nodeName != "#text"
+          ) {
             c2.push({
               block: c.dataset.block.split("-")[0],
               content: c.dataset.block.split("-")[1],
@@ -1778,14 +1806,30 @@ utils.$document.ready(function () {
         });
       }
       if (from == "3" && to != "3") {
-        c3 = c3.filter(function (obj) {
-          return obj.id !== item;
+        // c3 = c3.filter(function (obj) {
+        //   return obj.id !== item;
+        // });
+        c3 = [];
+        e.sourceContainer.childNodes.forEach((c) => {
+          if (
+            c.className != "kanban-item draggable--original" &&
+            c.nodeName != "#text"
+          ) {
+            c3.push({
+              block: c.dataset.block.split("-")[0],
+              content: c.dataset.block.split("-")[1],
+              id: c.dataset.block,
+            });
+          }
         });
       }
       if (to == "3") {
         c3 = [];
         $itemContainer[0].childNodes.forEach((c) => {
-          if (c.className != "kanban-item draggable--original") {
+          if (
+            c.className != "kanban-item draggable--original" &&
+            c.nodeName != "#text"
+          ) {
             c3.push({
               block: c.dataset.block.split("-")[0],
               content: c.dataset.block.split("-")[1],

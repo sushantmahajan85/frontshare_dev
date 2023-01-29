@@ -37,9 +37,20 @@ const socialLinkSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    htmlContent: {
+      type: String,
+      default: `<div class="kanban-item" data-block="sociallinks-1">
+      <div class="card kanban-item-card hover-actions-trigger" data-toggle="modal" data-target="#kanban-modal-1">
+        <div class="card-body position-relative">
+          <p class="mb-0 font-weight-medium text-sans-serif">This is a Social Link Block<br>Try dragging it around</p>
+        </div>
+      </div>
+    </div>`,
+    },
     columnNo: Number,
     rowNo: Number,
     createdAt: Number,
+    block: { type: String, default: "sociallinks" },
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );

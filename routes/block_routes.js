@@ -5,14 +5,14 @@ const authController = require("../controllers/authController");
 const router = express.Router();
 router.use(authController.isLoggedIn);
 
-router
-  .route("/sociallink")
-  .post(authController.protect, blockController.createSocialLink);
+// router
+//   .route("/sociallink")
+//   .post(authController.protect, blockController.createSocialLink);
 
-router
-  .route("/sociallink/:id")
-  .patch(blockController.updateSocialLink)
-  .delete(blockController.deleteSocialLink);
+// router
+//   .route("/sociallink/:id")
+//   .patch(blockController.updateSocialLink)
+//   .delete(blockController.deleteSocialLink);
 
 router
   .route("/customtext")

@@ -129,8 +129,7 @@ router.get("/login", function (req, res) {
 });
 
 router.get("/profile", authController.isLoggedIn, function (req, res) {
-  res.render("profile");
-  // console.log(req.logged);
+  console.log(req.logged);
 
   let c1elements = req.logged.c1;
 
@@ -149,6 +148,7 @@ router.get("/profile", authController.isLoggedIn, function (req, res) {
   c3elements.sort((a, b) => {
     return a.createdAt - b.createdAt;
   });
+  res.render("profile", { c1elements, c2elements, c3elements });
 });
 
 router.get(

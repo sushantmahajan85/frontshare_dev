@@ -9,6 +9,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+
     <link rel="stylesheet" href="./scss/css/style.css" />
     <title>Document</title>
   </head>
@@ -72,6 +73,13 @@
   </style>
   <body>
     <main class="main">
+      <% { %>
+      <script>
+        var c1 = <%- JSON.stringify(c1elements)  %>;
+        var c2 = <%- JSON.stringify(c2elements)  %>;
+        var c3 = <%- JSON.stringify(c3elements)  %>;
+      </script>
+      <% } %>
       <div
         class="container"
         data-layout="container"
@@ -698,7 +706,7 @@
               class="kanban-container scrollbar perfect-scrollbar mr-n3"
               data-options='{"suppressScrollY":true,"suppressScrollX":false}'
             >
-              <div>
+              <div style="display: flex; justify-content: center">
                 <div class="kanban-column" style="height: 30rem">
                   <div class="kanban-column-header">
                     <h5 class="text-serif fs-0 mb-0">
@@ -733,7 +741,10 @@
                     class="kanban-items-container scrollbar perfect-scrollbar"
                     style="height: 100%; max-height: 30rem"
                     id="addCards1"
-                  ></div>
+                  >
+                    <% for( var c of c1elements) { %> <%- c.htmlContent %> <% }
+                    %>
+                  </div>
                 </div>
                 <div class="kanban-column" style="height: 30rem">
                   <div class="kanban-column-header">
@@ -769,7 +780,10 @@
                     class="kanban-items-container scrollbar perfect-scrollbar"
                     style="height: 100%; max-height: 30rem"
                     id="addCards2"
-                  ></div>
+                  >
+                    <% for( var c of c2elements) { %> <%- c.htmlContent %> <% }
+                    %>
+                  </div>
                 </div>
                 <div class="kanban-column" style="height: 30rem">
                   <div class="kanban-column-header">
@@ -805,12 +819,15 @@
                     class="kanban-items-container scrollbar perfect-scrollbar"
                     style="height: 100%; max-height: 30rem"
                     id="addCards3"
-                  ></div>
+                  >
+                    <% for( var c of c3elements) { %> <%- c.htmlContent %> <% }
+                    %>
+                  </div>
                 </div>
               </div>
               <button
                 class="btn btn-primary rounded-pill"
-                style="margin: 0 auto; width: 100%"
+                style="margin: 0 auto; width: 100%; margin-top: 2rem !important"
                 type="submit"
                 name="submit"
                 id="save-cards-btn"
