@@ -27,6 +27,7 @@ const customLinkSchema = new mongoose.Schema(
     },
     columnNo: Number,
     rowNo: Number,
+    createdAt: Number,
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );

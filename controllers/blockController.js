@@ -13,64 +13,53 @@ var col1 = [];
 var col2 = [];
 var col3 = [];
 exports.updateCanvas = catchAsync(async (req, res, next) => {
-  console.log(req.body);
   const { c1, c2, c3 } = req.body;
 
   c1.forEach(async (c) => {
     const { block } = c;
     console.log(block, "blk");
     if (block == "sociallinks") {
-      console.log(new Date().getMilliseconds());
-      setTimeout(() => {
-        this.createSocialLink(req, 1);
-      }, 1000);
+      this.createSocialLink(req, 1, Date.now());
     } else if (block == "customlink") {
-      console.log(new Date().getMilliseconds());
-      setTimeout(() => {
-        this.createCustomLink(req, 1);
-      }, 1000);
+      this.createCustomLink(req, 1, Date.now());
     } else if (block == "customtext") {
-      this.createCustomText(req, 1);
+      this.createCustomText(req, 1, Date.now());
     } else if (block == "videopreview") {
-      this.createVideoPreview(req, 1);
+      this.createVideoPreview(req, 1, Date.now());
     } else if (block == "newsletter") {
-      this.createNewsLetter(req, 1);
+      this.createNewsLetter(req, 1, Date.now());
     }
   });
-  setTimeout(() => {
-    c2.forEach(async (c) => {
-      const { block } = c;
+  c2.forEach(async (c) => {
+    const { block } = c;
 
-      if (block == "sociallinks") {
-        await this.createSocialLink(req, 2);
-      } else if (block == "customlink") {
-        await this.createCustomLink(req, 2);
-      } else if (block == "customtext") {
-        this.createCustomText(req, 2);
-      } else if (block == "videopreview") {
-        this.createVideoPreview(req, 2);
-      } else if (block == "newsletter") {
-        this.createNewsLetter(req, 2);
-      }
-    });
-  }, 2500);
-  setTimeout(() => {
-    c3.forEach(async (c) => {
-      const { block } = c;
+    if (block == "sociallinks") {
+      await this.createSocialLink(req, 2, Date.now());
+    } else if (block == "customlink") {
+      await this.createCustomLink(req, 2, Date.now());
+    } else if (block == "customtext") {
+      this.createCustomText(req, 2, Date.now());
+    } else if (block == "videopreview") {
+      this.createVideoPreview(req, 2, Date.now());
+    } else if (block == "newsletter") {
+      this.createNewsLetter(req, 2, Date.now());
+    }
+  });
+  c3.forEach(async (c) => {
+    const { block } = c;
 
-      if (block == "sociallinks") {
-        await this.createSocialLink(req, 3);
-      } else if (block == "customlink") {
-        await this.createCustomLink(req, 3);
-      } else if (block == "customtext") {
-        this.createCustomText(req, 3);
-      } else if (block == "videopreview") {
-        this.createVideoPreview(req, 3);
-      } else if (block == "newsletter") {
-        this.createNewsLetter(req, 3);
-      }
-    });
-  }, 5000);
+    if (block == "sociallinks") {
+      await this.createSocialLink(req, 3, Date.now());
+    } else if (block == "customlink") {
+      await this.createCustomLink(req, 3, Date.now());
+    } else if (block == "customtext") {
+      this.createCustomText(req, 3, Date.now());
+    } else if (block == "videopreview") {
+      this.createVideoPreview(req, 3, Date.now());
+    } else if (block == "newsletter") {
+      this.createNewsLetter(req, 3, Date.now());
+    }
+  });
 
   col1 = [];
   col2 = [];
@@ -78,9 +67,10 @@ exports.updateCanvas = catchAsync(async (req, res, next) => {
   res.status(200).json({ status: "success" });
 });
 
-exports.createSocialLink = catchAsync(async (req, col) => {
+exports.createSocialLink = catchAsync(async (req, col, createdAt) => {
+  console.log(createdAt);
   const socialLinkDoc = await SocialLink.create({
-    columnNo: 2,
+    createdAt: createdAt,
   });
 
   if (col == 2) {
@@ -113,8 +103,9 @@ exports.createSocialLink = catchAsync(async (req, col) => {
   // res.status(200).json({ status: "success", data: { data: doc } });
 });
 
-exports.createCustomText = catchAsync(async (req, col) => {
-  const customTextDoc = await CustomText.create({ columnNo: 2 });
+exports.createCustomText = catchAsync(async (req, col, createdAt) => {
+  console.log(createdAt);
+  const customTextDoc = await CustomText.create({ createdAt: createdAt });
   if (col == 2) {
     col2.push(customTextDoc.id);
   }
@@ -141,8 +132,9 @@ exports.createCustomText = catchAsync(async (req, col) => {
   // res.status(200).json({ status: "success", data: { data: doc } });
 });
 
-exports.createCustomLink = catchAsync(async (req, col) => {
-  const customLinkDoc = await CustomLink.create({ columnNo: 2 });
+exports.createCustomLink = catchAsync(async (req, col, createdAt) => {
+  console.log(createdAt);
+  const customLinkDoc = await CustomLink.create({ createdAt: createdAt });
   if (col == 2) {
     col2.push(customLinkDoc.id);
   }
@@ -171,8 +163,8 @@ exports.createCustomLink = catchAsync(async (req, col) => {
   // res.status(200).json({ status: "success", data: { data: doc } });
 });
 
-exports.createVideoPreview = catchAsync(async (req, col) => {
-  const videoPreviewDoc = await VideoPreview.create({ columnNo: 2 });
+exports.createVideoPreview = catchAsync(async (req, col, createdAt) => {
+  const videoPreviewDoc = await VideoPreview.create({ createdAt: createdAt });
   if (col == 2) {
     col2.push(videoPreviewDoc.id);
   }
@@ -203,8 +195,8 @@ exports.createVideoPreview = catchAsync(async (req, col) => {
   // res.status(200).json({ status: "success", data: { data: doc } });
 });
 
-exports.createNewsLetter = catchAsync(async (req, col) => {
-  const newsLetterDoc = await NewsLetter.create({ columnNo: 2 });
+exports.createNewsLetter = catchAsync(async (req, col, createdAt) => {
+  const newsLetterDoc = await NewsLetter.create({ createdAt: createdAt });
   if (col == 2) {
     col2.push(newsLetterDoc.id);
   }
