@@ -55,6 +55,8 @@
       rel="stylesheet"
     />
     <link href="/assets/css/theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./scss/css/style.css" />
+
     <!-- <link rel="stylesheet" href=""> -->
   </head>
 
@@ -63,8 +65,10 @@
     <!--    Main Content-->
     <!-- ===============================================-->
     <main class="main" id="top">
+      <%- include('partials/navbar.ejs') %>
+
       <div class="container" data-layout="container">
-        <nav class="navbar navbar-vertical navbar-expand-xl navbar-light">
+        <!-- <nav class="navbar navbar-vertical navbar-expand-xl navbar-light">
           <div class="d-flex align-items-center">
             <div class="toggle-icon-wrapper">
               <button
@@ -1276,9 +1280,9 @@
               </div>
             </div>
           </div>
-        </nav>
+        </nav> -->
         <div class="content">
-          <nav
+          <!-- <nav
             class="navbar navbar-light navbar-glass navbar-top sticky-kit navbar-expand"
           >
             <button
@@ -1746,7 +1750,7 @@
                 </div>
               </li>
             </ul>
-          </nav>
+          </nav> -->
           <div class="card mb-3">
             <div class="card-body">
               <div class="row justify-content-center">

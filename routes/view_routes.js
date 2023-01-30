@@ -121,7 +121,7 @@ router.get("/signup", function (req, res) {
 router.get("/", bookingController.createBookingCheckout, function (req, res) {
   res.render("landing");
 });
-router.get("/pricing", function (req, res) {
+router.get("/pricing", authController.isLoggedIn, function (req, res) {
   res.render("pricing");
 });
 router.get("/login", function (req, res) {

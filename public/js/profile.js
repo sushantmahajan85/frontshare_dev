@@ -132,23 +132,6 @@ const passValueDelete = async () => {
   }
 };
 
-const passValueUpdateLink = async (profilelink) => {
-  try {
-    const result = await axios({
-      method: "PATCH",
-      url: "/api/v1/users/updatelink",
-      data: {
-        profilelink,
-      },
-    });
-    if (result.data.status === "success") {
-      window.alert("YES");
-    }
-  } catch (err) {
-    window.alert("NO");
-  }
-};
-
 document.getElementById("socialLinkForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const instagram = document.getElementById("instagram").value;
@@ -295,13 +278,4 @@ saveCardsButton.addEventListener("click", (e) => {
   console.log(c3);
   console.log("hiiiiiiiiiiii");
   passValueSaveCards(c1, c2, c3);
-});
-
-const updateLinkButton = document.querySelector("#updateLinkButton");
-updateLinkButton.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  const profilelink = document.getElementById("myInput-1").value.split("/")[1];
-  console.log(profilelink);
-  passValueUpdateLink(profilelink);
 });
