@@ -13,7 +13,6 @@ const signToken = (id) =>
   });
 
 exports.signUp = catchAsync(async (req, res, next) => {
-  console.log("gygy");
   const newUser = await User.create({
     name: req.body.name,
     password: req.body.password,
@@ -190,7 +189,6 @@ exports.login = async (req, res, next) => {
 };
 
 exports.logout = (req, res) => {
-  console.log("fdfdfdfdfdfd");
   res.cookie("jwt", "loggedout", {
     expires: new Date(Date.now() + 1),
     // secure: true,

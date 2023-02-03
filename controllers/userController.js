@@ -27,7 +27,7 @@ exports.getMe = (req, res, next) => {
   next();
 };
 exports.createProfileLink = catchAsync(async (req, res, next) => {
-  console.log(req.email);
+  // console.log(req.email);
   if (!req.email) {
     return;
   }
@@ -90,7 +90,7 @@ exports.updateLink = catchAsync(async (req, res, next) => {
     }
   );
 
-  console.log(req.body.profilelink);
+  // console.log(req.body.profilelink);
 
   res.status(200).json({ status: "success", data: { user: updatedUser } });
 });
@@ -135,8 +135,8 @@ const upload = multer({
 exports.uploadUserPhoto = upload.single("photo");
 
 exports.resizeUserPhoto = catchAsync(async (req, res, next) => {
-  console.log(req.user);
-  console.log(req.file);
+  // console.log(req.user);
+  // console.log(req.file);
   if (!req.file) {
     return next();
   }
@@ -166,8 +166,8 @@ const uploadVideo = multer({ storage: storage });
 exports.uploadVideo = uploadVideo.single("video");
 
 exports.addUserVideo = catchAsync(async (req, res, next) => {
-  console.log(req.file);
-  console.log(req.body);
+  // console.log(req.file);
+  // console.log(req.body);
 
   const newVid = await User.create({
     video: req.file.filename,

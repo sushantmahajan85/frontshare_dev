@@ -17,7 +17,7 @@ exports.updateCanvas = catchAsync(async (req, res, next) => {
   // drag start here
   c1.forEach(async (c) => {
     const { block } = c;
-    console.log(block, "blk");
+    // console.log(block, "blk");
     if (block == "sociallinks") {
       createSocialLink(req, 1, Date.now());
     } else if (block == "customlink") {
@@ -68,7 +68,7 @@ exports.updateCanvas = catchAsync(async (req, res, next) => {
 });
 
 const createSocialLink = catchAsync(async (req, col, createdAt) => {
-  console.log(createdAt);
+  // console.log(createdAt);
   const socialLinkDoc = await SocialLink.create({
     createdAt: createdAt,
   });
@@ -83,9 +83,9 @@ const createSocialLink = catchAsync(async (req, col, createdAt) => {
     col3.push(socialLinkDoc);
   }
 
-  console.log(col1, "col1_slink");
-  console.log(col2, "col2_slink");
-  console.log(col3, "col3_slink");
+  // console.log(col1, "col1_slink");
+  // console.log(col2, "col2_slink");
+  // console.log(col3, "col3_slink");
   const doc = await User.findByIdAndUpdate(
     req.logged.id,
     { $push: { social_links: socialLinkDoc.id }, c1: col1, c2: col2, c3: col3 },
@@ -104,7 +104,7 @@ const createSocialLink = catchAsync(async (req, col, createdAt) => {
 });
 
 exports.createCustomText = catchAsync(async (req, col, createdAt) => {
-  console.log(createdAt);
+  // console.log(createdAt);
   const customTextDoc = await CustomText.create({ createdAt: createdAt });
   if (col == 1) {
     col1.push(customTextDoc);
@@ -133,7 +133,7 @@ exports.createCustomText = catchAsync(async (req, col, createdAt) => {
 });
 
 exports.createCustomLink = catchAsync(async (req, col, createdAt) => {
-  console.log(createdAt);
+  // console.log(createdAt);
   const customLinkDoc = await CustomLink.create({ createdAt: createdAt });
   if (col == 1) {
     col1.push(customLinkDoc);
@@ -144,9 +144,9 @@ exports.createCustomLink = catchAsync(async (req, col, createdAt) => {
   if (col == 3) {
     col3.push(customLinkDoc);
   }
-  console.log(col1, "col1_clink");
-  console.log(col2, "col2_clink");
-  console.log(col3, "col3_clink");
+  // console.log(col1, "col1_clink");
+  // console.log(col2, "col2_clink");
+  // console.log(col3, "col3_clink");
   const doc = await User.findByIdAndUpdate(
     req.logged.id,
     { $push: { custom_link: customLinkDoc.id }, c1: col1, c2: col2, c3: col3 },

@@ -31,7 +31,7 @@ router.post(
     if (!errors.isEmpty()) {
       res.render("recruit", { errors: errors.mapped() });
     } else {
-      console.log(req.body.data);
+      // console.log(req.body.data);
       recruit.create(req.body.data, function (err, newdetails) {
         if (err) {
           console.log(err);
@@ -129,7 +129,7 @@ router.get("/login", function (req, res) {
 });
 
 router.get("/profile", authController.isLoggedIn, function (req, res) {
-  console.log(req.logged);
+  // console.log(req.logged);
 
   let c1elements = req.logged.c1;
 
