@@ -21,16 +21,6 @@ const bookplan = async (price) => {
   }
 };
 
-document.getElementById("purchase_pro").addEventListener("click", (e) => {
-  e.preventDefault();
-  let check = document.getElementById("customSwitch1");
-  let price = 1000;
-  if (!check.checked) price = 100;
-  console.log("booking");
-  e.target.textContent = "Processing...";
-  bookplan(price);
-});
-
 function changePrice() {
   let check = document.getElementById("customSwitch1");
   if (!check.checked) document.getElementById("priceplan").innerHTML = "100/m";

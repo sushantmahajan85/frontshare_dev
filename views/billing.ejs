@@ -132,12 +132,20 @@
         document
           .getElementById("billing-pay")
           .addEventListener("click", (e) => {
-            console.log("booking");
             e.preventDefault();
+            let check = document.getElementById("customSwitch1");
+            let price = 1000;
+            if (!check.checked) price = 100;
+            console.log("booking");
             e.target.textContent = "Processing...";
-            bookplan();
+            bookplan(price);
           });
       } else if (document.getElementById("paypal").checked) {
+        document
+          .getElementById("billing-pay")
+          .addEventListener("click", (e) => {
+            window.location.assign("/pay");
+          });
       }
     </script>
     <!-- ===============================================-->
