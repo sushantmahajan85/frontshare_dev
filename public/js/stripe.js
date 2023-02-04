@@ -20,10 +20,3 @@ const bookplan = async () => {
     // showAlert("error", err);
   }
 };
-
-document.getElementById("purchase_pro").addEventListener("click", (e) => {
-  console.log("booking");
-  e.preventDefault();
-  e.target.textContent = "Processing...";
-  bookplan();
-});

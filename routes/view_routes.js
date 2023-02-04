@@ -118,6 +118,9 @@ router.post(
 router.get("/signup", function (req, res) {
   res.render("signup");
 });
+router.get("/billing", authController.isLoggedIn, function (req, res) {
+  res.render("billing");
+});
 router.get("/", bookingController.createBookingCheckout, function (req, res) {
   res.render("landing");
 });
@@ -126,6 +129,9 @@ router.get("/pricing", authController.isLoggedIn, function (req, res) {
 });
 router.get("/login", function (req, res) {
   res.render("login");
+});
+router.get("/index", function (req, res) {
+  res.render("index");
 });
 
 router.get("/profile", authController.isLoggedIn, function (req, res) {

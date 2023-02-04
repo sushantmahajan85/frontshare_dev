@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>FrontShare | Dashboard &amp; WebApp Template</title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/img/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/img/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/img/favicons/favicon-16x16.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/assets/img/favicons/favicon.ico"
+    />
+    <link rel="manifest" href="/assets/img/favicons/manifest.json" />
+    <meta
+      name="msapplication-TileImage"
+      content="/assets/img/favicons/mstile-150x150.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <script src="/assets/js/config.navbar-vertical.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      href="/assets/lib/perfect-scrollbar/perfect-scrollbar.css"
+      rel="stylesheet"
+    />
+    <link href="/assets/css/theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./scss/css/style.css" />
+
+    <!-- <link rel="stylesheet" href=""> -->
+  </head>
+
+  <body>
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <%- include('partials/navbar.ejs') %>
+
+      <div class="row no-gutters">
+        <div class="col-lg-8 pr-lg-2 mb-3">
+          <div class="h-100 card">
+            <div class="card-header">
+              <h5 class="mb-0">Billing Details</h5>
+            </div>
+            <div class="card-body bg-light">
+              <form>
+                <div class="custom-control custom-radio">
+                  <input
+                    class="custom-control-input"
+                    type="radio"
+                    name="billing"
+                    value="Buy"
+                    id="paypal"
+                  />
+                  <label class="custom-control-label" for="paypal"
+                    ><img
+                      class="pull-right"
+                      src="../assets/img/icons/icon-paypal-full.png"
+                      height="20"
+                      alt=""
+                    />
+                  </label>
+                </div>
+                <p class="fs--1 mb-4">
+                  Pay with PayPal, Apple Pay, PayPal Credit and much more
+                </p>
+                <div class="custom-control custom-radio">
+                  <input
+                    class="custom-control-input"
+                    type="radio"
+                    name="billing"
+                    id="credit-card"
+                    checked="checked"
+                  />
+                  <label class="custom-control-label" for="credit-card"
+                    ><span class="d-flex align-items-center"
+                      ><span class="fs-1 text-nowrap">Credit Card</span
+                      ><img
+                        class="d-none d-sm-inline-block ml-2 mt-lg-0"
+                        src="../assets/img/icons/icon-payment-methods.png"
+                        height="20"
+                        alt=""
+                    /></span>
+                  </label>
+                  <button
+                    class="btn btn-primary btn-block"
+                    id="billing-pay"
+                    type="submit"
+                  >
+                    <span class="mr-2"></span>Make Payment
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      if (document.getElementById("credit-card").checked) {
+        document
+          .getElementById("billing-pay")
+          .addEventListener("click", (e) => {
+            console.log("booking");
+            e.preventDefault();
+            e.target.textContent = "Processing...";
+            bookplan();
+          });
+      } else if (document.getElementById("paypal").checked) {
+      }
+    </script>
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/lib/@fortawesome/all.min.js"></script>
+    <script src="/assets/lib/stickyfilljs/stickyfill.min.js"></script>
+    <script src="/assets/lib/sticky-kit/sticky-kit.min.js"></script>
+    <script src="/assets/lib/is_js/is.min.js"></script>
+    <script src="/assets/lib/lodash/lodash.min.js"></script>
+    <script src="/assets/lib/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:100,200,300,400,500,600,700,800,900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="/assets/js/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="/js/stripe.js"></script>
+  </body>
+</html>
