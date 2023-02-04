@@ -148,7 +148,16 @@ router.get("/profile", authController.isLoggedIn, function (req, res) {
   c3elements.sort((a, b) => {
     return a.createdAt - b.createdAt;
   });
-  res.render("profile", { c1elements, c2elements, c3elements });
+
+  let pro = false;
+  let plan = JSON.stringify(req.logged).split('plan":"')[1];
+  plan = plan ? plan.split('"')[0] : plan;
+
+  if (plan == "pro") {
+    pro = true;
+  }
+
+  res.render("profile", { c1elements, c2elements, c3elements, pro });
 });
 
 router.get(

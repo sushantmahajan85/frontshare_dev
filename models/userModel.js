@@ -92,6 +92,7 @@ const userSchema = new mongoose.Schema(
     c1: [Object],
     c2: [Object],
     c3: [Object],
+    plan: { type: String, default: "basic" },
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
