@@ -20,9 +20,3 @@ const bookplan = async (price) => {
     // showAlert("error", err);
   }
 };
-
-function changePrice() {
-  let check = document.getElementById("customSwitch1");
-  if (!check.checked) document.getElementById("priceplan").innerHTML = "100/m";
-  else document.getElementById("priceplan").innerHTML = 1000;
-}

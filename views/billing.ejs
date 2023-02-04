@@ -80,7 +80,6 @@
                     class="custom-control-input"
                     type="radio"
                     name="billing"
-                    value="Buy"
                     id="paypal"
                   />
                   <label class="custom-control-label" for="paypal"
@@ -133,9 +132,9 @@
           .getElementById("billing-pay")
           .addEventListener("click", (e) => {
             e.preventDefault();
-            let check = document.getElementById("customSwitch1");
+            // let check = document.getElementById("customSwitch1");
             let price = 1000;
-            if (!check.checked) price = 100;
+            // if (!check.checked) price = 100;
             console.log("booking");
             e.target.textContent = "Processing...";
             bookplan(price);
@@ -144,6 +143,7 @@
         document
           .getElementById("billing-pay")
           .addEventListener("click", (e) => {
+            console.log("paypal");
             window.location.assign("/pay");
           });
       }
