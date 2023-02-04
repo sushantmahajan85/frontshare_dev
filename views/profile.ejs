@@ -125,6 +125,7 @@
               data-options='{"suppressScrollY":true,"suppressScrollX":false}'
             >
               <div style="display: flex; justify-content: center">
+                <% if(pro == true){ %>
                 <div class="kanban-column" style="height: 30rem">
                   <div class="kanban-column-header">
                     <h5 class="text-serif fs-0 mb-0">
@@ -164,6 +165,7 @@
                     %>
                   </div>
                 </div>
+                <% } %>
                 <div class="kanban-column" style="height: 30rem">
                   <div class="kanban-column-header">
                     <h5 class="text-serif fs-0 mb-0">
@@ -203,6 +205,7 @@
                     %>
                   </div>
                 </div>
+                <% if(pro == true){ %>
                 <div class="kanban-column" style="height: 30rem">
                   <div class="kanban-column-header">
                     <h5 class="text-serif fs-0 mb-0">
@@ -242,6 +245,7 @@
                     %>
                   </div>
                 </div>
+                <% } %>
               </div>
               <button
                 class="btn btn-primary rounded-pill"

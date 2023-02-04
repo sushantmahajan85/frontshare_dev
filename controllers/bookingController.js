@@ -8,6 +8,7 @@ const catchAsync = require("../utils/catchAsync");
 const factory = require("./handlerFactory");
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
+  const { price } = req.params;
   // 1) Get the currently booked tour
   //   const tour = await Tour.findById(req.params.tourId);
   // console.log(stripe);
@@ -17,7 +18,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     payment_method_types: ["card"],
     success_url: `${req.protocol}://${req.get("host")}/?user=${
       req.user.id
-    }&price=100`,
+    }&price=${price}`,
     cancel_url: `${req.protocol}://${req.get("host")}/login`,
     customer_email: req.user.email,
     mode: "payment",
@@ -36,7 +37,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
             ],
           },
 
-          unit_amount: 100 * 100,
+          unit_amount: price * 100,
           currency: "usd",
         },
 
