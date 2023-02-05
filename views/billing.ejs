@@ -132,9 +132,7 @@
           .getElementById("billing-pay")
           .addEventListener("click", (e) => {
             e.preventDefault();
-            // let check = document.getElementById("customSwitch1");
-            let price = 1000;
-            // if (!check.checked) price = 100;
+            let price = localStorage.getItem("price");
             console.log("booking");
             e.target.textContent = "Processing...";
             bookplan(price);
