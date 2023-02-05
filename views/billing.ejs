@@ -74,13 +74,14 @@
               <h5 class="mb-0">Billing Details</h5>
             </div>
             <div class="card-body bg-light">
-              <form id="paymentForm" action="/pay" method="post">
+              <form id="paymentForm" method="post">
                 <div class="custom-control custom-radio">
                   <input
                     class="custom-control-input"
                     type="radio"
                     name="billing"
                     id="paypal"
+                    checked
                   />
                   <label class="custom-control-label" for="paypal"
                     ><img
@@ -114,7 +115,7 @@
                   <button
                     class="btn btn-primary btn-block"
                     id="billing-pay"
-                    type="submit"
+                    type="button"
                   >
                     <span class="mr-2"></span>Make Payment
                   </button>
@@ -126,28 +127,21 @@
       </div>
     </main>
     <script>
-      // if (document.getElementById("credit-card").checked) {
-      //   document
-      //     .getElementById("billing-pay")
-      //     .addEventListener("click", (e) => {
-      //       e.preventDefault();
-      //       // let check = document.getElementById("customSwitch1");
-      //       let price = 1000;
-      //       // if (!check.checked) price = 100;
-      //       console.log("booking");
-      //       e.target.textContent = "Processing...";
-      //       // bookplan(price);
-      //     });
-      // }
-      //  else
-      // if (document.getElementById("paypal").checked) {
       document.getElementById("billing-pay").addEventListener("click", (e) => {
         e.preventDefault();
-        console.log("paypal");
-        document.getElementById("paymentForm").submit();
-        // window.location.assign("/pay");
+        if (document.getElementsByName("billing")[0].checked) {
+          e.target.textContent = "Processing...";
+          document.getElementById("paymentForm").action =
+            "/pay?pricetogg=" + localStorage.getItem("price");
+
+          document.getElementById("paymentForm").submit();
+        } else {
+          let price = localStorage.getItem("price");
+          console.log("booking");
+          e.target.textContent = "Processing...";
+          bookplan(price);
+        }
       });
-      // }
     </script>
     <!-- ===============================================-->
     <!--    JavaScripts-->

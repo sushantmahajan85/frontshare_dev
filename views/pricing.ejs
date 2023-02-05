@@ -2723,11 +2723,16 @@
     <!--    JavaScripts-->
     <!-- ===============================================-->
     <script>
+      localStorage.setItem("price", 100);
       function changePrice() {
         let check = document.getElementById("customSwitch1");
-        if (!check.checked)
+        if (!check.checked) {
           document.getElementById("priceplan").innerHTML = "100/m";
-        else document.getElementById("priceplan").innerHTML = 1000;
+          localStorage.setItem("price", 100);
+        } else {
+          document.getElementById("priceplan").innerHTML = 1000;
+          localStorage.setItem("price", 1000);
+        }
       }
     </script>
     <script src="/assets/js/jquery.min.js"></script>
