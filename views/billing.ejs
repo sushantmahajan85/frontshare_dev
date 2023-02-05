@@ -74,7 +74,7 @@
               <h5 class="mb-0">Billing Details</h5>
             </div>
             <div class="card-body bg-light">
-              <form>
+              <form id="paymentForm" action="/pay" method="post">
                 <div class="custom-control custom-radio">
                   <input
                     class="custom-control-input"
@@ -100,7 +100,6 @@
                     type="radio"
                     name="billing"
                     id="credit-card"
-                    checked="checked"
                   />
                   <label class="custom-control-label" for="credit-card"
                     ><span class="d-flex align-items-center"
@@ -127,26 +126,28 @@
       </div>
     </main>
     <script>
-      if (document.getElementById("credit-card").checked) {
-        document
-          .getElementById("billing-pay")
-          .addEventListener("click", (e) => {
-            e.preventDefault();
-            // let check = document.getElementById("customSwitch1");
-            let price = 1000;
-            // if (!check.checked) price = 100;
-            console.log("booking");
-            e.target.textContent = "Processing...";
-            bookplan(price);
-          });
-      } else if (document.getElementById("paypal").checked) {
-        document
-          .getElementById("billing-pay")
-          .addEventListener("click", (e) => {
-            console.log("paypal");
-            window.location.assign("/pay");
-          });
-      }
+      // if (document.getElementById("credit-card").checked) {
+      //   document
+      //     .getElementById("billing-pay")
+      //     .addEventListener("click", (e) => {
+      //       e.preventDefault();
+      //       // let check = document.getElementById("customSwitch1");
+      //       let price = 1000;
+      //       // if (!check.checked) price = 100;
+      //       console.log("booking");
+      //       e.target.textContent = "Processing...";
+      //       // bookplan(price);
+      //     });
+      // }
+      //  else
+      // if (document.getElementById("paypal").checked) {
+      document.getElementById("billing-pay").addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("paypal");
+        document.getElementById("paymentForm").submit();
+        // window.location.assign("/pay");
+      });
+      // }
     </script>
     <!-- ===============================================-->
     <!--    JavaScripts-->
