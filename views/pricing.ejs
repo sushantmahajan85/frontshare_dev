@@ -1,68 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <%- include('partials/head.ejs'); %>
     <!-- ===============================================-->
-    <!--    Document Title-->
+    <!--                Page Title                      -->
     <!-- ===============================================-->
-    <title>FrontShare | Dashboard &amp; WebApp Template</title>
-
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/img/favicons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/img/favicons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/img/favicons/favicon-16x16.png"
-    />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="/assets/img/favicons/favicon.ico"
-    />
-    <link rel="manifest" href="/assets/img/favicons/manifest.json" />
-    <meta
-      name="msapplication-TileImage"
-      content="/assets/img/favicons/mstile-150x150.png"
-    />
-    <meta name="theme-color" content="#ffffff" />
-
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <script src="/assets/js/config.navbar-vertical.js"></script>
-    <script src="https://js.stripe.com/v3/"></script>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      href="/assets/lib/perfect-scrollbar/perfect-scrollbar.css"
-      rel="stylesheet"
-    />
-    <link href="/assets/css/theme.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./scss/css/style.css" />
-
-    <!-- <link rel="stylesheet" href=""> -->
+    <title>FrontShare | Plans</title>
   </head>
 
   <body>
     <!-- ===============================================-->
-    <!--    Main Content-->
+    <!--                Main Content                    -->
     <!-- ===============================================-->
     
     <%- include('partials/navbar.ejs') %>
@@ -112,7 +60,6 @@
                             <h2 class="font-weight-light mt-0 text-primary">
                               <sup class="fs-1">&dollar;</sup
                               ><span class="fs-3">0</span>
-                              <span class="fs--2 mt-1">/ m</span>
                               <!-- <span class="fs--2 mt-1">/ m</span> -->
                             </h2>
                           </div>
@@ -234,8 +181,7 @@
                             </h3>
                             <h2 class="font-weight-light text-primary mt-0">
                               <sup class="fs-1">&dollar;</sup
-                              ><span class="fs-3" id="priceplan">15/ m</span>
-                              <!-- <span class="fs--2 mt-1">/ m</span> -->
+                              ><span class="fs-3" id="priceplan">15</span>
                               <!-- <span class="fs--2 mt-1">lifetime</span> -->
                             </h2>
                           </div>
@@ -336,15 +282,16 @@
                               Custom referral Code
                             </li>
                           </ul>
-                          <a href="/billing">
                             <button
                               class="btn btn-primary btn-block"
                               type="button"
                               id="purchase_pro"
+                              data-toggle="button" 
+                              aria-pressed="false" 
+                              autocomplete="off"
                             >
                               Select
                             </button>
-                          </a>
                         </div>
                       </div>
                     </div>
@@ -353,6 +300,67 @@
               </div>
             </div>
           </div>
+
+            <div class="col-lg-12 p-lg-0 mb-3">
+              <div class="h-100 card">
+                <div class="card-header">
+                  <h5 class="mb-0">Billing Details</h5>
+                </div>
+                <div class="card-body bg-light">
+                  <form id="paymentForm" method="post">
+                    <div class="custom-control custom-radio">
+                      <input
+                        class="custom-control-input"
+                        type="radio"
+                        name="billing"
+                        id="paypal"
+                        checked
+                      />
+                      <label class="custom-control-label" for="paypal"
+                        ><img
+                          class="pull-right"
+                          src="../assets/img/icons/icon-paypal-full.png"
+                          height="20"
+                          alt=""
+                        />
+                      </label>
+                      <p class="fs--1 mb-4">
+                        Pay with PayPal
+                      </p>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input
+                        class="custom-control-input"
+                        type="radio"
+                        name="billing"
+                        id="credit-card"
+                      />
+                      <label class="custom-control-label" for="credit-card"
+                        ><span class="d-flex align-items-center"
+                          ><span class="fs-1 text-nowrap">Credit Card</span
+                          ><img
+                            class="d-none d-sm-inline-block ml-2 mt-lg-0"
+                            src="../assets/img/icons/icon-payment-methods.png"
+                            height="20"
+                            alt=""
+                        /></span>
+                      </label>
+                      <p class="fs--1 mb-4">
+                        Pay with Stripe
+                      </p>
+                    </div>
+                    <button
+                        class="btn btn-primary btn-block m-auto"
+                        id="billing-pay"
+                        type="button"
+                      >
+                        <span class="mr-2"></span>Make Payment
+                      </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
           <div class="card">
             <div class="card-header">
               <h5 class="mb-0">Frequently asked questions</h5>
@@ -456,6 +464,7 @@
                   >Ask us anything</a
                 >
               </div>
+              <!-- Question formula down below -->
               <div
                 class="modal fade"
                 id="exampleModal"
@@ -1037,11 +1046,27 @@
     <!--    JavaScripts-->
     <!-- ===============================================-->
     <script>
+      document.getElementById("billing-pay").addEventListener("click", (e) => {
+        e.preventDefault();
+        if (document.getElementsByName("billing")[0].checked) {
+          e.target.textContent = "Processing...";
+          document.getElementById("paymentForm").action =
+            "/pay?pricetogg=" + localStorage.getItem("price");
+
+          document.getElementById("paymentForm").submit();
+        } else {
+          let price = localStorage.getItem("price");
+          console.log("booking");
+          e.target.textContent = "Processing...";
+          bookplan(price);
+        }
+      });
+      
       localStorage.setItem("price", 15);
       function changePrice() {
         let check = document.getElementById("customSwitch1");
         if (!check.checked) {
-          document.getElementById("priceplan").innerHTML = "15/ m";
+          document.getElementById("priceplan").innerHTML = 15;
           localStorage.setItem("price", 15);
         } else {
           document.getElementById("priceplan").innerHTML = 180;
