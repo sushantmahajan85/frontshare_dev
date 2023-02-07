@@ -131,33 +131,9 @@
                 <% if(pro == true){ %>
                 <div class="kanban-column" style="height: 30rem">
                   <div class="kanban-column-header">
-                    <h5 class="text-serif fs-0 mb-0">
-                      <!-- Documentation <span class="text-500">(8)</span> -->
+                    <h5 class="text-serif fs-0 m-auto">
+                      Left Column <span class="text-500"><!-- Block count goes here--></span>
                     </h5>
-                    <div class="dropdown text-sans-serif btn-reveal-trigger">
-                      <button
-                        class="btn btn-sm btn-reveal py-0 px-2"
-                        type="button"
-                        id="kanban-column-0"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <!-- <span class="fas fa-ellipsis-h"></span> -->
-                      </button>
-                      <div
-                        class="dropdown-menu dropdown-menu-right py-0"
-                        aria-labelledby="kanban-column-0"
-                      >
-                        <a class="dropdown-item" href="#!">Add Card</a
-                        ><a class="dropdown-item" href="#!">Edit</a
-                        ><a class="dropdown-item" href="#!">Copy link</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="#!"
-                          >Remove</a
-                        >
-                      </div>
-                    </div>
                   </div>
                   <div
                     class="kanban-items-container scrollbar perfect-scrollbar"
@@ -171,33 +147,9 @@
                 <% } %>
                 <div class="kanban-column" style="height: 30rem">
                   <div class="kanban-column-header">
-                    <h5 class="text-serif fs-0 mb-0">
-                      <!-- Doing <span class="text-500">(4)</span> -->
+                    <h5 class="text-serif fs-0 m-auto">
+                      Center Column <span class="text-500"><!-- Block count goes here--></span>
                     </h5>
-                    <div class="dropdown text-sans-serif btn-reveal-trigger">
-                      <button
-                        class="btn btn-sm btn-reveal py-0 px-2"
-                        type="button"
-                        id="kanban-column-1"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <!-- <span class="fas fa-ellipsis-h"></span> -->
-                      </button>
-                      <div
-                        class="dropdown-menu dropdown-menu-right py-0"
-                        aria-labelledby="kanban-column-1"
-                      >
-                        <a class="dropdown-item" href="#!">Add Card</a
-                        ><a class="dropdown-item" href="#!">Edit</a
-                        ><a class="dropdown-item" href="#!">Copy link</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="#!"
-                          >Remove</a
-                        >
-                      </div>
-                    </div>
                   </div>
                   <div
                     class="kanban-items-container scrollbar perfect-scrollbar"
@@ -211,33 +163,9 @@
                 <% if(pro == true){ %>
                 <div class="kanban-column" style="height: 30rem">
                   <div class="kanban-column-header">
-                    <h5 class="text-serif fs-0 mb-0">
-                      <!-- Review <span class="text-500">(4)</span> -->
+                    <h5 class="text-serif fs-0 m-auto">
+                      Right Column <span class="text-500"><!-- Block count goes here--></span>
                     </h5>
-                    <div class="dropdown text-sans-serif btn-reveal-trigger">
-                      <button
-                        class="btn btn-sm btn-reveal py-0 px-2"
-                        type="button"
-                        id="kanban-column-2"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <!-- <span class="fas fa-ellipsis-h"></span> -->
-                      </button>
-                      <div
-                        class="dropdown-menu dropdown-menu-right py-0"
-                        aria-labelledby="kanban-column-2"
-                      >
-                        <a class="dropdown-item" href="#!">Add Card</a
-                        ><a class="dropdown-item" href="#!">Edit</a
-                        ><a class="dropdown-item" href="#!">Copy link</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="#!"
-                          >Remove</a
-                        >
-                      </div>
-                    </div>
                   </div>
                   <div
                     class="kanban-items-container scrollbar perfect-scrollbar"
@@ -251,8 +179,7 @@
                 <% } %>
               </div>
               <button
-                class="btn btn-primary rounded-pill"
-                style="margin: 0 auto; width: 100%; margin-top: 2rem !important"
+                class="btn btn-primary btn-block mt-5 rounded-pill"
                 type="submit"
                 name="submit"
                 id="save-cards-btn"
@@ -260,7 +187,7 @@
                 Save
               </button>
             </div>
-            <!-- Social Links -->
+            <!-- Social Links
             <form
               style="
                 width: 100%;
@@ -474,12 +401,16 @@
               >
                 Save
               </button>
-            </form>
+            </form> -->
+
+            <!-- Footer -->
+            <%- include('partials/footer.ejs'); %>
           </div>
         </div>
       </div>
     </main>
 
+    <!-- Right Sidebar -->
     <%- include('partials/rightsidebar.ejs') %>
 
     <script>
