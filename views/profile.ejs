@@ -17,8 +17,9 @@
     <title>FrontShare | Canvas</title>
   </head>
   <style></style>
-  <body>
+  <body class="scrollbar scrollbar-pink bordered-pink thin">
     <main class="main">
+      
       <% { %>
       <script>
         var c1 = <%- JSON.stringify(c1elements)  %>;
@@ -33,23 +34,14 @@
       >
         <!-- Set .navbar-top-combo class to the navbar top element as describe in step 1 in the responsive behaviours section-->
         <%- include('partials/navbar.ejs') %>
-        <div class="content" style="margin: 0">
+        <div class="content">
           <!-- Set the unique ID to data-move-target attribute which you added in step 2 as describe in step 3 in the responsive behaviours section -->
 
           <!-- Your page content wil go here-->
 
-          <div
-            style="
-              width: 95%;
-              padding: 1rem;
-              border-radius: 2rem;
-              margin: 6rem auto;
-            "
-          >
-            <div class="row profile-area-header">
-              <div
-                style="display: flex; justify-content: space-around; width: 10%"
-              ></div>
+          <div class="col-8 mx-auto">
+            <div class="row profile-area-header border">
+              
             </div>
             <div class="row profile-area" style="margin-bottom: 3rem">
               <div class="col-4 d-flex flex-column align-items-center">
@@ -411,7 +403,7 @@
     </main>
 
     <!-- Right Sidebar -->
-    <%- include('partials/rightsidebar.ejs') %>
+    <%- include('partials/addblock.ejs') %>
 
     <script>
       $(function () {
