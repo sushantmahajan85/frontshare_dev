@@ -1,10 +1,9 @@
 <div
-  id="addBlocksContainer"
-  class="bg-light shadow rounded"
+  id="addBlocksContainerright"
+  class="shadow rounded"
   style="
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     position: fixed;
     top: 6rem;
@@ -12,8 +11,23 @@
     height: 88%;
     width: 3rem;
     color: #5e6e82;
+    background-color: #EDF2F9;
   "
 >
+
+<!---->
+<button
+  class="btn navbar-toggler-humburger-icon navbar-vertical-toggle"
+  data-toggle="tooltip"
+  data-placement="left"
+  title="Toggle Navigation"
+>
+  <span class="navbar-toggle-icon">
+    <span class="toggle-line">
+    </span>
+  </span>
+</button>
+<!---->
   A<br>
   D<br>
   D<br>
@@ -26,8 +40,8 @@
   S
 </div>
 <div
-  id="insideAddBlocks"
-  class="bg-light shadow rounded"
+  id="insideAddBlocksright"
+  class="shadow rounded"
   style="
     display: none;
     flex-direction: column;
@@ -40,6 +54,7 @@
     width: 15%;
     padding-bottom: 1rem;
     font-size: 12;
+    background-color: #EDF2F9;
   "
 >
   <h2
@@ -181,7 +196,7 @@
       Podcast<br>Music
     </button>
     <button
-      class="add-block-btn mx-2 rounded bg-white shadow"
+      class="add-block-btn mx-2 rounded bg-success text-white shadow"
       style="height: 100px; width: 70px;"
       data-block=""
     >
@@ -191,27 +206,27 @@
 </div>
 
 <script>
-  const addBlocksContainer = document.querySelector("#addBlocksContainer");
-  addBlocksContainer.style.cursor = "pointer";
-  addBlocksContainer.addEventListener("mouseover", (e) => {
+  const addBlocksContainerright = document.querySelector("#addBlocksContainerright");
+  addBlocksContainerright.style.cursor = "pointer";
+  addBlocksContainerright.addEventListener("mouseover", (e) => {
     e.preventDefault();
 
-    const insideAddBlocks = document.querySelector("#insideAddBlocks");
-    insideAddBlocks.style.display = "flex";
+    const insideAddBlocksright = document.querySelector("#insideAddBlocksright");
+    insideAddBlocksright.style.display = "flex";
   });
 
-  const insideAddBlocks = document.querySelector("#insideAddBlocks");
-  insideAddBlocks.addEventListener("mouseover", (e) => {
+  const insideAddBlocksright = document.querySelector("#insideAddBlocksright");
+  insideAddBlocksright.addEventListener("mouseover", (e) => {
     e.preventDefault();
 
-    const insideAddBlocks = document.querySelector("#insideAddBlocks");
-    insideAddBlocks.style.display = "flex";
+    const insideAddBlocksright = document.querySelector("#insideAddBlocksright");
+    insideAddBlocksright.style.display = "flex";
   });
 
-  insideAddBlocks.addEventListener("mouseout", (e) => {
+  insideAddBlocksright.addEventListener("mouseout", (e) => {
     e.preventDefault();
 
-    const insideAddBlocks = document.querySelector("#insideAddBlocks");
-    insideAddBlocks.style.display = "none";
+    const insideAddBlocksright = document.querySelector("#insideAddBlocksright");
+    insideAddBlocksright.style.display = "none";
   });
 </script>
