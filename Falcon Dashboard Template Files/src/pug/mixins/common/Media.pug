@@ -10,7 +10,7 @@ mixin Media(config)
         span.calendar-day=config.calendar.day
     .flex-1.position-relative.ps-3
       if(config.action)
-        .position-absolute.end-0.z-index-1
+        .position-absolute.end-0.z-1
           .dropdown.font-sans-serif
             button.btn.btn-link.text-600.btn-sm.dropdown-toggle.btn-reveal(type='button' id='profile-settings' data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
               span.fas.fa-ellipsis-h.fs--1

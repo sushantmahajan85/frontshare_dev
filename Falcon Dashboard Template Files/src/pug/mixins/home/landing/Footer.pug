@@ -1,5 +1,5 @@
 mixin FooterStandard
-  +Section.bg-dark.pt-8.pb-4.light
+  +Section.bg-dark.pt-8.pb-4(data-bs-theme="light")
     .position-absolute.btn-back-to-top.bg-dark
       a(href="#banner" data-bs-offset-top=0).text-600
         span.fas.fa-chevron-up(data-fa-transform="rotate-45")
@@ -77,7 +77,7 @@ mixin FooterStandard
                   a(href='#!').link-600  The New #{name} Theme
                 p.text-600.opacity-50 Dec 23 &bull; 10min read 
 
-  +Section('').py-0.bg-dark.light
+  +Section('').py-0.bg-dark(data-bs-theme="light")
     hr.my-0.text-600.opacity-25
     .container.py-3
       .row.justify-content-between.fs--1

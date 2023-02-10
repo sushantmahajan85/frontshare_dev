@@ -56,7 +56,7 @@ mixin CardLmsUserLocation(page=4)
         .d-flex.flex-between-center.fs--2 
           p.mb-0 less than 1k
           p.mb-0 more than 100k
-      +UserByLocationTable.mx-ncard.mt-3
+      +UserByLocationTable.mx-nx1.mt-3
     
     .card-footer.bg-light.text-end.py-2
       a.btn.btn-link.btn-sm.px-0.fw-medium(href='#!') View all
@@ -64,7 +64,7 @@ mixin CardLmsUserLocation(page=4)
 
 
 mixin Badge(content, type)
-  span.badge.badge.rounded-pill.fw-medium.fs--2(class=`badge-soft-${type}`)=content
+  span.badge.badge.rounded-pill.fw-medium.fs--2(class=`badge-subtle-${type}`)=content
 
 mixin UserByLocationTable
   .table-responsive.scrollbar&attributes(attributes)

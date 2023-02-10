@@ -9,13 +9,13 @@ mixin LinkLooper(config)
       a.dropdown-item.link-600.fw-medium(href=page.name !== 'modal' ? `${CWD}${page.path}.html` : `${CWD}${page.path}` data-bs-toggle=page.name ==="modal" ? 'modal' : false)
         +cleanText(pageName)
         if page.badge
-          span.badge.rounded-pill.ms-2(class=`badge-soft-${page.badge.type}`)=page.badge.text
+          span.badge.rounded-pill.ms-2(class=`badge-subtle-${page.badge.type}`)=page.badge.text
 
     else
       a.nav-link.py-1.link-600.fw-medium(href=page.name !== 'modal' ? `${CWD}${page.path}.html` : `${CWD}${page.path}` data-bs-toggle=page.name ==="modal" ? 'modal' : false)
         +cleanText(pageName)
         if page.badge
-          span.badge.rounded-pill.ms-2(class=`badge-soft-${page.badge.type}`)=page.badge.text
+          span.badge.rounded-pill.ms-2(class=`badge-subtle-${page.badge.type}`)=page.badge.text
 
 
 
@@ -233,8 +233,8 @@ mixin NavbarToggleIcon(config)
 
 mixin NavbarIcons
   ul.navbar-nav.navbar-nav-icons.ms-auto.flex-row.align-items-center
-    li.nav-item
-      .theme-control-toggle.fa-icon-wait.px-2
+    li.nav-item.px-2
+      .theme-control-toggle.fa-icon-wait
         input#themeControlToggle.form-check-input.ms-0.theme-control-toggle-input(
           type='checkbox'
           data-theme-control="theme"

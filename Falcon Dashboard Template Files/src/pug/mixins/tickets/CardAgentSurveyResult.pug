@@ -6,7 +6,7 @@ append variables
         avatar: {
           more: 'A',
           size: 'xl',
-          contentClass: 'text-success bg-soft-success fs-0'
+          contentClass: 'text-success bg-success-subtle fs-0'
         },
         satisfied: {
           total: 36,
@@ -28,7 +28,7 @@ append variables
         avatar: {
           more: 'B',
           size: 'xl',
-          contentClass: 'text-primary bg-soft-primary fs-0'
+          contentClass: 'text-primary bg-primary-subtle fs-0'
         },
         satisfied: {
           total: 41,
@@ -50,7 +50,7 @@ append variables
         avatar: {
           more: 'A',
           size: 'xl',
-          contentClass: 'text-info bg-soft-info fs-0'
+          contentClass: 'text-info bg-info-subtle fs-0'
         },
         satisfied: {
           total: 52,
@@ -72,7 +72,7 @@ append variables
         avatar: {
           more: 'C',
           size: 'xl',
-          contentClass: 'text-warning bg-soft-warning fs-0'
+          contentClass: 'text-warning bg-warning-subtle fs-0'
         },
         satisfied: {
           total: 14,
@@ -115,7 +115,7 @@ append variables
         avatar: {
           more: 'B',
           size: 'xl',
-          contentClass: 'text-primary bg-soft-primary fs-0'
+          contentClass: 'text-primary bg-primary-subtle fs-0'
         },
         satisfied: {
           total: 41,
@@ -137,7 +137,7 @@ append variables
         avatar: {
           more: 'A',
           size: 'xl',
-          contentClass: 'text-info bg-soft-info fs-0'
+          contentClass: 'text-info bg-info-subtle fs-0'
         },
         satisfied: {
           total: 52,
@@ -159,7 +159,7 @@ append variables
         avatar: {
           more: 'C',
           size: 'xl',
-          contentClass: 'text-warning bg-soft-warning fs-0'
+          contentClass: 'text-warning bg-warning-subtle fs-0'
         },
         satisfied: {
           total: 14,
@@ -202,7 +202,7 @@ append variables
         avatar: {
           more: 'A',
           size: 'xl',
-          contentClass: 'text-success bg-soft-success fs-0'
+          contentClass: 'text-success bg-success-subtle fs-0'
         },
         satisfied: {
           total: 36,
@@ -222,8 +222,8 @@ append variables
     ]
 
 mixin ProgressBar(progressBarWidth, progressBarColor)
-  .progress(style="height:5px; width:174px").rounded-pill&attributes(attributes)
-    .progress-bar.rounded-pill(class=progressBarColor role="progressbar" aria-label="Basic example" style=`width: ${progressBarWidth}%` aria-valuenow=progressBarWidth aria-valuemin="0" aria-valuemax="100")
+  .progress(style="height:5px; width:174px" role="progressbar" aria-label="Basic example" aria-valuenow=progressBarWidth aria-valuemin="0" aria-valuemax="100").rounded-pill&attributes(attributes)
+    .progress-bar.rounded-pill(class=progressBarColor style=`width: ${progressBarWidth}%`)
 
 mixin TableItem(config, index)
   tr&attributes(attributes)

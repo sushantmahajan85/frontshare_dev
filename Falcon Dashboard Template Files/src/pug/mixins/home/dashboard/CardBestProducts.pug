@@ -53,8 +53,8 @@ mixin ProductItem(product, index, totalPrice)
     td.align-middle.text-end.fw-semi-bold $#{productTotalPrice}
     td.align-middle.pe-x1
       .d-flex.align-items-center
-        .progress(style=`height: 5px;width:80px`).me-3.rounded-3.bg-200
-          .progress-bar.rounded-pill(role='progressbar', style=`width: ${parcentage}%;`  aria-valuenow=`${parcentage}`, aria-valuemin='0' aria-valuemax='100')
+        .progress(style=`height: 5px; width:80px;` role='progressbar' aria-valuenow=`${parcentage}`, aria-valuemin='0' aria-valuemax='100').me-3.rounded-3.bg-200
+          .progress-bar.rounded-pill(style=`width: ${parcentage}%;`)
         .fw-semi-bold.ms-2 #{parcentage}%
 
 

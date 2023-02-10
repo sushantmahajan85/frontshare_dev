@@ -82,12 +82,16 @@ mixin ProjectStatisticsItem(project, index)
     a(href='#!').fs--2.text-600.mb-0 #{project.team}
 
 mixin ProgressBar
-  .overflow-visible.progress.mt-4.rounded-3(style="height: 6px;")
-    .overflow-visible.progress-bar.bg-progress-gradient.border-end.border-white.border-2.rounded-end.rounded-pill(role='progressbar' style='width: 25%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
-      span.mt-n4.text-900.fw-bold 25%
-    .overflow-visible.progress-bar.bg-secondary.border-end.border-white.border-2(role='progressbar' style='width: 45%' aria-valuenow='45' aria-valuemin='0' aria-valuemax='100')
-      span.mt-n4.text-900.fw-bold 45%
-    .overflow-visible.progress-bar.bg-warning.border-end.border-white.border-2(role='progressbar' style='width: 15%' aria-valuenow='15' aria-valuemin='0' aria-valuemax='100')
-      span.mt-n4.text-900.fw-bold 15%
-    .overflow-visible.progress-bar.bg-info.rounded-start.rounded-pill(role='progressbar' style='width: 15%' aria-valuenow='15' aria-valuemin='15' aria-valuemax='100')
-      span.mt-n4.text-900.fw-bold 15%
+  .progress-stacked.overflow-visible.mt-4.rounded-3(style="height: 6px;")
+    .progress(role='progressbar' style='width: 25%; height: 6px;' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+      .overflow-visible.progress-bar.bg-progress-gradient.border-end.border-white.border-2.rounded-end.rounded-pill
+        span.mt-n4.text-900.fw-bold 25%
+    .progress(role='progressbar' style='width: 45%; height: 6px;' aria-valuenow='45' aria-valuemin='0' aria-valuemax='100')
+      .overflow-visible.progress-bar.bg-secondary.border-end.border-white.border-2
+        span.mt-n4.text-900.fw-bold 45%
+    .progress(role='progressbar' style='width: 15%; height: 6px;' aria-valuenow='15' aria-valuemin='0' aria-valuemax='100')
+      .overflow-visible.progress-bar.bg-warning.border-end.border-white.border-2
+        span.mt-n4.text-900.fw-bold 15%
+    .progress(role='progressbar' style='width: 15%; height: 6px;' aria-valuenow='15' aria-valuemin='15' aria-valuemax='100')
+      .overflow-visible.progress-bar.bg-info.rounded-start.rounded-pill
+        span.mt-n4.text-900.fw-bold 15%

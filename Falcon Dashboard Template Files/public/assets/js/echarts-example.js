@@ -84,16 +84,16 @@ var getColors = function getColors(dom) {
   };
 };
 
-var getSoftColors = function getSoftColors(dom) {
+var getSubtleColors = function getSubtleColors(dom) {
   return {
-    primary: getColor('soft-primary', dom),
-    secondary: getColor('soft-secondary', dom),
-    success: getColor('soft-success', dom),
-    info: getColor('soft-info', dom),
-    warning: getColor('soft-warning', dom),
-    danger: getColor('soft-danger', dom),
-    light: getColor('soft-light', dom),
-    dark: getColor('soft-dark', dom)
+    primary: getColor('primary-bg-subtle', dom),
+    secondary: getColor('secondary-bg-subtle', dom),
+    success: getColor('success-bg-subtle', dom),
+    info: getColor('info-bg-subtle', dom),
+    warning: getColor('warning-bg-subtle', dom),
+    danger: getColor('danger-bg-subtle', dom),
+    light: getColor('light-bg-subtle', dom),
+    dark: getColor('dark-bg-subtle', dom)
   };
 };
 
@@ -277,7 +277,7 @@ var utils = {
   rgbaColor: rgbaColor,
   getColor: getColor,
   getColors: getColors,
-  getSoftColors: getSoftColors,
+  getSubtleColors: getSubtleColors,
   getGrays: getGrays,
   getOffset: getOffset,
   isScrolledIntoView: isScrolledIntoView,

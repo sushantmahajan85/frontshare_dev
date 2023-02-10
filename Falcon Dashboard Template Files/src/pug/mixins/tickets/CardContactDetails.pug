@@ -213,7 +213,7 @@ append variables
     ]
 
 mixin Badge(badge)
-  small.badge.rounded(class=`badge-soft-${badge.type} ${badge.type === 'secondary' && "dark__bg-1000"}`)=badge.content
+  small.badge.rounded(class=`badge-subtle-${badge.type} ${badge.type === 'secondary' && "dark__bg-1000"}`)=badge.content
 
 mixin PrioritySelect(config)
   .d-flex.align-items-center.gap-2&attributes(attributes)
@@ -277,7 +277,7 @@ mixin Notes
       .bg-white.dark__bg-1100.p-x1.rounded-3.shadow-sm
         .row.flex-between-center
           .col-12.col-md-7.col-xl-12.col-xxl-8.order-1.order-md-0.order-xl-1.order-xxl-0
-            h5.mb-0.border-top.border-md-0.border-xl-top.border-xxl-0.mt-x1.mt-md-0.mt-xl-x1.mt-xxl-0.pt-x1.pt-md-0.pt-xl-x1.pt-xxl-0.border-200.border-xl-200= note.title
+            h5.mb-0.border-top.border-top-md-0.border-top-xl.border-top-xxl-0.mt-x1.mt-md-0.mt-xl-x1.mt-xxl-0.pt-x1.pt-md-0.pt-xl-x1.pt-xxl-0.border-200.border-xl-200= note.title
           .col-12.col-md-auto.col-xl-12.col-xxl-auto.d-flex.flex-between-center
             +AgentSelect(note.agent).me-2.w-auto
             .dropdown.font-sans-serif
@@ -293,7 +293,7 @@ mixin Notes
           span.text-600= note.date
           span.text-500  at 
           span.text-600= note.time
-        p.w-lg-75.w-xl-100.w-xxl-75.mb-0.border-top.border-md-0.border-xl-top.border-xxl-0.mt-x1.mt-md-4.mt-xl-x1.mt-xxl-4.pt-x1.pt-md-0.pt-xl-x1.pt-xxl-0.border-200.border-xl-200= note.description
+        p.w-lg-75.w-xl-100.w-xxl-75.mb-0.border-top.border-top-md-0.border-top-xl.border-top-xxl-0.mt-x1.mt-md-4.mt-xl-x1.mt-xxl-4.pt-x1.pt-md-0.pt-xl-x1.pt-xxl-0.border-200.border-xl-200= note.description
 
 
 mixin CardContactDetails 

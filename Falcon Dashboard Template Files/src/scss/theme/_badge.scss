@@ -2,20 +2,20 @@
 /*                                    Badge                                   */
 /* -------------------------------------------------------------------------- */
 
-@mixin badge-soft-variant($color) {
-  color: var(--#{$prefix}badge-soft-#{$color}-color);
-  background-color: var(--#{$prefix}badge-soft-#{$color}-background-color);
+@mixin badge-subtle-variant($color) {
+  color: var(--#{$prefix}badge-subtle-#{$color}-color);
+  background-color: var(--#{$prefix}badge-subtle-#{$color}-background-color);
   &[href] {
     @include hover-focus {
       text-decoration: none;
-      color: var(--#{$prefix}badge-soft-#{$color}-color);
-      background-color: var(--#{$prefix}badge-soft-#{$color}-background-color);
+      color: var(--#{$prefix}badge-subtle-#{$color}-color);
+      background-color: var(--#{$prefix}badge-subtle-#{$color}-background-color);
     }
   }
 }
 
 @each $color, $value in $theme-colors {
-  .badge-soft-#{$color} {
-    @include badge-soft-variant($color)
+  .badge-subtle-#{$color} {
+    @include badge-subtle-variant($color)
   }
 }

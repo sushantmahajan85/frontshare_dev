@@ -35,7 +35,7 @@ mixin GrossRevenueCard
           .d-flex
             h4.text-primary.mb-0 $165.50
             .ms-3
-              span.badge.rounded-pill(class=`badge-soft-${details.badge.color}`)
+              span.badge.rounded-pill(class=`badge-subtle-${details.badge.color}`)
                 span.fas.fa-caret-up
                 |  #{details.badge.text}
         .col-auto
@@ -43,7 +43,7 @@ mixin GrossRevenueCard
             each month, index in months
               option(value=index)=month
     .card-body.pt-0.pb-3.h-100
-      .mx-ncard
+      .mx-nx1
         +GrossTable
         // Find the JS file for the following calendar at: src/js/charts/echarts/gross-revenue.js
         // If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js

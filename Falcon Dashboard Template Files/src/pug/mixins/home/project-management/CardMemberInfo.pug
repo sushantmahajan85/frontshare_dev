@@ -160,14 +160,14 @@ mixin MemberData(member, index)
     td
       +MemeberInfoMember(member)
     td.align-middle.text-center
-      small.badge.fw-semi-bold.rounded-pill(class = `badge-soft-${member.attendance.color}`) #{member.attendance.text}
+      small.badge.fw-semi-bold.rounded-pill(class = `badge-subtle-${member.attendance.color}`) #{member.attendance.text}
     td.align-middle.text-center
-      small.badge.fw-semi-bold.rounded-pill(class = `badge-soft-${member.today.color}`) #{member.today.amount}%
+      small.badge.fw-semi-bold.rounded-pill(class = `badge-subtle-${member.today.color}`) #{member.today.amount}%
       p.fs--2.mb-0 1h:52m
     td.align-middle
       .row.g-2.justify-content-end
         .col-auto
-          small.badge.fw-semi-bold.rounded-pill(class = `badge-soft-${member.thisWeek.color}`) #{member.thisWeek.amount}%
+          small.badge.fw-semi-bold.rounded-pill(class = `badge-subtle-${member.thisWeek.color}`) #{member.thisWeek.amount}%
           p.fs--2.mb-0 1h:52m
         .col-auto.mt-auto
           .mb-1(data-echarts!={

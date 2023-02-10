@@ -208,7 +208,7 @@ mixin Dropdown(id)
       a(href='#!').dropdown-item.text-danger Delete
 
 mixin CardTopCoursesTable({ items=5, data: courses, id })
-  .z-index-1&attributes(attributes)(
+  .z-1&attributes(attributes)(
     id=id 
     data-list!={
       valueNames: ["title", "name", "published", "enrolled", "price"],
@@ -222,7 +222,7 @@ mixin CardTopCoursesTable({ items=5, data: courses, id })
               th.fw-medium.sort.pe-1.align-middle(data-sort="title") Course Title
               th.fw-medium.sort.pe-1.align-middle(data-sort="name") Trainer
               th.fw-medium.sort.pe-1.align-middle.text-end(data-sort="published") Published on
-              th.fw-medium.sort.pe-1.align-middle.text-end(data-sort="enrolled") enrolled
+              th.fw-medium.sort.pe-1.align-middle.text-end(data-sort="enrolled") Enrolled
               th.fw-medium.sort.pe-1.align-middle.text-end.text-end(data-sort="price") Price
               th.fw-medium.no-sort.pe-1.align-middle.data-table-row-action
           tbody.list

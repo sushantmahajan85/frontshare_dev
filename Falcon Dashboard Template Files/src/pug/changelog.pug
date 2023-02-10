@@ -13,13 +13,85 @@ block append content
             p.mb-0 Backup your files and read the changelog before updating Falcon on your project. If you come across with any problems with Falcon template during the update, feel free to contact us at 
               a(href='mailto:support@themewagon.com') support@themewagon.com
               | .
+  //-  ------------------------
+  .card.mb-3
+    .card-header
+      h5.mb-2
+        code.fw-bold.fs-1 v3.15.0
+        |  - Prairie falcon
+      p.mb-0 06 Feb, 2023
+    .card-body.bg-light
+
+
+      h6 New
+      ul.bullet-inside.ps-0
+        li SCSS: 
+          code src/scss/theme/_variables-dark.scss
+        li Utilities: 
+          ul 
+            li Text emphasis colors: 
+              code text-{color}-emphasis
+            li Subtle border colors: 
+              code border-{color}-subtle
+      
+      h6 Update
+      ul.bullet-inside.ps-0
+        li Bootstrap to 
+          code 5.3.0-alpha1
+        li Progress bars 
+          a(href='https://prium.github.io/falcon/v3.15.0/modules/components/progress-bar.html') see documentation
+        li Dark Mode Toggle 
+          a(href='https://prium.github.io/falcon/v3.15.0/documentation/customization/dark-mode.html') see documentation
+        li Styling 
+          a(href='https://prium.github.io/falcon/v3.15.0/documentation/customization/styling.html') see documentation
+        li JS: 
+          code src/js/config.js 
+        li JS: 
+          code src/js/theme-control.js 
+        li Utility classes: 
+          ul 
+            li 
+              code bg-soft-{color} 
+              | is now 
+              code bg-{color}-subtle
+            li
+              code z-index-* 
+              | is now 
+              code z-*
+            li
+              code border-start-{sm|md|lg|xl|2xl}-{values}
+            li
+              code border-end-{sm|md|lg|xl|2xl}-{values}
+            li
+              code border-top-{sm|md|lg|xl|2xl}-{values}
+            li
+              code border-bottom-{sm|md|lg|xl|2xl}-{values}
+        li Removed: 
+          ul
+            li SCSS: 
+              code src/scss/theme/_form-wizard.scss
+            li SCSS: 
+              code src/scss/theme/_form.scss
+            li SCSS: 
+              code src/scss/theme/_double-top-nav-layout.scss
+            li SCSS: 
+              code src/scss/theme/_cursor.scss
+            li SCSS: 
+              code src/scss/theme/_alert.scss
+            li SCSS: 
+              code src/scss/theme/mixins/_alert.scss
+            li Utilities: 
+              | responsive 
+              code border-color
+
   
+  //-  ------------------------
   .card.mb-3
     .card-header
       h5.mb-2
         code.fw-bold.fs-1 v3.14.0
         |  - Black falcon
-      p.mb-0 20 Oct, 2022
+      p.mb-0 17 Nov, 2022
     .card-body.bg-light
 
 

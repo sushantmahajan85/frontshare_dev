@@ -3,20 +3,20 @@
 /* -------------------------------------------------------------------------- */
 const docReady = (fn) => {
   // see if DOM is already available
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', fn);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", fn);
   } else {
     setTimeout(fn, 1);
   }
 };
 
-const resize = (fn) => window.addEventListener('resize', fn);
+const resize = (fn) => window.addEventListener("resize", fn);
 
 const isIterableArray = (array) => Array.isArray(array) && !!array.length;
 
 const camelize = (str) => {
   const text = str.replace(/[-_\s.]+(.)?/g, (_, c) =>
-    c ? c.toUpperCase() : ''
+    c ? c.toUpperCase() : ""
   );
   return `${text.substr(0, 1).toLowerCase()}${text.substr(1)}`;
 };
@@ -33,7 +33,7 @@ const getData = (el, data) => {
 
 const hexToRgb = (hexValue) => {
   let hex;
-  hexValue.indexOf('#') === 0
+  hexValue.indexOf("#") === 0
     ? (hex = hexValue.substring(1))
     : (hex = hexValue);
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
@@ -50,7 +50,7 @@ const hexToRgb = (hexValue) => {
     : null;
 };
 
-const rgbaColor = (color = '#fff', alpha = 0.5) =>
+const rgbaColor = (color = "#fff", alpha = 0.5) =>
   `rgba(${hexToRgb(color)}, ${alpha})`;
 
 /* --------------------------------- Colors --------------------------------- */
@@ -59,41 +59,41 @@ const getColor = (name, dom = document.documentElement) =>
   getComputedStyle(dom).getPropertyValue(`--falcon-${name}`).trim();
 
 const getColors = (dom) => ({
-  primary: getColor('primary', dom),
-  secondary: getColor('secondary', dom),
-  success: getColor('success', dom),
-  info: getColor('info', dom),
-  warning: getColor('warning', dom),
-  danger: getColor('danger', dom),
-  light: getColor('light', dom),
-  dark: getColor('dark', dom),
+  primary: getColor("primary", dom),
+  secondary: getColor("secondary", dom),
+  success: getColor("success", dom),
+  info: getColor("info", dom),
+  warning: getColor("warning", dom),
+  danger: getColor("danger", dom),
+  light: getColor("light", dom),
+  dark: getColor("dark", dom),
 });
 
-const getSoftColors = (dom) => ({
-  primary: getColor('soft-primary', dom),
-  secondary: getColor('soft-secondary', dom),
-  success: getColor('soft-success', dom),
-  info: getColor('soft-info', dom),
-  warning: getColor('soft-warning', dom),
-  danger: getColor('soft-danger', dom),
-  light: getColor('soft-light', dom),
-  dark: getColor('soft-dark', dom),
+const getSubtleColors = (dom) => ({
+  primary: getColor("primary-bg-subtle", dom),
+  secondary: getColor("secondary-bg-subtle", dom),
+  success: getColor("success-bg-subtle", dom),
+  info: getColor("info-bg-subtle", dom),
+  warning: getColor("warning-bg-subtle", dom),
+  danger: getColor("danger-bg-subtle", dom),
+  light: getColor("light-bg-subtle", dom),
+  dark: getColor("dark-bg-subtle", dom),
 });
 
 const getGrays = (dom) => ({
-  white: getColor('gray-white', dom),
-  100: getColor('gray-100', dom),
-  200: getColor('gray-200', dom),
-  300: getColor('gray-300', dom),
-  400: getColor('gray-400', dom),
-  500: getColor('gray-500', dom),
-  600: getColor('gray-600', dom),
-  700: getColor('gray-700', dom),
-  800: getColor('gray-800', dom),
-  900: getColor('gray-900', dom),
-  1000: getColor('gray-1000', dom),
-  1100: getColor('gray-1100', dom),
-  black: getColor('gray-black', dom),
+  white: getColor("gray-white", dom),
+  100: getColor("gray-100", dom),
+  200: getColor("gray-200", dom),
+  300: getColor("gray-300", dom),
+  400: getColor("gray-400", dom),
+  500: getColor("gray-500", dom),
+  600: getColor("gray-600", dom),
+  700: getColor("gray-700", dom),
+  800: getColor("gray-800", dom),
+  900: getColor("gray-900", dom),
+  1000: getColor("gray-1000", dom),
+  1100: getColor("gray-1100", dom),
+  black: getColor("gray-black", dom),
 });
 
 const hasClass = (el, className) => {
@@ -144,10 +144,10 @@ const getBreakpoint = (el) => {
     breakpoint =
       breakpoints[
         classes
-          .split(' ')
-          .filter((cls) => cls.includes('navbar-expand-'))
+          .split(" ")
+          .filter((cls) => cls.includes("navbar-expand-"))
           .pop()
-          .split('-')
+          .split("-")
           .pop()
       ];
   }
@@ -169,17 +169,17 @@ const getCookie = (name) => {
 
 const settings = {
   tinymce: {
-    theme: 'oxide',
+    theme: "oxide",
   },
   chart: {
-    borderColor: 'rgba(255, 255, 255, 0.8)',
+    borderColor: "rgba(255, 255, 255, 0.8)",
   },
 };
 
 /* -------------------------- Chart Initialization -------------------------- */
 
 const newChart = (chart, config) => {
-  const ctx = chart.getContext('2d');
+  const ctx = chart.getContext("2d");
   return new window.Chart(ctx, config);
 };
 
@@ -218,13 +218,13 @@ const getPastDates = (duration) => {
   let days;
 
   switch (duration) {
-    case 'week':
+    case "week":
       days = 7;
       break;
-    case 'month':
+    case "month":
       days = 30;
       break;
-    case 'year':
+    case "year":
       days = 365;
       break;
 
@@ -255,7 +255,7 @@ const utils = {
   rgbaColor,
   getColor,
   getColors,
-  getSoftColors,
+  getSubtleColors,
   getGrays,
   getOffset,
   isScrolledIntoView,

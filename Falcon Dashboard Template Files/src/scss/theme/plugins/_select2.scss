@@ -30,7 +30,7 @@
   }
 }
 
-.dark {
+html[data-bs-theme="dark"] {
   .select2-results__option.select2-results__option--highlighted:not(.select2-results__option--selected) {
     background-color: $dropdown-dark-link-hover-bg !important;
     color: var(--#{$prefix}input-color) !important;

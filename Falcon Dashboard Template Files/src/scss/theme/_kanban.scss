@@ -4,10 +4,10 @@ $page-header-height: 4.3125rem;
 $column-header-height: 2.5625rem;
 $column-footer-height: 2.8125rem;
 $horizontal-scroll-height: 0.9375rem;
-$default-height-remove: $top-nav-height + $page-header-height +
-  $column-header-height + $column-footer-height + $horizontal-scroll-height; // With bottom spaces for horizontal scrollbar
-$updated-height-remove: $top-nav-height + $page-header-height +
-  $column-header-height + $horizontal-scroll-height; // Except column footer height
+$default-height-remove: calc($top-nav-height + $page-header-height +
+  $column-header-height + $column-footer-height + $horizontal-scroll-height); // With bottom spaces for horizontal scrollbar
+$updated-height-remove: calc($top-nav-height + $page-header-height +
+  $column-header-height + $horizontal-scroll-height); // Except column footer height
 
 .kanban-header {
   background-color: var(--#{$prefix}kanban-header-bg);
@@ -47,7 +47,7 @@ $updated-height-remove: $top-nav-height + $page-header-height +
 .kanban-items-container {
   outline: none;
   padding: map_get($spacers, 2) $card-spacer-x;
-  max-height: calc(100vh - #{$default-height-remove});
+  max-height: calc(100vh - $default-height-remove);
   overflow-y: auto;
   overflow-x: hidden;
   background-color: var(--#{$prefix}kanban-bg);
@@ -89,7 +89,7 @@ $updated-height-remove: $top-nav-height + $page-header-height +
 }
 .form-added {
   .kanban-items-container {
-    max-height: calc(100vh - #{$updated-height-remove});
+    max-height: calc(100vh - $updated-height-remove);
     border-bottom-left-radius: $border-radius-lg;
     border-bottom-right-radius: $border-radius-lg;
   }
@@ -181,11 +181,11 @@ div[data-collapse],
 .mobile.safari,
 .mobile.chrome {
   .kanban-items-container {
-    max-height: calc(100vh - #{$default-height-remove + 3.5rem});
+    max-height: calc(100vh - ($default-height-remove + 3.5rem));
   }
   .form-added {
     .kanban-items-container {
-      max-height: calc(100vh - #{$updated-height-remove + 3.5rem});
+      max-height: calc(100vh - ($updated-height-remove + 3.5rem));
     }
   }
 }

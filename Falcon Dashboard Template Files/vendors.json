@@ -129,7 +129,11 @@
     "dest": "d3"
   },
   "select2": {
-    "src": ["dist/css/select2.min.css", "dist/js/select2.min.js", "dist/js/select2.full.min.js"],
+    "src": [
+      "dist/css/select2.min.css",
+      "dist/js/select2.min.js",
+      "dist/js/select2.full.min.js"
+    ],
     "dest": "select2"
   },
   "select2-bootstrap-5-theme": {
@@ -152,9 +156,7 @@
     "dest": "datatables.net-bs5"
   },
   "datatables.net-fixedcolumns": {
-    "src": [
-      "js/dataTables.fixedColumns.min.js"
-    ],
+    "src": ["js/dataTables.fixedColumns.min.js"],
     "dest": "datatables.net-fixedcolumns"
   }
 }

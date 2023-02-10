@@ -18,15 +18,15 @@ mixin BadgePillDemo
       +cleanText(value)
     = '\n'
 
-mixin BadgeSoftDemo
+mixin BadgeSubtleDemo
   each value in colors
-    span.badge(class=`badge-soft-${value}`)
+    span.badge(class=`badge-subtle-${value}`)
       +cleanText(value)
     = '\n'
     
-mixin BadgeSoftPillDemo
+mixin BadgeSubtlePillDemo
   each value in colors
-    span.badge.rounded-pill(class=`badge-soft-${value}`)
+    span.badge.rounded-pill(class=`badge-subtle-${value}`)
       +cleanText(value)
     = '\n'
 

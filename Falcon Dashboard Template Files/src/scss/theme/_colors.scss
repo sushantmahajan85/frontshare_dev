@@ -72,55 +72,14 @@ $theme-colors: (
   'dark': $dark,
 ) !default;
 
-
-$theme-colors-soft:(
-  'primary': tint-color($primary, 88%) ,
-  'secondary': tint-color($secondary, 88%),
-  'success': tint-color($success, 88%),
-  'info': tint-color($info, 88%),
-  'warning': tint-color($warning, 88%),
-  'danger': tint-color($danger, 88%),
-  'light': tint-color($light, 88%),
-  'dark': tint-color($dark, 88%),
-) !default;
-
-$dark-grays: (
-  'black': $white,
-  '100': $gray-1100,
-  '200': $gray-1000,
-  '300': $gray-900,
-  '400': $gray-800,
-  '500': $gray-700,
-  '600': $gray-600,
-  '700': $gray-500,
-  '800': $gray-400,
-  '900': $gray-300,
-  '1000': $gray-200,
-  '1100': $gray-100,
-  'white': $black,
-) !default;
-
-$theme-dark-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-  'success': $success,
-  'info': $info,
-  'warning': $warning,
-  'danger': $danger,
-  'light': rgba(map-get($dark-grays, '200'), 0.25), //TODO
-  'dark': $light,
-) !default;
-
-$theme-dark-colors-soft: (
-  'primary': shift-color($primary, 70%),
-  'secondary': shift-color($secondary, 70%),
-  'success': shift-color($success, 70%),
-  'info': shift-color($info, 70%),
-  'warning': shift-color($warning, 70%),
-  'danger': shift-color($danger, 70%),
-  'light': shift-color($light, 70%),
-  'dark': shift-color($dark, 70%),
-) !default;
+$primary-bg-subtle: tint-color($primary, 88%) !default;
+$secondary-bg-subtle: tint-color($secondary, 88%) !default;
+$success-bg-subtle: tint-color($success, 88%) !default;
+$info-bg-subtle: tint-color($info, 88%) !default;
+$warning-bg-subtle: tint-color($warning, 88%) !default;
+$danger-bg-subtle: tint-color($danger, 88%) !default;
+$light-bg-subtle: tint-color($light, 88%) !default;
+$dark-bg-subtle: tint-color($dark, 88%) !default;
 
 //*-----------------------------------------------
 //|   Brand colors
@@ -147,5 +106,3 @@ $icon-circle-colors: (
   'info': $info,
   'warning': $warning,
 ) !default;
-
-

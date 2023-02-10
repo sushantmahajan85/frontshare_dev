@@ -14,19 +14,19 @@ const chartBubble = () => {
         {
           label: 'Dataset 1',
           data: getBubbleDataset(5, 5, 15, 0, 100),
-          backgroundColor: utils.getSoftColors()['primary'],
+          backgroundColor: utils.getSubtleColors()['primary'],
           hoverBackgroundColor: utils.getColors()['primary']
         },
         {
           label: 'Dataset 2',
           data: getBubbleDataset(5, 5, 15, 0, 100),
-          backgroundColor: utils.getSoftColors()['success'],
+          backgroundColor: utils.getSubtleColors()['success'],
           hoverBackgroundColor: utils.getColors()['success']
         },
         {
           label: 'Dataset 3',
           data: getBubbleDataset(5, 5, 15, 0, 100),
-          backgroundColor: utils.getSoftColors()['danger'],
+          backgroundColor: utils.getSubtleColors()['danger'],
           hoverBackgroundColor: utils.getColors()['danger']
         }
       ]

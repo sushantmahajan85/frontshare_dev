@@ -20,10 +20,10 @@ append content
     title: 'Navbar Light',
     anchor: true,
   }).mb-3
-    +Navbar('navbarLightExample').bg-light.navbar-light
+    +Navbar('navbarLightExample').bg-light.navbar
 
   +ComponentCard({
     title: 'Navbar Dark',
     anchor: true,
   }).mb-3
-    +Navbar('navbarSuccessExample').bg-dark.navbar-dark.light
+    +Navbar('navbarSuccessExample').bg-dark.navbar(data-bs-theme="light")

@@ -1,6 +1,5 @@
 :root,
-:root.light,
-:root .light {
+[data-bs-theme="light"] {
 
 
   // ----------------------------------
@@ -23,13 +22,6 @@
     --#{$prefix}#{$color}: #{$value};
   }
 
-  //---------------------------
-
-  @each $color,
-  $value in $theme-colors-soft {
-    --#{$prefix}soft-#{$color}: #{$value};
-  }
-
   //----------------------- rgb color ----------------------------------
   @each $color,
   $value in $grays-rgb {
@@ -44,11 +36,25 @@
   --#{$prefix}dark-rgb: #{to-rgb(map-get($theme-colors, 'dark'))};
   --#{$prefix}light-rgb: #{to-rgb(map-get($theme-colors, 'light'))};
 
+  /* -------------------------------- Font family ------------------------------- */
+  --#{$prefix}font-sans-serif: #{inspect($font-family-sans-serif)};
+  --#{$prefix}font-monospace: #{inspect($font-family-monospace)};
+  --#{$prefix}font-base: #{inspect($font-family-base)};
+
+
   /* -------------------------------- Border ------------------------------- */
 
   --#{$prefix}global-border-style: solid;
   --#{$prefix}border-color: #{map-get($grays, '300')};
   --#{$prefix}btn-disabled-border-color: transparent;
+
+
+  --#{$prefix}top-nav-height: 4.3125rem;
+  @include media-breakpoint-up(lg) {
+    &.double-top-nav-layout {
+      --#{$prefix}top-nav-height: 8.688rem;
+    }
+  }
 
 
   /* ------------------------------ Reveal Button ----------------------------- */
@@ -107,22 +113,22 @@
     }
 
     /* ---------------------------------- Badge --------------------------------- */
-    --#{$prefix}badge-soft-#{$color}-background-color: #{shift-color($value, -80%)};
+    --#{$prefix}badge-subtle-#{$color}-background-color: #{shift-color($value, -80%)};
 
     @if $color =='secondary' {
-      --#{$prefix}badge-soft-#{$color}-color: #{shift-color($value, -6.4%)};
+      --#{$prefix}badge-subtle-#{$color}-color: #{shift-color($value, -6.4%)};
     }
 
     @else if $value =='warning' {
-      --#{$prefix}badge-soft-#{$color}-color: #{shift-color($value, 20%)};
+      --#{$prefix}badge-subtle-#{$color}-color: #{shift-color($value, 20%)};
     }
 
     @else if $value =='danger' {
-      --#{$prefix}badge-soft-#{$color}-color: #{shift-color($value, 36%)};
+      --#{$prefix}badge-subtle-#{$color}-color: #{shift-color($value, 36%)};
     }
 
     @else {
-      --#{$prefix}badge-soft-#{$color}-color: #{shift-color($value, 36%)};
+      --#{$prefix}badge-subtle-#{$color}-color: #{shift-color($value, 36%)};
     }
   }
 
@@ -136,7 +142,7 @@
   --#{$prefix}box-shadow-inset: #{inset 0 1px 2px rgba($black, .075)};
 
   --#{$prefix}component-active-color: #{map-get($theme-colors, 'white')};
-  --#{$prefix}component-active-bg: #{map-get($theme-colors, 'primary')};
+  --#{$prefix}component-active-bg: #{$component-active-bg};
 
 
   --#{$prefix}text-muted: #{map-get($grays, '600')};
@@ -467,14 +473,19 @@
   }
 
   .offcanvas {
-    // --#{$prefix}offcanvas-bg: #{$dark};
+    --#{$prefix}offcanvas-bg: #{$white};
   }
 
   /* ---------------------------------- Toast --------------------------------- */
   .toast {
     --#{$prefix}toast-bg: #{$toast-background-color};
     --#{$prefix}toast-header-bg: #{$toast-header-background-color};
+  }
 
+  /* ---------------------------------- Tooltip --------------------------------- */
+  .tooltip {
+    --#{$prefix}tooltip-bg: #{$tooltip-bg};
+    --#{$prefix}tooltip-color: #{$tooltip-color};
   }
 
   /* ------------------------------- List Group ------------------------------- */

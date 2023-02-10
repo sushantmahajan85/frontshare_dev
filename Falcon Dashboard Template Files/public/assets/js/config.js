@@ -24,6 +24,6 @@ if (JSON.parse(localStorage.getItem('isNavbarVerticalCollapsed'))) {
 }
 
 if (localStorage.getItem('theme') === 'dark') {
-  document.documentElement.classList.add('dark');
+  document.documentElement.setAttribute('data-bs-theme', 'dark');
 }
 //# sourceMappingURL=config.js.map

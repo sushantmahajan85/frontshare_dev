@@ -37,7 +37,7 @@ mixin CandleChart()
               .col-12.col-sm-auto
                 +Stat(item,index)
     .card-body.pe-0.position-relative#candle-chart(dir='ltr')
-      .btn-group.position-absolute.z-index-1.top-0.d-inline-block(role="group" style='left:20px;right:20px;')
+      .btn-group.position-absolute.z-1.top-0.d-inline-block(role="group" style='left:20px;right:20px;')
         button.btn.btn-falcon-default.btn-sm.mb-1(data-zoom="in")
           span.fas.fa-plus
         button.btn.btn-falcon-default.btn-sm.mb-1(data-zoom="out")
@@ -49,10 +49,10 @@ mixin CandleChart()
 
 
 mixin Stat(details,index)
-    .mb-3(class=index != 2 ? 'pe-4 border-sm-end border-200' : 'pe-0')
+    .mb-3(class=index != 2 ? 'pe-4 border-end-sm border-200' : 'pe-0')
       h6.fs--2.text-600.mb-1 #{details.title}
       .d-flex.align-items-center
         h5.fs-0.text-900.mb-0.me-2 #{details.amount}
-        span.badge.rounded-pill(class=`badge-soft-${details.badge.color}`)
+        span.badge.rounded-pill(class=`badge-subtle-${details.badge.color}`)
           span.fas.fa-caret-up
           |  #{details.badge.text}

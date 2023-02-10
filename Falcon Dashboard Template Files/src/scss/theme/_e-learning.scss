@@ -6,7 +6,7 @@
   @include media-breakpoint-up(lg) {
     position: sticky;
     z-index: $zindex-sticky;
-    top: $top-nav-height + 1;
+    top: calc($top-nav-height + 1rem);
   }
 }
 

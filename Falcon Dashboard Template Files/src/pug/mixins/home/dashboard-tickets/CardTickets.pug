@@ -564,7 +564,7 @@ append variables
     ]
 
 mixin Badge(badge)
-  small.badge.rounded(class=`badge-soft-${badge.type} ${badge.type === 'secondary' && "dark__bg-1000"}`)=badge.content
+  small.badge.rounded(class=`badge-subtle-${badge.type} ${badge.type === 'secondary' && "dark__bg-1000"}`)=badge.content
 
 mixin PrioritySelect(config)
   .d-flex.align-items-center.gap-2&attributes(attributes)

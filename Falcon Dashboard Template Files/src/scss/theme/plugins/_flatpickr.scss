@@ -67,13 +67,14 @@
   &.today{
     @include hover-focus{
       background-color: var(--#{$prefix}flatpickr-calendar-bg);
-      color: var(--#{$prefix}black);
+      color: var(--#{$prefix}black) !important;
     }
   }
   &.selected{ 
     background-color: var(--#{$prefix}primary);
     border-color: var(--#{$prefix}primary); 
     @include hover-focus{
+      color: $white;
       background-color: var(--#{$prefix}primary);
       border-color: var(--#{$prefix}primary); 
     }
