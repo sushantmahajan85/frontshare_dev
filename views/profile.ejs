@@ -1,22 +1,33 @@
-<html lang="en">
+<html lang="en" id="html">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/assets/js/config.navbar-vertical.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.6.3.min.js"
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
     <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+    <link
+      href="/assets/lib/perfect-scrollbar/perfect-scrollbar.css"
+      rel="stylesheet"
+    />
 
+    <link href="/assets/css/theme.css" rel="stylesheet" />
     <link rel="stylesheet" href="./scss/css/style.css" />
     <title>Document</title>
   </head>
-  <style></style>
+  <style>
+    .nav-item {
+      height: 35.19px;
+    }
+  </style>
   <body>
-    <main class="main">
-      <% { %>
+    <main class="main" id="top">
+      <!-- Set .navbar-top-combo class to the navbar top element as describe in step 1 in the responsive behaviours section-->
+      <%- include('partials/navbar.ejs') %> <% { %>
       <script>
         var c1 = <%- JSON.stringify(c1elements)  %>;
         var c2 = <%- JSON.stringify(c2elements)  %>;
@@ -28,21 +39,14 @@
         data-layout="container"
         style="max-width: 100% !important"
       >
-        <!-- Set .navbar-top-combo class to the navbar top element as describe in step 1 in the responsive behaviours section-->
-        <%- include('partials/navbar.ejs') %>
+        <!-- comment -->
+        <%- include('partials/leftsidebar.ejs') %>
         <div class="content" style="margin: 0">
           <!-- Set the unique ID to data-move-target attribute which you added in step 2 as describe in step 3 in the responsive behaviours section -->
 
           <!-- Your page content wil go here-->
 
-          <div
-            style="
-              width: 95%;
-              padding: 1rem;
-              border-radius: 2rem;
-              margin: 6rem auto;
-            "
-          >
+          <div style="width: 95%; padding: 1rem; border-radius: 2rem">
             <div class="row profile-area-header">
               <div
                 style="display: flex; justify-content: space-around; width: 10%"
@@ -536,6 +540,21 @@
             },
           ],
         });
+      });
+    </script>
+
+    <script>
+      const insideAddBlocks1 = document.querySelector("#leftsidebar-toggle");
+      const html = document.querySelector("#html");
+      insideAddBlocks1.addEventListener("mouseover", (e) => {
+        e.preventDefault();
+        console.log("bcjbskjbskj");
+        html.classList.add("navbar-vertical-collapsed-hover");
+      });
+
+      insideAddBlocks1.addEventListener("mouseout", (e) => {
+        e.preventDefault();
+        html.classList.remove("navbar-vertical-collapsed-hover");
       });
     </script>
 
