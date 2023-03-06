@@ -49,6 +49,8 @@ app.use(compression());
 dotenv.config({ path: "./config.env" });
 
 app.post("/pay", (req, res) => {
+  const pricetogg = req.query.pricetogg;
+  // console.log(pricetogg);
   const create_payment_json = {
     intent: "sale",
     payer: {
@@ -65,7 +67,7 @@ app.post("/pay", (req, res) => {
             {
               name: "Red Sox Hat",
               sku: "001",
-              price: "25.00",
+              price: pricetogg,
               currency: "USD",
               quantity: 1,
             },
@@ -73,7 +75,7 @@ app.post("/pay", (req, res) => {
         },
         amount: {
           currency: "USD",
-          total: "25.00",
+          total: pricetogg,
         },
         description: "Hat for the best team ever",
       },
@@ -89,7 +91,7 @@ app.post("/pay", (req, res) => {
         {
           amount: {
             currency: "USD",
-            total: "25.00",
+            total: pricetogg,
           },
         },
       ],
