@@ -9,7 +9,6 @@ const userRoutes = require("./routes/user_routes");
 const blockRoutes = require("./routes/block_routes");
 const bookingRoutes = require("./routes/booking_routes");
 const paypal = require("paypal-rest-sdk");
-const authController = require("./controllers/authController");
 
 //   (methodOverride = require("method-override")),
 //   (bodyParser = require("body-parser")),
@@ -48,11 +47,10 @@ app.use(cookieParser());
 app.use(compression());
 
 dotenv.config({ path: "./config.env" });
-let pricetogg_glb = 0;
-app.post("/pay", authController.protect, (req, res) => {
+
+app.post("/pay", (req, res) => {
   const pricetogg = req.query.pricetogg;
   // console.log(pricetogg);
-  pricetogg_glb = pricetogg;
   const create_payment_json = {
     intent: "sale",
     payer: {
@@ -83,13 +81,10 @@ app.post("/pay", authController.protect, (req, res) => {
       },
     ],
   };
-  app.get("/success", authController.protect, async (req, res) => {
+  app.get("/success", (req, res) => {
     const payerId = req.query.PayerID;
     const paymentId = req.query.paymentId;
-    const userid = user.id;
-    const pricePaypal = pricetogg_glb;
-    await Booking.create({ user: userid, price: pricetogg_glb });
-    await User.findByIdAndUpdate(userid, { plan: "pro" });
+
     const execute_payment_json = {
       payer_id: payerId,
       transactions: [

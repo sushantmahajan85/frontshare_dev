@@ -19,16 +19,16 @@ mixin ProductList(config, index)
                   each slide in config.slider
                     .swiper-slide.h-100
                       a(href=`${CWD}${paths['product-details']}`).d-block.h-sm-100
-                        img(src=`${CWD}assets/img/products/${slide}.jpg` alt="").rounded-1.h-100.w-100.object-fit-cover
+                        img(src=`${CWD}assets/img/products/${slide}.jpg` alt="").rounded-1.h-100.w-100.fit-cover
                 .swiper-nav
                   .swiper-button-next.swiper-button-white
                   .swiper-button-prev.swiper-button-white
           else
             a(href=`${CWD}${paths['product-details']}`).d-block.h-100
-              img(src=`${CWD}assets/img/products/${config.img}.jpg`, alt="").img-fluid.object-fit-cover.w-sm-100.h-sm-100.rounded-1.absolute-sm-centered
+              img(src=`${CWD}assets/img/products/${config.img}.jpg`, alt="").img-fluid.fit-cover.w-sm-100.h-sm-100.rounded-1.absolute-sm-centered
 
           if(config.new)
-            .badge.rounded-pill.bg-success.position-absolute.top-0.end-0.me-2.mt-2.fs--2.z-2 New
+            .badge.rounded-pill.bg-success.position-absolute.top-0.end-0.me-2.mt-2.fs--2.z-index-2 New
       .col-sm-7.col-md-8
         .row
           .col-lg-8

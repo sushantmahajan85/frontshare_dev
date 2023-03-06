@@ -1,15 +1,13 @@
 /* -------------------------------------------------------------------------- */
 /*                                 Theme                                      */
 /* -------------------------------------------------------------------------- */
+
 @import "../../node_modules/bootstrap/scss/_functions";
 @import "theme/functions";
 
 @import "user-variables";
-@import 'theme/colors';
 @import "theme/variables";
-@import "theme/variables-dark";
 @import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/variables-dark";
 
 
 @import 'theme/maps';

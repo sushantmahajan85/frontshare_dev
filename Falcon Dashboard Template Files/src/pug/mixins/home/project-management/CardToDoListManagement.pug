@@ -32,7 +32,7 @@ mixin CardToDoListManagement
     .card-header
       h6.mb-0 To Do List
 
-    .card-body.p-0
+    .card-body.p-0.scrollbar.to-do-list-body-height
       each item, index in todoList
         +TodoItem(item,index)
 

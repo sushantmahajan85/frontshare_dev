@@ -112,7 +112,6 @@
   .fc-popover {
     border-color: $border-color;
     box-shadow: $box-shadow;
-    border-radius: $border-radius-lg;
     .fc-popover-title {
       font-family: var(--#{$prefix}font-sans-serif);
     }
@@ -237,15 +236,15 @@
 }
 @each $color, $value in $theme-colors {
   .fc-timegrid {
-    .event-bg-#{$color}-subtle {
+    .event-bg-soft-#{$color} {
       border: 0 !important;
-      @extend .bg-#{$color}-subtle;
+      @extend .bg-soft-#{$color};
       .fc-event-main:after {
         background-color: $value !important;
       }
     }
   }
-  .bg-#{$color}-subtle {
+  .bg-soft-#{$color} {
     .fc-event-main {
       color: darken($value, 10%) !important;
       &:after {

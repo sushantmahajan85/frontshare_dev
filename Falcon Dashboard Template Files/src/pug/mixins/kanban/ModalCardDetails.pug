@@ -131,7 +131,7 @@ mixin Descriptions
     +ModalIcon({ icon: 'fas fa-align-left', transform: 'shrink-2'})
     .flex-1
       h5.mb-2.fs-0 Description
-      p.text-break.fs--1
+      p.text-word-break.fs--1
         | The illustration must match to the contrast of the theme. The illustraion must described the concept of the design. To know more about the theme visit the page. 
         a(href=`https://prium.github.io/falcon/${version}/index.html` target="_blank") https://prium.github.io/falcon/#{version}/index.html
 
@@ -147,7 +147,7 @@ mixin Labels
     ]
   .d-flex
     each label in assignedLabels
-      span.badge.me-1.py-2(class=`badge-subtle-${label.type}`)=label.text
+      span.badge.me-1.py-2(class=`badge-soft-${label.type}`)=label.text
     .dropdown.dropend
       button.btn.btn-sm.btn-secondary.px-2.fsp-75.bg-400.border-400.dropdown-toggle.dropdown-caret-none(data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
         span.fas.fa-plus
@@ -156,7 +156,7 @@ mixin Labels
         .dropdown-divider
         .px-3
           each label in labels
-            button(type="button" class=`badge-subtle-${label.type}`).dropdown-item.rounded-1.mb-2=label.text
+            button(type="button" class=`badge-soft-${label.type}`).dropdown-item.rounded-1.mb-2=label.text
         .dropdown-divider
         .px-3
           button.btn.btn-sm.d-block.w-100.btn-outline-secondary.border-400 Create Label
@@ -176,7 +176,7 @@ mixin ModalCardDetails(config)
         if config.img
           .position-relative.overflow-hidden.py-8
             +Background({ image: config.img, className: 'rounded-top-lg' })
-        .position-absolute.top-0.end-0.mt-3.me-3.z-1
+        .position-absolute.top-0.end-0.mt-3.me-3.z-index-1
           button.btn-close.btn.btn-sm.btn-circle.d-flex.flex-center.transition-base(data-bs-dismiss="modal" aria-label="Close")
         .modal-body.p-0
           +HeaderContent(config)

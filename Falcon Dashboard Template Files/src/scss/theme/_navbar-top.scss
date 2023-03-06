@@ -149,15 +149,9 @@
 }
 
 .theme-control-toggle{
-  position: relative;
-  height: 30px;
-  width: 30px;
   .theme-control-toggle-label{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    height: 30px;
+    width: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,12 +168,10 @@
   .theme-control-toggle-input {
     display: none;
     &:checked ~ .theme-control-toggle-dark{
-      opacity: 0;
-      z-index: -1;
+      display: none;
     }
     &:not(:checked) ~ .theme-control-toggle-light{
-      opacity: 0;
-      z-index: -1;
+      display: none;
     }
   }
 }  

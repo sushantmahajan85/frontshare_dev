@@ -22,7 +22,7 @@ mixin CourseBottomBar
 //- Course Banner
 //- ==============================================
 mixin CourseBanner
-  .card.overflow-hidden(data-bs-theme="light")&attributes(attributes)
+  .card.overflow-hidden.light&attributes(attributes)
     .card-body.bg-black
       +Background({image: `${CWD}assets/img/icons/spot-illustrations/course-details-bg.png`, className:"rounded-3"})
       .row
@@ -233,7 +233,7 @@ mixin LessonsItem(config, index)
         .bg-attachment.bg-attachment-square
           +Background({ image: config.attachment.image })
       .hoverbox-content.flex-center.pe-none.bg-holder.overlay.overlay-1.rounded
-        .position-relative.fs-2.text-white(data-bs-theme="light")
+        .position-relative.light.fs-2.text-white
           span.fas.fa-play-circle
 
     .flex-1

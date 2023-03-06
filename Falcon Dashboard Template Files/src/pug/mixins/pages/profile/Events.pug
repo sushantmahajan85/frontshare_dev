@@ -501,7 +501,7 @@ mixin TicketPrice
             span.fas.fa-times-circle.text-danger(data-fa-transform="shrink-2")
 
 mixin ItemCloseButton
-  .position-absolute.end-0.top-0.mt-2.me-3.z-1
+  .position-absolute.end-0.top-0.mt-2.me-3.z-index-1
     button.btn.btn-link.btn-sm.p-0(type="button")
       span.fas.fa-times-circle.text-danger(data-fa-transform="shrink-1")
 
@@ -678,7 +678,7 @@ mixin Events(config)
     var events = [
       {
         calendar: {month: 'Mar', day: 26},
-        title: 'Crain\'s New York Business <span class="badge badge-subtle-success rounded-pill">Free</span>',
+        title: 'Crain\'s New York Business <span class="badge badge-soft-success rounded-pill">Free</span>',
         subtitle: 'Organized by <a href="#!" class="text-700">AID MIT</a>',
         additional: ['Time: 11:00AM', 'Duration: Feb 29 - Mar 2'],
         block: 'The Liberty Warehouse, New Yourk',
@@ -809,7 +809,7 @@ mixin EventDetails
           span.fab.fa-medium-m
 
       .googlemap.min-vh-50.rounded-3.mt-5#view-map(data-latlng='23.8383608,90.3680554' data-scrollwheel='false', data-icon=`${CWD}assets/img/icons/map-marker.png`, data-zoom='17' data-theme='Default')
-        .marker-content.pb-3(data-bs-theme="light")
+        .marker-content.pb-3.light
           h5 Eiffel Tower
           p
             | Gustave Eiffel's iconic, wrought-iron 1889 tower,

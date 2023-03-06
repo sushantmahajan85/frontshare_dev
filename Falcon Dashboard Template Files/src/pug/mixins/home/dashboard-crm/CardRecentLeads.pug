@@ -60,9 +60,9 @@ mixin RecentLeadsTable
     table.table.fs--1.mb-0
       thead.bg-200.text-800
         tr
-          th.white-space-nowrap.align-middle.py-0(style="max-width: 30px;")
+          th.py-3.white-space-nowrap(style="max-width: 30px;")
             .form-check.mb-0.d-flex.align-items-center
-              input.form-check-input.mt-0#checkbox-bulk-leads-select(
+              input.form-check-input#checkbox-bulk-leads-select(
                 type='checkbox' 
                 data-bulk-select!={
                   body: "table-recent-leads-body",
@@ -95,7 +95,7 @@ mixin RecentLeadsTableItem(config, index)
     td.align-middle.white-space-nowrap.text-primary.email
       a(href=`mailto:${config.email}`)=config.email
     td.align-middle.white-space-nowrap
-      small.badge.fw-semi-bold.rounded-pill.status(class = `badge-subtle-${config.color}`)  #{config.status}
+      small.badge.fw-semi-bold.rounded-pill.status(class = `badge-soft-${config.color}`)  #{config.status}
     td.align-middle.white-space-nowrap.text-end.position-relative
       .hover-actions.bg-100
         button.btn.icon-item.rounded-3.me-2.fs--2.icon-item-sm

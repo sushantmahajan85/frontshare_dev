@@ -292,7 +292,7 @@ mixin DropdownLms(id)
 //- Badge (badge-config)
 //- ==============================================
 mixin Badge(badge)
-  span.badge.rounded-pill(class=`badge-subtle-${badge.type}`)&attributes(attributes)
+  span.badge.rounded-pill(class=`badge-soft-${badge.type}`)&attributes(attributes)
     if badge.iconBefore
       span(class=`${badge.icon} me-1` data-fa-transform="shrink-4")
     span=badge.content

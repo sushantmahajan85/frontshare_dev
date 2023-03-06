@@ -758,7 +758,7 @@ mixin MessageRight(config)
           if(config.type === 'gallery')
             .chat-message.chat-gallery!=config.message
           else
-            .bg-primary.text-white.p-2.rounded-2.chat-message(data-bs-theme="light")
+            .bg-primary.text-white.p-2.rounded-2.chat-message.light
               !=config.message
 
         .text-400.fs--2.text-end=config.time.hour
@@ -777,7 +777,7 @@ mixin ConversationInfo(thread, index)
         .flex-1.ms-2.d-flex.flex-between-center
           h6.mb-0
             a(href=`${CWD}${paths['user-profile']}`).text-decoration-none.stretched-link.text-700=thread.name
-          .dropdown.z-1
+          .dropdown.z-index-1
             button.btn.btn-link.btn-sm.text-400.dropdown-toggle.dropdown-caret-none.me-n3(type='button', id=`profile-dropdown-${index}` data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
               span.fas.fa-cog
             .dropdown-menu.dropdown-menu-end.border.py-2(aria-labelledby=`profile-dropdown-${index}`)
@@ -824,7 +824,7 @@ mixin ConversationInfo(thread, index)
                     h6.mb-0
                       a(href=`${CWD}${paths['user-profile']}`).text-700=member.name
                     .fs--2.text-400=member.designation
-                  .dropdown.hover-actions.position-relative.dropdown-active-trigger.z-1
+                  .dropdown.hover-actions.position-relative.dropdown-active-trigger.z-index-1
                     button.btn.btn-link.btn-sm.text-400.dropdown-toggle.dropdown-caret-none(type='button', id=`user-settings-dropdown-${i}`, data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
                       span.fas.fa-ellipsis-h
                     .dropdown-menu.dropdown-menu-end.py-2.border(aria-labelledby=`user-settings-dropdown-${i}`)
@@ -920,7 +920,7 @@ mixin ChatContact(config)
     .hover-actions-trigger.chat-contact.nav-item(class=config.class ? config.class : false role="presentation")&attributes(attributes)
       .d-md-none.d-lg-block
         .dropdown.dropdown-active-trigger.dropdown-chat
-          button.hover-actions.btn.btn-link.btn-sm.text-400.dropdown-caret-none.dropdown-toggle.end-0.fs-0.mt-4.me-1.z-1.pb-2.mb-n2(
+          button.hover-actions.btn.btn-link.btn-sm.text-400.dropdown-caret-none.dropdown-toggle.end-0.fs-0.mt-4.me-1.z-index-1.pb-2.mb-n2(
             type='button' 
             id=config.dropdownId 
             data-boundary="viewport"

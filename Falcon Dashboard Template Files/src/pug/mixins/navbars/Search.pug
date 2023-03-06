@@ -30,7 +30,7 @@ mixin SuggestedFilter(items)
   each item in items
     a(href=item.url).dropdown-item.px-x1.py-1.fs-0
       .d-flex.align-items-center
-        span.badge.fw-medium.text-decoration-none.me-2(class=`badge-subtle-${item.type}`) #{item.key}:
+        span.badge.fw-medium.text-decoration-none.me-2(class=`badge-soft-${item.type}`) #{item.key}:
         .flex-1.fs--1.title=item.text
     = '\n'
 
@@ -53,7 +53,7 @@ mixin Search(placeholder)
         img: `${CWD}assets/img/products/3-thumb.png`,
         file: true,
         title: 'iPhone',
-        imgAttrs: { class: 'border h-100 w-100 object-fit-cover rounded-3' },
+        imgAttrs: { class: 'border h-100 w-100 fit-cover rounded-3' },
         text: '<span class="fw-semi-bold">Antony</span><span class="fw-medium text-600 ms-2">27 Sep at 10:30 AM</span>'
       },
       {

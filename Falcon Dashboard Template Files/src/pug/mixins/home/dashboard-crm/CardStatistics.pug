@@ -16,7 +16,7 @@ mixin CardCrmStatistics
               data: [220, 230, 150, 175, 200, 170, 70, 160],
               lineColor:  themeColor.primary 
             }
-        +CrmStatisticsItem(crmNewContact, 'dropdown-new-contact').border-end-lg.border-bottom.border-bottom-lg-0.pb-3.pb-lg-0
+        +CrmStatisticsItem(crmNewContact, 'dropdown-new-contact').border-lg-end.border-bottom.border-lg-0.pb-3.pb-lg-0
         -
           var crmNewUser = 
             {
@@ -30,7 +30,7 @@ mixin CardCrmStatistics
               data: [90, 160, 150, 120, 230, 155, 220,240],
               lineColor: themeColor.info
             }
-        +CrmStatisticsItem(crmNewUser, 'dropdown-new-users').border-end-lg.border-bottom.border-bottom-lg-0.py-3.py-lg-0
+        +CrmStatisticsItem(crmNewUser, 'dropdown-new-users').border-lg-end.border-bottom.border-lg-0.py-3.py-lg-0
         -
           var crmNewLeads = 
             {
@@ -50,7 +50,7 @@ mixin CrmStatisticsItem(item,id)
   .col-lg-4&attributes(attributes)
     .d-flex.flex-between-center.mb-3
       .d-flex.align-items-center
-        .icon-item.icon-item-sm.bg-primary-subtle.shadow-none.me-2(class = `bg-${item.color}-subtle`)
+        .icon-item.icon-item-sm.bg-soft-primary.shadow-none.me-2(class = `bg-soft-${item.color}`)
           span.fs--2(class = `${item.icon} text-${item.color}`)
         h6.mb-0 #{item.title}
       +DashboardDropdown(id)

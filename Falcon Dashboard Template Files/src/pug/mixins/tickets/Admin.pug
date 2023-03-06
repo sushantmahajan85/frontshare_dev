@@ -82,7 +82,7 @@ append variables
 mixin AmdinItem(config)
   .col-xxl-4.col-md-6&attributes(attributes)
     .hover-bg-100.py-x1.text-center.rounded-3.position-relative
-      .icon-item.icon-item-xl.shadow-none.mx-auto.mt-x1(class=`bg-${config.color}-subtle`)
+      .icon-item.icon-item-xl.shadow-none.mx-auto.mt-x1(class=`bg-soft-${config.color}`)
         span(class=`text-${config.color}` data-feather=config.icon)
       h5.mt-3.mb-2
         a.text-900.hover-primary.stretched-link(href='#!')= config.title

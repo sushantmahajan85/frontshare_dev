@@ -46,7 +46,7 @@ const dealStorageFunnelInit = () => {
               
             },
             borderRadius: 5,
-            backgroundColor:  utils.getSubtleColors().primary,
+            backgroundColor:  utils.getSoftColors().primary,
             padding: [6,16,6,16],
             width: 115
             },

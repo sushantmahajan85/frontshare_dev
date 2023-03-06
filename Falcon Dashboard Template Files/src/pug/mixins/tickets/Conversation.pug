@@ -65,8 +65,7 @@ append variables
 mixin MailHeader(image, name, type, email, date, time)
   .d-md-flex.d-xl-inline-block.d-xxl-flex.align-items-center.justify-content-between&attributes(attributes)
     .d-flex.align-items-center.gap-2
-      a(href=`${CWD}${paths['contact-details']}`) 
-        +Avatar({img:image, size: "2xl"})
+      +Avatar({img:image, size: "2xl"})
       p.mb-0
         a.fw-semi-bold.mb-0.text-800(href=`${CWD}${paths['contact-details']}`)= name
         span.fs--2.text-800.fw-normal.mx-2= type
@@ -175,7 +174,7 @@ mixin Conversation
       +MailBody(messages[0])
       .my-5.position-relative.text-center
         hr.position-absolute.top-50.border-300.w-100.my-0
-        span.position-relative.bg-white.dark__bg-card-dark.px-3.z-1
+        span.position-relative.bg-white.dark__bg-card-dark.px-3.z-index-1
           button.btn.btn-sm.btn-outline-secondary.rounded-pill.border-300.px-lg-5 Conversions 5+
       +MailHeader(`${CWD}assets/img/team/2-thumb.png`,"Mike", "replied","mike@support.com", "01 March, 2020", "8:40 AM (1 Day ago)" ).mb-x1
       +MailBody(messages[1]).mb-5.pb-5
@@ -187,7 +186,7 @@ mixin Conversation
       +MailBody(messages[4]).mb-5.pb-5
       +MailHeader(`${CWD}assets/img/team/1-thumb.png`,"Emma Waston", "via email","emma@watson.com", "01 March, 2020", "8:40 AM (1 Day ago)" ).mb-x1
       +MailBody(messages[5]).border-none
-    .collapse.transition-none#previewMailForm
+    .collapse.rounded-lg.transition-none#previewMailForm
       +ReplyCompose
     .card-footer.bg-light#preview-footer
       button(type='button' data-bs-toggle="collapse" data-bs-target="#previewMailForm" aria-expanded="false" aria-controls="previewMailForm").btn.btn-falcon-default.btn-sm.fs--1

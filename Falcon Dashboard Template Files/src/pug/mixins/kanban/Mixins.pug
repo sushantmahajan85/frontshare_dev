@@ -285,7 +285,7 @@ mixin KanbanHeader
 //- Kanban item footer
 mixin KanbanItemFooter(config)
   .kanban-item-footer.cursor-default
-    .text-500.z-2
+    .text-500.z-index-2
       if config.members
         - var member = config.members.filter(member => member.name === 'Emma')[0]
         if member
@@ -299,7 +299,7 @@ mixin KanbanItemFooter(config)
         span.me-2(data-bs-toggle="tooltip" title="Checklist")
           span.fas.fa-check.me-1
           span #{config.checklist.completed}/#{config.checklist.totalCount}
-    .z-2
+    .z-index-2
       if config.members
         each member in config.members
           +Avatar({img: member.url, size: 'l'}).align-top.ms-n2(data-bs-toggle="tooltip" title=member.name)     
@@ -325,7 +325,7 @@ mixin KanbanItem(config, index, length)
         if config.labels
           .mb-2
             each label in config.labels
-              span.badge.py-1.me-1.mb-1(class=`badge-subtle-${label.type}`)=label.text
+              span.badge.py-1.me-1.mb-1(class=`badge-soft-${label.type}`)=label.text
         p.mb-0.fw-medium.font-sans-serif.stretched-link(data-bs-toggle="modal" data-bs-target=config.modalID)!=config.title
 
 

@@ -32,7 +32,7 @@
   &:checked{
     border-color: #73D3FE !important;
     background-color: #73D3FE !important;
-    html[data-bs-theme="dark"] & {
+    .dark & {
       border-color: #229BD2 !important;
       background-color: #229BD2 !important;
     }
@@ -42,7 +42,7 @@
   &:checked{
     border-color: #A9E4FF !important;
     background-color: #A9E4FF !important;
-    html[data-bs-theme="dark"] & {
+    .dark & {
       border-color: #195979 !important;
       background-color: #195979 !important;
     }
@@ -64,4 +64,9 @@
 }
 .input-search-width{
   width: 13.75rem;
+}
+.rounded-xl-3{
+  @include media-breakpoint-up(xl){
+    border-radius: var(--#{$prefix}border-radius-lg);
+  }
 }

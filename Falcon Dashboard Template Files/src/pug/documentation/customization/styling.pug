@@ -131,21 +131,18 @@ append content
           -----------------------------------------------*/
           $success: #00d27a;
           $danger: #e63757;
-          :root,
-          [data-bs-theme="light"] {
+          :root, :root.light, :root .light {
             --falcon-primary:  #{success};
             --falcon-primary-rgb: #{successRgb};
-            ...
-            ...
-            ...
+             ...
+             ...
+             ...
           }
-          @if $enable-dark-mode {
-            @include color-mode(dark, true) {
-              --falcon-primary: #{danger};
-              --falcon-primary-rgb: #{dangerRgb};
-              .card{
-                --falcon-card-bg: #{success};
-              }
+          .dark{
+            --falcon-primary: #{danger};
+            --falcon-primary-rgb: #{dangerRgb};
+            .card{
+              --falcon-card-bg: #{success};
             }
           }
 
@@ -160,8 +157,7 @@ append content
           /*-----------------------------------------------
           |   Theme Styles
           -----------------------------------------------*/
-          :root,
-          [data-bs-theme=light] {
+          :root, :root.light, :root .light {
             --falcon-primary:  #00d27a;
             --falcon-primary-rgb: 0, 210, 122;
             ...
@@ -171,7 +167,7 @@ append content
             --falcon-gray-100:  #f9fafd;
             --falcon-gray-100-rgb: 249, 250, 253;
           }
-          [data-bs-theme=dark]{
+          .dark{
             --falcon-primary:  #e63757;
             --falcon-primary-rgb: 230, 55, 87;
 

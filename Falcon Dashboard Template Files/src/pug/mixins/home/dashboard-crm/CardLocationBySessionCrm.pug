@@ -49,7 +49,7 @@ mixin CardCrmLocationBySession(page=3)
         button.btn.btn-link.btn-sm.bg-100.rounded-top-0.px-2.location-by-session-map-zoomOut.text-700(type='button')
           span.fas.fa-minus.fs--1
       
-      +LocationBySessionTable.mx-nx1.mt-3
+      +LocationBySessionTable.mx-ncard.mt-3
     .card-footer.text-end.p-0
       .pagination.d-none
       p.mb-0.fs--1.px-x1
@@ -85,5 +85,5 @@ mixin CrmTableItem(config, index)
     td.align-middle.pe-x1
       .d-flex.align-items-center.justify-content-end
         p.mb-0.me-2 #{config.percentage}%
-        .progress.rounded-3.bg-200(style=`height: 0.3125rem;width:3.8rem`, role='progressbar',  aria-valuenow=`${config.percentage}`, aria-valuemin='0', aria-valuemax='100')
-          .progress-bar.bg-primary.rounded-pill(style=`width: ${config.percentage}%;`)
+        .progress.rounded-3.bg-200(style=`height: 0.3125rem;width:3.8rem`)
+          .progress-bar.bg-primary.rounded-pill(role='progressbar', style=`width: ${config.percentage}%;`  aria-valuenow=`${config.percentage}`, aria-valuemin='0' aria-valuemax='100')

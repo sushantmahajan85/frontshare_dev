@@ -1,8 +1,8 @@
 mixin CardGreetings
   .card.bg-transparent-50.overflow-hidden&attributes(attributes)
     .card-header.position-relative
-      +Background({image: "../assets/img/illustrations/ecommerce-bg.png", attrs: {style: {'background-size': '230px', 'background-position': 'right bottom','z-index':'-1'} }, className:'d-none d-md-block bg-card z-1'})
-      .position-relative.z-2
+      +Background({image: "../assets/img/illustrations/ecommerce-bg.png", attrs: {style: {'background-size': '230px', 'background-position': 'right bottom','z-index':'-1'} }, className:'d-none d-md-block bg-card z-index-1'})
+      .position-relative.z-index-2
         div
           h3.text-primary.mb-1 Good Afternoon, Jonathan!
           p Here’s what happening with your store today 

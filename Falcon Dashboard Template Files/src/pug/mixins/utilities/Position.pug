@@ -1,11 +1,11 @@
 
 mixin PositionCenterElementsDemo
   .position-relative.bg-200(style="height: 200px;")
-    .p-3.bg-900.rounded-1.position-absolute.top-0.start-50.translate-middle-x(data-bs-theme="light")
-    .p-3.bg-900.rounded-1.position-absolute.top-50.start-0.translate-middle-y(data-bs-theme="light")
-    .p-3.bg-900.rounded-1.position-absolute.top-50.start-50.translate-middle(data-bs-theme="light")
-    .p-3.bg-900.rounded-1.position-absolute.top-50.end-0.translate-middle-y(data-bs-theme="light")
-    .p-3.bg-900.rounded-1.position-absolute.bottom-0.start-50.translate-middle-x(data-bs-theme="light")
+    .light.p-3.bg-900.rounded-1.position-absolute.top-0.start-50.translate-middle-x
+    .light.p-3.bg-900.rounded-1.position-absolute.top-50.start-0.translate-middle-y
+    .light.p-3.bg-900.rounded-1.position-absolute.top-50.start-50.translate-middle
+    .light.p-3.bg-900.rounded-1.position-absolute.top-50.end-0.translate-middle-y
+    .light.p-3.bg-900.rounded-1.position-absolute.bottom-0.start-50.translate-middle-x
 
 mixin PositionCenterElementsDescription
   p&attributes(attributes) In addition, you can also center the elements with the transform utility classes 
@@ -29,14 +29,14 @@ mixin PositionArrangeElementsDescription
 
 mixin PositionArrangeElementsDemo
   .position-relative.bg-200.mb-4(style="height: 200px;")
-    .p-3.bg-900.rounded-1.position-absolute.top-0.start-0(data-bs-theme="light")
-    .p-3.bg-900.rounded-1.position-absolute.top-0.end-0(data-bs-theme="light")
-    .p-3.bg-900.rounded-1.position-absolute.top-50.start-50(data-bs-theme="light")
-    .p-3.bg-900.rounded-1.position-absolute.bottom-50.end-50(data-bs-theme="light")
-    .p-3.bg-900.rounded-1.position-absolute.bottom-0.start-0(data-bs-theme="light")
-    .p-3.bg-900.rounded-1.position-absolute.bottom-0.end-0(data-bs-theme="light")
+    .light.p-3.bg-900.rounded-1.position-absolute.top-0.start-0
+    .light.p-3.bg-900.rounded-1.position-absolute.top-0.end-0
+    .light.p-3.bg-900.rounded-1.position-absolute.top-50.start-50
+    .light.p-3.bg-900.rounded-1.position-absolute.bottom-50.end-50
+    .light.p-3.bg-900.rounded-1.position-absolute.bottom-0.start-0
+    .light.p-3.bg-900.rounded-1.position-absolute.bottom-0.end-0
 
-  .position-relative(style="height: 100px; width: 100px" data-bs-theme="light")
+  .position-relative.light(style="height: 100px; width: 100px")
     .bg-900.rounded-1.text-white.d-flex.flex-center.position-absolute.all-0 .all-0
 
 mixin PositionCommonValuesDescription

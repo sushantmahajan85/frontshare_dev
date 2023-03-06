@@ -9,6 +9,21 @@
 .text-superscript {
   vertical-align: super;
 }
+.text-word-break {
+  word-break: break-word;
+}
+
+
+/*-----------------------------------------------
+|   Font family
+-----------------------------------------------*/
+// .text-serif { font-family: $font-family-serif; }
+.font-sans-serif {
+  font-family: var(--#{$prefix}font-sans-serif)
+}
+.font-base {
+  font-family: $font-family-base;
+}
 
 /*-----------------------------------------------
 |   Error Page
@@ -18,4 +33,11 @@
   @include media-breakpoint-up(sm) {
     font-size: 10rem;
   }
+}
+
+/*-----------------------------------------------
+|   Text alignment
+-----------------------------------------------*/
+.text-justify{
+  text-align: justify !important;
 }

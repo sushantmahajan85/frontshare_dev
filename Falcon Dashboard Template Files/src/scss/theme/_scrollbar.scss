@@ -10,6 +10,14 @@
   }
 }
 
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden !important;
+}
+
 .navbar-vibrant {
   .scrollbar {
     @include chrome-scrollbar(rgba($white, 0.4));
@@ -24,6 +32,13 @@
         overflow: initial !important;
       }
     }
+  }
+  .overflow-x-hidden {
+    overflow-x: hidden !important;
+  }
+  
+  .overflow-y-hidden {
+    overflow-y: hidden !important;
   }
 
   .navbar-vibrant {

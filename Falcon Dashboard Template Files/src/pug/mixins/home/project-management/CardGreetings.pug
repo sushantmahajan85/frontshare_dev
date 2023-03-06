@@ -1,10 +1,10 @@
 mixin CardGreetingsManagement
   .card&attributes(attributes)
     +Background({image: `${CWD}assets/img/icons/spot-illustrations/corner-3.png`, className: 'bg-card'})
-    .card-header.z-1
+    .card-header.z-index-1
       h5.text-primary Welcome to Falcon! 
       h6.text-600 Here are some quick links for you to start  
-    .card-body.z-1
+    .card-body.z-index-1
       .row.g-2.h-100.align-items-end
         -
           var greetingsItems = [
@@ -54,8 +54,8 @@ mixin CardTeamProgress
         span.fas.fa-chevron-right.ms-1.fs--2  
     .card-body
       p.fs--1.text-600 See team members' time worked, <br /> activity levels, and progress
-      .progress.mb-3.rounded-pill(style="height: 6px;" role='progressbar' aria-valuenow='43.72' aria-valuemin='0' aria-valuemax='100')
-        .progress-bar.bg-progress-gradient.rounded-pill(style='width: 75%')
+      .progress.mb-3.rounded-pill(style="height: 6px;")
+        .progress-bar.bg-progress-gradient.rounded-pill(role='progressbar' style='width: 75%' aria-valuenow='43.72' aria-valuemin='0' aria-valuemax='100')
       p.mb-0.text-primary 75% completed
       p.mb-0.fs--2.text-500 Jan 1st to 30th
 
@@ -67,7 +67,7 @@ mixin CardFalconRoadMapDiscussion
           p.mb-1.fs--2.text-500 Upcoming schedule
           h5.text-primary.fs-0 Falcon discussion
         .col-auto
-          .bg-primary-subtle.px-3.py-3.rounded-circle.text-center(style={width: '60px', height: '60px'})
+          .bg-soft-primary.px-3.py-3.rounded-circle.text-center(style={width: '60px', height: '60px'})
             h5.text-primary.mb-0.d-flex.flex-column.mt-n1
               span 09
               small.text-primary.fs--2.lh-1 MAR

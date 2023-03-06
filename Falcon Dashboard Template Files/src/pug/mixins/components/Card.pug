@@ -1,5 +1,5 @@
 mixin CardOverlayDemo(config)
-  .card.bg-dark.text-white.overflow-hidden(data-bs-theme="light")&attributes(config.attrs)
+  .card.bg-dark.text-white.overflow-hidden.light&attributes(config.attrs)
     .card-img-top
       img.img-fluid(src=`${CWD}assets/img/${config.img}`, alt='Card image')
     .card-img-overlay.d-flex.align-items-end
@@ -100,7 +100,7 @@ mixin CardStyle(variant)
         | Some quick example text to build on the card title and make up the bulk of the card's content.
 
 mixin CardStyleDemo
-  .row(data-bs-theme="light")
+  .row.light
     .col-sm-6.col-lg-4.mb-4
       +CardStyle('Primary').text-white.bg-primary
     .col-sm-6.col-lg-4.mb-4

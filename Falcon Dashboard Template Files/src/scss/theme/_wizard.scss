@@ -28,7 +28,7 @@
         color: #fff;
         border-color: var(--#{$prefix}primary);
       }
-      color: var(--#{$prefix}white) !important;
+      color: var(--#{$prefix}primary);
     }
     &.done {
       .nav-item-circle {

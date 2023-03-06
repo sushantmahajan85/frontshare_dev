@@ -42,7 +42,7 @@ append variables
 mixin CardWelcomeTicket
   .card.bg-light.shadow-none&attributes(attributes)
     +Background({image:`${CWD}assets/img/illustrations/ticket-bg.png`, className:"bg-card d-none d-sm-block"})
-    .card-header.d-flex.align-items-center.z-1.p-0
+    .card-header.d-flex.align-items-center.z-index-1.p-0
       img(src=`${CWD}assets/img/illustrations/ticket-welcome.png`, alt="" width='96')
       .ms-n3
         h6.mb-1.text-primary Welcome to
@@ -54,11 +54,11 @@ mixin CardTicketsStatus
   .card&attributes(attributes)
     .card-body
       .row.g-0
-        .col-md-6.border-200.border-bottom.border-end-md.pb-x1.pe-md-x1
+        .col-md-6.border-200.border-md-200.border-bottom.border-md-end.pb-x1.pe-md-x1
             +StatusItem(statusData[0])
         .col-md-6.ps-md-x1.pb-x1.pt-x1.pt-md-0.border-bottom.border-200
           +StatusItem(statusData[1])
-        .col-md-6.border-200.border-bottom.border-bottom-md-0.border-end-md.pt-x1.pe-md-x1.pb-x1.pb-md-0
+        .col-md-6.border-md-200.border-200.border-bottom.border-md-bottom-0.border-md-end.pt-x1.pe-md-x1.pb-x1.pb-md-0
           +StatusItem(statusData[2])
         .col-md-6.ps-md-x1.pt-x1
           +StatusItem(statusData[3])

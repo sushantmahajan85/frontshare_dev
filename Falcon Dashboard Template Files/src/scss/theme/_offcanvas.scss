@@ -12,7 +12,7 @@
     }
     &.offcanvas-contact-info{
       @include media-breakpoint-down(xl){
-        html[data-bs-theme="dark"] &{
+        .dark &{
           background-color: $card-bg-dark;
         }
       }

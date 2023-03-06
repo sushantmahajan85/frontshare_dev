@@ -110,16 +110,16 @@ var getColors = function getColors(dom) {
   };
 };
 
-var getSubtleColors = function getSubtleColors(dom) {
+var getSoftColors = function getSoftColors(dom) {
   return {
-    primary: getColor('primary-bg-subtle', dom),
-    secondary: getColor('secondary-bg-subtle', dom),
-    success: getColor('success-bg-subtle', dom),
-    info: getColor('info-bg-subtle', dom),
-    warning: getColor('warning-bg-subtle', dom),
-    danger: getColor('danger-bg-subtle', dom),
-    light: getColor('light-bg-subtle', dom),
-    dark: getColor('dark-bg-subtle', dom)
+    primary: getColor('soft-primary', dom),
+    secondary: getColor('soft-secondary', dom),
+    success: getColor('soft-success', dom),
+    info: getColor('soft-info', dom),
+    warning: getColor('soft-warning', dom),
+    danger: getColor('soft-danger', dom),
+    light: getColor('soft-light', dom),
+    dark: getColor('soft-dark', dom)
   };
 };
 
@@ -303,7 +303,7 @@ var utils = {
   rgbaColor: rgbaColor,
   getColor: getColor,
   getColors: getColors,
-  getSubtleColors: getSubtleColors,
+  getSoftColors: getSoftColors,
   getGrays: getGrays,
   getOffset: getOffset,
   isScrolledIntoView: isScrolledIntoView,
@@ -4210,39 +4210,39 @@ var swiperInit = function swiperInit() {
 var initialDomSetup = function initialDomSetup(element) {
   if (!element) return;
   var dataUrlDom = element.querySelector('[data-theme-control = "navbarPosition"]');
-  var hasDataUrl = dataUrlDom ? getData(dataUrlDom, "page-url") : null;
-  element.querySelectorAll("[data-theme-control]").forEach(function (el) {
-    var inputDataAttributeValue = getData(el, "theme-control");
+  var hasDataUrl = dataUrlDom ? getData(dataUrlDom, 'page-url') : null;
+  element.querySelectorAll('[data-theme-control]').forEach(function (el) {
+    var inputDataAttributeValue = getData(el, 'theme-control');
     var localStorageValue = getItemFromStore(inputDataAttributeValue);
 
-    if (inputDataAttributeValue === "navbarStyle" && !hasDataUrl && (getItemFromStore("navbarPosition") === "top" || getItemFromStore("navbarPosition") === "double-top")) {
-      el.setAttribute("disabled", true);
+    if (inputDataAttributeValue === 'navbarStyle' && !hasDataUrl && (getItemFromStore('navbarPosition') === 'top' || getItemFromStore('navbarPosition') === 'double-top')) {
+      el.setAttribute('disabled', true);
     }
 
-    if (el.type === "select-one" && inputDataAttributeValue === "navbarPosition") {
+    if (el.type === 'select-one' && inputDataAttributeValue === 'navbarPosition') {
       el.value = localStorageValue;
     }
 
-    if (el.type === "checkbox") {
-      if (inputDataAttributeValue === "theme") {
-        localStorageValue === "dark" && el.setAttribute("checked", true);
+    if (el.type === 'checkbox') {
+      if (inputDataAttributeValue === 'theme') {
+        localStorageValue === 'dark' && el.setAttribute('checked', true);
       } else {
-        localStorageValue && el.setAttribute("checked", true);
+        localStorageValue && el.setAttribute('checked', true);
       }
     } else {
       var isChecked = localStorageValue === el.value;
-      isChecked && el.setAttribute("checked", true);
+      isChecked && el.setAttribute('checked', true);
     }
   });
 };
 
 var changeTheme = function changeTheme(element) {
   element.querySelectorAll('[data-theme-control = "theme"]').forEach(function (el) {
-    var inputDataAttributeValue = getData(el, "theme-control");
+    var inputDataAttributeValue = getData(el, 'theme-control');
     var localStorageValue = getItemFromStore(inputDataAttributeValue);
 
-    if (el.type === "checkbox") {
-      localStorageValue === "dark" ? el.checked = true : el.checked = false;
+    if (el.type === 'checkbox') {
+      localStorageValue === 'dark' ? el.checked = true : el.checked = false;
     } else {
       localStorageValue === el.value ? el.checked = true : el.checked = false;
     }
@@ -4251,27 +4251,27 @@ var changeTheme = function changeTheme(element) {
 
 var themeControl = function themeControl() {
   var themeController = new DomNode(document.body);
-  var navbarVertical = document.querySelector(".navbar-vertical");
+  var navbarVertical = document.querySelector('.navbar-vertical');
   initialDomSetup(themeController.node);
-  themeController.on("click", function (e) {
+  themeController.on('click', function (e) {
     var target = new DomNode(e.target);
 
-    if (target.data("theme-control")) {
-      var control = target.data("theme-control");
-      var value = e.target[e.target.type === "radio" ? "value" : "checked"];
+    if (target.data('theme-control')) {
+      var control = target.data('theme-control');
+      var value = e.target[e.target.type === 'radio' ? 'value' : 'checked'];
 
-      if (control === "theme") {
-        typeof value === "boolean" && (value = value ? "dark" : "light");
+      if (control === 'theme') {
+        typeof value === 'boolean' && (value = value ? 'dark' : 'light');
       }
 
-      if (control !== "navbarPosition") {
+      if (control !== 'navbarPosition') {
         CONFIG.hasOwnProperty(control) && setItemToStore(control, value);
 
         switch (control) {
-          case "theme":
+          case 'theme':
             {
-              document.documentElement.setAttribute("data-bs-theme", value);
-              var clickControl = new CustomEvent("clickControl", {
+              document.documentElement.classList[value === 'dark' ? 'add' : 'remove']('dark');
+              var clickControl = new CustomEvent('clickControl', {
                 detail: {
                   control: control,
                   value: value
@@ -4282,20 +4282,20 @@ var themeControl = function themeControl() {
               break;
             }
 
-          case "navbarStyle":
+          case 'navbarStyle':
             {
-              navbarVertical.classList.remove("navbar-card");
-              navbarVertical.classList.remove("navbar-inverted");
-              navbarVertical.classList.remove("navbar-vibrant");
+              navbarVertical.classList.remove('navbar-card');
+              navbarVertical.classList.remove('navbar-inverted');
+              navbarVertical.classList.remove('navbar-vibrant');
 
-              if (value !== "transparent") {
+              if (value !== 'transparent') {
                 navbarVertical.classList.add("navbar-".concat(value));
               }
 
               break;
             }
 
-          case "reset":
+          case 'reset':
             {
               Object.keys(CONFIG).forEach(function (key) {
                 localStorage.setItem(key, CONFIG[key]);
@@ -4311,13 +4311,13 @@ var themeControl = function themeControl() {
     }
   }); // control navbar position
 
-  themeController.on("change", function (e) {
+  themeController.on('change', function (e) {
     var target = new DomNode(e.target);
 
-    if (target.data("theme-control") === "navbarPosition") {
-      CONFIG.hasOwnProperty("navbarPosition") && setItemToStore("navbarPosition", e.target.value);
-      var pageUrl = getData(target.node.selectedOptions[0], "page-url");
-      !!pageUrl ? window.location.replace(pageUrl) : window.location.replace(window.location.href.split("#")[0]);
+    if (target.data('theme-control') === 'navbarPosition') {
+      CONFIG.hasOwnProperty('navbarPosition') && setItemToStore('navbarPosition', e.target.value);
+      var pageUrl = getData(target.node.selectedOptions[0], 'page-url');
+      !!pageUrl ? window.location.replace(pageUrl) : window.location.replace(window.location.href.split('#')[0]);
     }
   });
 };
@@ -4698,47 +4698,47 @@ var events = [{
   start: "".concat(currentYear, "-").concat(currentMonth, "-01 10:00:00"),
   end: "".concat(currentYear, "-").concat(currentMonth, "-03 16:00:00"),
   description: "Boston Harbor Now in partnership with the Friends of Christopher Columbus Park, the Wharf District Council and the City of Boston is proud to announce the New Year's Eve Midnight Harbor Fireworks! This beloved nearly 40-year old tradition is made possible by the generous support of local waterfront organizations and businesses and the support of the City of Boston and the Office of Mayor Marty Walsh.",
-  className: 'bg-success-subtle',
+  className: 'bg-soft-success',
   location: 'Boston Harborwalk, Christopher Columbus Park, <br /> Boston, MA 02109, United States',
   organizer: 'Boston Harbor Now'
 }, {
   title: 'Crain\'s New York Business ',
   start: "".concat(currentYear, "-").concat(currentMonth, "-11"),
   description: "Crain's 2020 Hall of Fame. Sponsored Content By Crain's Content Studio. Crain's Content Studio Presents: New Jersey: Perfect for Business. Crain's Business Forum: Letitia James, New York State Attorney General. Crain's NYC Summit: Examining racial disparities during the pandemic",
-  className: 'bg-primary-subtle'
+  className: 'bg-soft-primary'
 }, {
   title: 'Conference',
   start: "".concat(currentYear, "-").concat(currentMonth, "-").concat(currentDay),
   description: 'The Milken Institute Global Conference gathered the best minds in the world to tackle some of its most stubborn challenges. It was a unique experience in which individuals with the power to enact change connected with experts who are reinventing health, technology, philanthropy, industry, and media.',
-  className: 'bg-success-subtle',
+  className: 'bg-soft-success',
   allDay: true,
   schedules: [{
     title: 'Reporting',
     start: "".concat(currentYear, "-").concat(currentMonth, "-").concat(currentDay, " 11:00:00"),
     description: 'Time to start the conference and will briefly describe all information about the event.  ',
-    className: 'event-bg-success-subtle'
+    className: 'event-bg-soft-success'
   }, {
     title: 'Lunch',
     start: "".concat(currentYear, "-").concat(currentMonth, "-").concat(currentDay, " 14:00:00"),
     description: 'Lunch facility for all the attendance in the conference.',
-    className: 'event-bg-success-subtle'
+    className: 'event-bg-soft-success'
   }, {
     title: 'Contest',
     start: "".concat(currentYear, "-").concat(currentMonth, "-").concat(currentDay, " 16:00:00"),
     description: 'The starting of the programming contest',
-    className: 'event-bg-success-subtle'
+    className: 'event-bg-soft-success'
   }, {
     title: 'Dinner',
     start: "".concat(currentYear, "-").concat(currentMonth, "-").concat(currentDay, " 22:00:00"),
     description: 'Dinner facility for all the attendance in the conference',
-    className: 'event-bg-success-subtle'
+    className: 'event-bg-soft-success'
   }]
 }, {
   title: "ICT Expo ".concat(currentYear, " - Product Release"),
   start: "".concat(currentYear, "-").concat(currentMonth, "-16 10:00:00"),
   description: "ICT Expo ".concat(currentYear, " is the largest private-sector exposition aimed at showcasing IT and ITES products and services in Switzerland."),
   end: "".concat(currentYear, "-").concat(currentMonth, "-18 16:00:00"),
-  className: 'bg-warning-subtle'
+  className: 'bg-soft-warning'
 }, {
   title: 'Meeting',
   start: "".concat(currentYear, "-").concat(currentMonth, "-07 10:00:00"),
@@ -4751,24 +4751,24 @@ var events = [{
   title: 'Event With Url',
   start: "".concat(currentYear, "-").concat(currentMonth, "-23"),
   description: 'Sample example of a event with url. Click the event, will redirect to the given link.',
-  className: 'bg-success-subtle',
+  className: 'bg-soft-success',
   url: 'http://google.com'
 }, {
   title: 'Competition',
   start: "".concat(currentYear, "-").concat(currentMonth, "-26"),
   description: 'The Future of Zambia – Top 30 Under 30 is an annual award, ranking scheme, and recognition platform for young Zambian achievers under the age of 30, who are building brands, creating jobs, changing the game, and transforming the country.',
-  className: 'bg-danger-subtle'
+  className: 'bg-soft-danger'
 }, {
   title: 'Birthday Party',
   start: "".concat(currentYear, "-").concat(nextMonth, "-05"),
   description: 'Will celebrate birthday party with my friends and family',
-  className: 'bg-primary-subtle'
+  className: 'bg-soft-primary'
 }, {
   title: 'Click for Google',
   url: 'http://google.com/',
   start: "".concat(currentYear, "-").concat(prevMonth, "-10"),
   description: 'Applications are open for the New Media Writing Prize 2020. The New Media Writing Prize (NMWP) showcases exciting and inventive stories and poetry that integrate a variety of formats, platforms, and digital media.',
-  className: 'bg-primary-subtle'
+  className: 'bg-soft-primary'
 }];
 /*-----------------------------------------------
 |   Calendar
@@ -4908,7 +4908,7 @@ var appCalendarInit = function appCalendarInit() {
         start: startDate.value,
         end: endDate.value ? endDate.value : null,
         allDay: allDay.checked,
-        className: allDay.checked && label.value ? "bg-".concat(label.value, "-subtle") : '',
+        className: allDay.checked && label.value ? "bg-soft-".concat(label.value) : '',
         description: description.value
       });
       e.target.reset();
@@ -5202,17 +5202,17 @@ var chartBubble = function chartBubble() {
         datasets: [{
           label: 'Dataset 1',
           data: getBubbleDataset(5, 5, 15, 0, 100),
-          backgroundColor: utils.getSubtleColors()['primary'],
+          backgroundColor: utils.getSoftColors()['primary'],
           hoverBackgroundColor: utils.getColors()['primary']
         }, {
           label: 'Dataset 2',
           data: getBubbleDataset(5, 5, 15, 0, 100),
-          backgroundColor: utils.getSubtleColors()['success'],
+          backgroundColor: utils.getSoftColors()['success'],
           hoverBackgroundColor: utils.getColors()['success']
         }, {
           label: 'Dataset 3',
           data: getBubbleDataset(5, 5, 15, 0, 100),
-          backgroundColor: utils.getSubtleColors()['danger'],
+          backgroundColor: utils.getSoftColors()['danger'],
           hoverBackgroundColor: utils.getColors()['danger']
         }]
       },
@@ -5266,13 +5266,13 @@ var chartCombo = function chartCombo() {
         }, {
           type: 'bar',
           label: 'Dataset 2',
-          backgroundColor: utils.getSubtleColors().danger,
+          backgroundColor: utils.getSoftColors().danger,
           data: [4, -80, 90, -22, 70, 35, -50],
           borderWidth: 1
         }, {
           type: 'bar',
           label: 'Dataset 3',
-          backgroundColor: utils.getSubtleColors().primary,
+          backgroundColor: utils.getSoftColors().primary,
           data: [-30, 30, -18, 100, -45, -25, -50],
           borderWidth: 1
         }]
@@ -7138,13 +7138,13 @@ var browsedCoursesInit = function browsedCoursesInit() {
           data: [600, 832, 901, 934, 1290, 1330, 1320, 1250, 1190, 1345, 1009, 1320, 600, 832, 901, 934, 1290, 1330, 1320, 1250, 1190, 1345, 1009, 1320],
           itemStyle: {
             emphasis: {
-              color: utils.getSubtleColors().info,
+              color: utils.getSoftColors().info,
               barBorderRadius: [5, 5, 0, 0],
               borderWidth: 1,
               borderColor: utils.getGrays()[300]
             },
             normal: {
-              color: utils.getSubtleColors().primary,
+              color: utils.getSoftColors().primary,
               barBorderRadius: [5, 5, 0, 0],
               borderWidth: 1,
               borderColor: utils.getGrays()[300]
@@ -8061,7 +8061,7 @@ var dealStorageFunnelInit = function dealStorageFunnelInit() {
               fontFamily: 'poppins'
             },
             borderRadius: 5,
-            backgroundColor: utils.getSubtleColors().primary,
+            backgroundColor: utils.getSoftColors().primary,
             padding: [6, 16, 6, 16],
             width: 115
           },
@@ -10183,8 +10183,8 @@ var reportForThisWeekInit = function reportForThisWeekInit() {
 
   if ($echartBarReportForThisWeek) {
     var selectChart = utils.getData($echartBarReportForThisWeek, 'chart');
-    var legendThisWeek = document.getElementById(selectChart === null || selectChart === void 0 ? void 0 : selectChart.option1);
-    var legendLastWeek = document.getElementById(selectChart === null || selectChart === void 0 ? void 0 : selectChart.option2);
+    var legendLastWeek = document.getElementById(selectChart === null || selectChart === void 0 ? void 0 : selectChart.option1);
+    var legendThisWeek = document.getElementById(selectChart === null || selectChart === void 0 ? void 0 : selectChart.option2);
     var data = [['product', 'This Week', 'Last Week'], ['Sun', 43, 85], ['Mon', 83, 73], ['Tue', 86, 62], ['Wed', 72, 53], ['Thu', 80, 50], ['Fri', 50, 70], ['Sat', 80, 90]];
     var userOptions = utils.getData($echartBarReportForThisWeek, 'options');
     var chart = window.echarts.init($echartBarReportForThisWeek);

@@ -18,16 +18,16 @@ append content
     each kanbanItem, index in kanbanItems
       +KanbanColumn(kanbanItem, index)
     .kanban-column
-      .collapse.bg-100.p-x1.rounded-3.transition-none#addListForm
+      .collapse.bg-100.p-x1.rounded-lg.transition-none#addListForm
         form
           textarea.form-control.mb-2(data-input="add-list" rows=2 placeholder="Enter list title...")
           .row.gx-2
             .col
               button.btn.btn-primary.btn-sm.d-block.w-100(type="button") Add
             .col
-              button.btn.btn-outline-secondary.btn-sm.d-block.w-100.border.border-400(type="button" data-dismiss="collapse") Cancel
+              button.btn.btn-outline-secondary.btn-sm.d-block.w-100.border-400(type="button" data-dismiss="collapse") Cancel
 
-      button.btn.d-block.w-100.btn-secondary.bg-400.border.border-400(data-bs-toggle="collapse" data-bs-target='#addListForm' aria-expanded="false" aria-controls="addListForm")
+      button.btn.d-block.w-100.btn-secondary.bg-400.border-400(data-bs-toggle="collapse" data-bs-target='#addListForm' aria-expanded="false" aria-controls="addListForm")
         span.fas.fa-plus.me-1 
         | Add another list
 

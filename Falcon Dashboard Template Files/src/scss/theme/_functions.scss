@@ -74,6 +74,10 @@
   @return rgb(var(--#{$prefix}#{$identifier}-rgb))
 };
 
+@function bg-soft-css-var($identifier, $target){
+  @return var(--#{$prefix}#{$target}-#{$identifier})
+};
+
 // stylelint-disable scss/dollar-variable-pattern
 // @function grays-rgba-css-var($identifier, $target) {
 //     @return rgba(var(--#{$prefix}gray-#{$identifier}-rgb), var(--#{$prefix}bg-opacity));

@@ -4,11 +4,11 @@ mixin ModalExampleDemo
   #error-modal.modal.fade(tabindex='-1' role='dialog' aria-hidden='true')
     .modal-dialog.modal-dialog-centered(role="document" style="max-width: 500px")
       .modal-content.position-relative
-        .position-absolute.top-0.end-0.mt-2.me-2.z-1
+        .position-absolute.top-0.end-0.mt-2.me-2.z-index-1
           = '\n'
           button.btn-close.btn.btn-sm.btn-circle.d-flex.flex-center.transition-base(data-bs-dismiss='modal' aria-label='Close')
         .modal-body.p-0
-          .rounded-top-3.py-3.ps-4.pe-6.bg-light
+          .rounded-top-lg.py-3.ps-4.pe-6.bg-light
             h4#modalExampleDemoLabel.mb-1 Add a new illustration 
           .p-4.pb-0  
             form
@@ -34,10 +34,10 @@ mixin StaticBackdrop
   #staticBackdrop.modal.fade(data-bs-keyboard="false" data-bs-backdrop="static" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" )
     .modal-dialog.modal-lg.mt-6(role='document')
       .modal-content.border-0
-        .position-absolute.top-0.end-0.mt-3.me-3.z-1
+        .position-absolute.top-0.end-0.mt-3.me-3.z-index-1
           button.btn-close.btn.btn-sm.btn-circle.d-flex.flex-center.transition-base(data-bs-dismiss='modal' aria-label='Close')
         .modal-body.p-0
-          .bg-light.rounded-top-3.py-3.ps-4.pe-6
+          .bg-light.rounded-top-lg.py-3.ps-4.pe-6
             h4#staticBackdropLabel.mb-1 Add a new illustration to the landing page
             p.fs--2.mb-0
               | Added by 
@@ -52,9 +52,9 @@ mixin StaticBackdrop
                   .flex-1
                     h5.mb-2.fs-0 Labels
                     .d-flex
-                      span.badge.me-1.py-2.badge-subtle-success New
-                      span.badge.me-1.py-2.badge-subtle-primary Goal
-                      span.badge.me-1.py-2.badge-subtle-info Enhancement
+                      span.badge.me-1.py-2.badge-soft-success New
+                      span.badge.me-1.py-2.badge-soft-primary Goal
+                      span.badge.me-1.py-2.badge-soft-info Enhancement
                       .dropdown.dropend
                         button.btn.btn-sm.btn-secondary.px-2.fsp-75.bg-400.border-400.dropdown-toggle.dropdown-caret-none(data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
                           span.fas.fa-plus
@@ -62,9 +62,9 @@ mixin StaticBackdrop
                           h6.dropdown-header.py-0.px-3.mb-0 Select Label
                           .dropdown-divider
                           .px-3
-                            button.badge-subtle-danger.dropdown-item.rounded-1.mb-2(type='button') New
-                            button.badge-subtle-primary.dropdown-item.rounded-1.mb-2(type='button') Goal
-                            button.badge-subtle-info.dropdown-item.rounded-1.mb-2(type='button') Enhancement
+                            button.badge-soft-danger.dropdown-item.rounded-1.mb-2(type='button') New
+                            button.badge-soft-primary.dropdown-item.rounded-1.mb-2(type='button') Goal
+                            button.badge-soft-info.dropdown-item.rounded-1.mb-2(type='button') Enhancement
                           .dropdown-divider
                           .px-3
                             button.btn.btn-sm.d-block.w-100.btn-outline-secondary.border-400 Create Label
@@ -75,7 +75,7 @@ mixin StaticBackdrop
                     i.fa-inverse.fa-stack-1x.text-primary.fas.fa-align-left(data-fa-transform='shrink-2')
                   .flex-1
                     h5.mb-2.fs-0 Description
-                    p.text-break.fs--1
+                    p.text-word-break.fs--1
                       | The illustration must match to the contrast of the theme. The illustraion must described the concept of the design. To know more about the theme visit the page. 
               .col-lg-3      
                 h6.mt-5.mt-lg-0 Add To Card
@@ -152,10 +152,10 @@ mixin TooltipsPopovers
   #tooltippopovers.modal.fade(tabindex='-1' aria-labelledby='tooltippopoversLabel' aria-hidden='true')
     .modal-dialog.mt-6(role='document')
       .modal-content.border-0
-        .position-absolute.top-0.end-0.mt-2.me-2.z-1
+        .position-absolute.top-0.end-0.mt-2.me-2.z-index-1
           button.btn-close.btn.btn-sm.btn-circle.d-flex.flex-center.transition-base(data-bs-dismiss='modal' aria-label='Close')
         .modal-body.p-0
-          .bg-light.rounded-top-3.py-3.ps-4.pe-6
+          .bg-light.rounded-top-lg.py-3.ps-4.pe-6
             h4#tooltippopoversLabel.mb-1 Tooltips and Pophover
           .p-4.pb-0
             .row

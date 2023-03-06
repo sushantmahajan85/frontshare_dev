@@ -13,9 +13,9 @@ const reportForThisWeekInit = () => {
 
   if ($echartBarReportForThisWeek) {
     const selectChart = utils.getData($echartBarReportForThisWeek, "chart");
-    const legendThisWeek = document.getElementById(selectChart?.option1);
-    const legendLastWeek = document.getElementById(selectChart?.option2);
-
+    const legendLastWeek = document.getElementById(selectChart?.option1);
+    const legendThisWeek = document.getElementById(selectChart?.option2);
+  
     const data = [
       ["product", "This Week", "Last Week"],
       ["Sun", 43, 85],
@@ -113,23 +113,21 @@ const reportForThisWeekInit = () => {
       grid: { right: "0", left: "40px", bottom: "10%", top: "15%" },
     });
 
-    legendLastWeek &&
-      legendLastWeek.addEventListener("click", () => {
-        legendLastWeek.classList.toggle("opacity-50");
-        chart.dispatchAction({
-          type: "legendToggleSelect",
-          name: "Last Week",
-        });
+    legendLastWeek && legendLastWeek.addEventListener("click", () => {
+      legendLastWeek.classList.toggle("opacity-50");
+      chart.dispatchAction({
+        type: "legendToggleSelect",
+        name: "Last Week",
       });
+    });
 
-    legendThisWeek &&
-      legendThisWeek.addEventListener("click", () => {
-        legendThisWeek.classList.toggle("opacity-50");
-        chart.dispatchAction({
-          type: "legendToggleSelect",
-          name: "This Week",
-        });
+    legendThisWeek && legendThisWeek.addEventListener("click", () => {
+      legendThisWeek.classList.toggle("opacity-50");
+      chart.dispatchAction({
+        type: "legendToggleSelect",
+        name: "This Week",
       });
+    });
 
     echartSetOption(chart, userOptions, getDefaultOptions);
   }

@@ -322,7 +322,7 @@ mixin WeeklyGoalsStat(goal, index)
       h6.fs--2.text-600.mb-1 #{goal.title}
       .d-flex.align-items-center
         h5.fs-2.text-700.mb-0.me-2(data-countup!={endValue: goal.value, suffix:'%'}) 0
-        span.badge.rounded-pill.fs--2.fw-medium(class=`badge-subtle-${goal.badge.color}`)
+        span.badge.rounded-pill.fs--2.fw-medium(class=`badge-soft-${goal.badge.color}`)
           span(class=`${goal.badge.icon}`)
           |  #{goal.badge.text}
 

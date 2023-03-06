@@ -139,13 +139,13 @@ const browsedCoursesInit = () => {
           ],
           itemStyle: {
             emphasis: {
-              color: utils.getSubtleColors().info,
+              color: utils.getSoftColors().info,
               barBorderRadius: [5, 5, 0, 0],
               borderWidth: 1,
               borderColor: utils.getGrays()[300],
             },
             normal: {
-              color: utils.getSubtleColors().primary,
+              color: utils.getSoftColors().primary,
               barBorderRadius: [5, 5, 0, 0],
               borderWidth: 1,
               borderColor: utils.getGrays()[300],

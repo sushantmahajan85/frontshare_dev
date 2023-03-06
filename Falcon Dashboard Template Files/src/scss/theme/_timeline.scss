@@ -94,7 +94,7 @@
       @include media-breakpoint-up(lg){
         &::before{
           background: var(--#{$prefix}white);
-          html[data-bs-theme="dark"] & {
+          .dark & {
             background-color: var(--#{$prefix}gray-100) !important;
           }
         }

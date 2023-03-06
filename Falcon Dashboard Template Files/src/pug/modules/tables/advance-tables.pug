@@ -328,40 +328,40 @@ block append content
     .card-body.bg-light
       p Integrate List in #{name} by following these easy steps:
       ul
-        li Set unique ID and add 
-          code data-list 
-          | attribute to the wrapper element  and list your column in 
-          code valueNames 
+        li Set unique ID and add
+          code data-list
+          | attribute to the wrapper element  and list your column in
+          code valueNames
           | property.
           +ComponentCardLib
             #tableExample(data-list!={ valueNames: ["name", "email", "age"]})
               // Your list content will go here
-        li To enable sorting in your column, add 
-          code data-sort 
+        li To enable sorting in your column, add
+          code data-sort
           | attribute and assign column name to the attribute.
 
           +ComponentCardLib
             th.sort(data-sort="name") Customer
-        li Add 
-          code list 
+        li Add
+          code list
           | class to the content wrapper element.
 
           +ComponentCardLib
             tbody.list
               // Your value will go here
 
-        li Then wrap your value with column name as a class. For example, if your column name is 
-          code name 
+        li Then wrap your value with column name as a class. For example, if your column name is
+          code name
           | then the value will be look like this:
           +ComponentCardLib
             td.name John Doe
-        li To add pagination 
-          code .pagination 
+        li To add pagination add
+          code .pagination
           | class inside your wrapper element
-        li To enable  button pagination add 
-          code data-list-pagination='prev' 
-          | and 
-          code data-list-pagination='next' 
+        li To enable  button pagination add
+          code data-list-pagination='prev'
+          | and
+          code data-list-pagination='next'
           | to the "Prev" and "Next" buttons respectively.
         li To enable search feature add 
           code search 
@@ -369,7 +369,7 @@ block append content
           code input 
           | tag.
         li To see the list info, add 
-          code data-list-info 
+          code data-list-info
           |  attribute to a DOM element inside your wrapper element.
 
   .card.mb-3

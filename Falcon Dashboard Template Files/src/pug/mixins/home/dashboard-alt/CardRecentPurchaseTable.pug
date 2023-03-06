@@ -108,7 +108,7 @@ append variables
     ]
 
 mixin Badge(badge)
-  span.badge.badge.rounded-pill(class=`badge-subtle-${badge.type}`)=badge.content
+  span.badge.badge.rounded-pill(class=`badge-soft-${badge.type}`)=badge.content
     span.ms-1(class=badge.icon data-fa-transform="shrink-2")
 
 mixin Dropdown(id)
@@ -168,7 +168,7 @@ mixin RecentPurchaseTable
           +RecentPurchaseTableItem(purchase, index)
 
 mixin CardRecentPurchaseTable(page=8, viewAllBtn=true)
-  .card.z-1#recentPurchaseTable&attributes(attributes)(data-list!={
+  .card.z-index-1#recentPurchaseTable&attributes(attributes)(data-list!={
     valueNames: ["name", "email", "product", "payment", "amount"],
     page: page,
     pagination: true

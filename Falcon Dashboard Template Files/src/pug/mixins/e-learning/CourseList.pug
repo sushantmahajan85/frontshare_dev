@@ -12,9 +12,9 @@ mixin CourseListItem(config)
               src: `${CWD}assets/${config.thumbnail.video}`,
               type: 'video'
             }, 'attachment-bg')
-              img(src=`${CWD}assets/img/${config.thumbnail.image}`, alt="").h-100.w-100.object-fit-cover
+              img(src=`${CWD}assets/img/${config.thumbnail.image}`, alt="").h-100.w-100.fit-cover
             .hoverbox-content.flex-center.pe-none.bg-holder.overlay.overlay-2
-              img.z-1(src=`${CWD}assets/img/icons/play.svg`, width=60 alt="")
+              img.z-index-1(src=`${CWD}assets/img/icons/play.svg`, width=60 alt="")
 
         .col-md-8.col-lg-9.p-x1
           .row.g-0.h-100

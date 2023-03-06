@@ -43,7 +43,7 @@ mixin CardMostLeads
               p.fs--1.mb-0.text-400.font-sans-serif.fw-medium Total
               p.fs-3.mb-0.font-sans-serif.fw-medium.mt-n2 15.6k
         .col-xxl-12.col-md-7
-          hr.mx-nx1.mb-0.d-md-none.d-xxl-block
+          hr.mx-ncard.mb-0.d-md-none.d-xxl-block
           each item,index in mostLeadActivities
             +CrmLeadItem(item, index)
 
@@ -118,7 +118,7 @@ mixin CardLeadConversion
       h6.mb-0 Lead Conversion
       +DashboardDropdown(`crm-lead-conversion`)  
     .card-body.pt-0
-      .d-flex.bg-100.py-2.mb-3.justify-content-center.mx-nx1.fs--1.border-bottom.border-200
+      .d-flex.bg-100.py-2.mb-3.justify-content-center.mx-ncard.fs--1.border-bottom.border-200
         p.text-600.mb-0.border-end.border-200.px-x1.d-flex.align-items-center Current Rete:   
           span.fs-sm-1.font-sans-serif.ms-2.text-700  4.5%
           span.fas.fa-caret-up.ms-2.ms-xxl-3.fs--1.text-success

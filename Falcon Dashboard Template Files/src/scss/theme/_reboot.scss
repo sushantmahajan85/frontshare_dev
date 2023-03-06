@@ -12,7 +12,9 @@
 }
 
 [id]{
-  scroll-margin-top: calc($top-nav-height + 1.5rem);
+  @media (min-height: $top-nav-height) {
+    scroll-margin-top: $top-nav-height + 1.5; 
+  }
 }
 
 body {
@@ -66,10 +68,8 @@ strong {
 }
 
 label {
-  font-size: map_get($font-sizes, "-1");
-  font-weight: $form-label-font-weight;
-  margin-bottom: $form-label-margin-bottom;
-  letter-spacing: 0.02em;
+  font-weight: $font-weight-medium !important;
+  margin-bottom: map-get($spacers, 2);
 }
 
 pre,

@@ -76,8 +76,8 @@ block append content
       h6.fs-0 Modify  Dark colors using CSS
       p You can find all the CSS variables used to create the dark mode in 
         code /public/assets/css/theme.css
-        |  file. Look for 
-        code :root[data-bs-theme=dark]
+        |  file. Look for the class 
+        code :root.dark
         |  and you will see all the available variables. If you want to override a variable, copy that variable to your 
         code /public/assets/css/user.css
         |  file and update it as you see fit.
@@ -86,8 +86,7 @@ block append content
           /*-----------------------------------------------
           |   Theme Styles
           -----------------------------------------------*/
-          :root,
-          [data-bs-theme=light] {
+          :root, :root.light, :root .light {
             --falcon-gray-100: #f9fafd;
             --falcon-gray-100-rgb: 249, 250, 253;
 
@@ -98,7 +97,7 @@ block append content
             --falcon-gray-300-rgb: 237, 242, 249;
           }
 
-          [data-bs-theme=dark] {
+          .dark {
             --falcon-gray-100: #0b1727;
             --falcon-gray-100: 11, 23, 39;
 
@@ -114,24 +113,24 @@ block append content
 
     .card-body.bg-light
       h6.fs-0 You can keep a style constant regardless of current (light or dark) mode
-      p If you want a component to retain it’s color (light or dark) as it is regardless of the current mode, you can use the following attributes -
+      p If you want a component to retain it’s color (light or dark) as it is regardless of the current mode, you can use the following classes -
       p 
-        code data-bs-theme="light"
+        code .light
         |  - It will keep the color light even if the current mode is dark
       p 
-        code data-bs-theme="dark"
+        code .dark
         |  - It will keep the color dark even if the current mode is light
       p The following two examples illustrate the color persistency -
       .row.gx-3
         .col-lg-6
           +ComponentCard
-            .card.bg-100(data-bs-theme="light")
+            .card.bg-100.light
               .card-body 
                 p.mb-0.text-700
                   b This element will retain it's color if you switch between light and dark mode.
         .col-lg-6.mt-3.mt-lg-0
           +ComponentCard
-            .card.bg-100(data-bs-theme="dark")
+            .card.bg-100.dark
               .card-body 
                 p.mb-0.text-700
                   b This element will retain it's color if you switch between light and dark mode.

@@ -206,7 +206,7 @@
 }
 
 .echart-closed-vs-goal {
-  min-height: 15rem;
+  min-height: 15re;
 
   @include media-breakpoint-up(xxl) {
     min-height: 14rem !important;
@@ -227,7 +227,8 @@
 }
 
 .echart-unresolved-tickets {
-  min-height: 21rem;
+  min-height: 20rem;
+  width: 100%;
 }
 
 .echart-number-of-tickets {

@@ -23,14 +23,14 @@ const chartCombo = () => {
         {
           type: 'bar',
           label: 'Dataset 2',
-          backgroundColor: utils.getSubtleColors()['danger'],
+          backgroundColor: utils.getSoftColors()['danger'],
           data: [4, -80, 90, -22, 70, 35, -50],
           borderWidth: 1
         },
         {
           type: 'bar',
           label: 'Dataset 3',
-          backgroundColor: utils.getSubtleColors()['primary'],
+          backgroundColor: utils.getSoftColors()['primary'],
           data: [-30, 30, -18, 100, -45, -25, -50],
           borderWidth: 1
         }

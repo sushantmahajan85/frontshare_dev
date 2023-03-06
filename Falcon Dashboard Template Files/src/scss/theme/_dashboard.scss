@@ -28,7 +28,7 @@
 .greetings-item {
   background-color: var(--#{$prefix}white) !important;
 
-  html[data-bs-theme="dark"] & {
+  .dark & {
     background-color: var(--#{$prefix}card-bg) !important;
   }
 }

@@ -1,6 +1,7 @@
 /* prettier-ignore */
 @use 'sass:math';
 @use "sass:string";
+@import 'colors';
 $prefix: 'falcon-';
 $spacer-x1: 1.25rem;
 
@@ -47,13 +48,6 @@ $spacers: (
   11: $spacer * 15,
   x1: $spacer-x1) !default;
 
-$border-widths: (
-  1: 1px,
-  2: 2px,
-  3: 3px,
-  4: 4px,
-  5: 5px,
-) !default;
 
 //*-----------------------------------------------
 //|   Body
@@ -62,7 +56,8 @@ $body-bg: $gray-200 !default;
 $body-color: $gray-700 !default;
 // $body-color: map-get($grays, '700') !default;
 
-//*----------------------------------------------- 
+
+//*-----------------------------------------------
 //|   Gutter
 //-----------------------------------------------*/
 $grid-gutter-width: 2rem !default;
@@ -88,18 +83,6 @@ $border-styles : (dotted: 'dotted !important',
 ) !default;
 
 $disabled-border: transparent !default;
-
-$border-radiuses: (
-  null: var(--#{$prefix}border-radius),
-  0: 0,
-  1: var(--#{$prefix}border-radius-sm),
-  2: var(--#{$prefix}border-radius),
-  3: var(--#{$prefix}border-radius-lg),
-  4: var(--#{$prefix}border-radius-xl),
-  5: var(--#{$prefix}border-radius-2xl),
-  circle: 50%,
-  pill: var(--#{$prefix}border-radius-pill)
-) !default;
 
 //*-----------------------------------------------
 //|   Opacity
@@ -131,7 +114,7 @@ $enable-negative-margins: true !default;
 
 
 // $component-active-color: var(--#{$prefix}white) !default;
-$component-active-bg: map-get($theme-colors, 'primary') !default;
+// $component-active-bg: var(--#{$prefix}primary) !default;
 
 //*-----------------------------------------------
 //|   Shadow
@@ -146,7 +129,6 @@ $box-shadow-inset: var(--#{$prefix}box-shadow-inset) !default;
 //-----------------------------------------------*/
 $link-decoration: none !default;
 $link-hover-decoration: underline !default;
-$link-shade-percentage: 20% !default;
 
 //*-----------------------------------------------
 //|   Components
@@ -211,19 +193,6 @@ $font-sizes: map-merge(('-2': math.div(1, pow($type-scale, 2)) * $font-size-base
 
 $font-size-sm: $font-size-base * 0.875 !default;
 $font-size-lg: $font-size-base * 1.2 !default;
-
-$font-weights : (
-  thin: 100,
-  lighter: 200,
-  light: 300,
-  normal: 400,
-  medium: 500,
-  semi-bold: 600,
-  bold: 700,
-  bolder: 800,
-  black: 900
-) !default;
-
 $font-weight-thin: 100 !default;
 $font-weight-lighter: 200 !default;
 $font-weight-light: 300 !default;
@@ -285,8 +254,8 @@ $accordion-button-active-bg: var(--#{$prefix}card-bg
 //|   Tables
 //-----------------------------------------------*/
 $table-border-color: map-get($grays, '200') !default;
-// $table-dark-bg: $gray-1000 !default;
-// $table-dark-border-color: lighten($gray-1000, 7.5%) !default;
+$table-dark-bg: $gray-1000 !default;
+$table-dark-border-color: lighten($gray-1000, 7.5%) !default;
 $table-striped-order: even !default;
 // $table-accent-bg: $gray-100 !default;
 $table-cell-padding-y: 0.75rem !default;
@@ -329,9 +298,7 @@ $input-border-color: var(--#{$prefix}input-border-color) !default;
 $input-placeholder-color: var(--#{$prefix}input-placeholder-color) !default;
 $input-color: var(--#{$prefix}input-color) !default;
 $form-check-margin-bottom: 0.34375rem !default;
-$form-label-font-size: map_get($font-sizes, "-1") !default;
-$form-label-font-weight: $font-weight-medium !default;
-$form-label-margin-bottom: map-get($spacers, 2) !default;
+$form-label-font-size: $font-size-sm !default;
 $form-check-input-bg: transparent !default;
 $form-check-input-border: 1px solid var(--#{$prefix}form-check-input-border-color) !default;
 $form-switch-color: $gray-500 !default;
@@ -340,14 +307,6 @@ $input-bg: var(--#{$prefix}input-bg) !default;
 $input-focus-border-color: var(--#{$prefix}input-focus-border-color) !default;
 $form-file-button-bg: $gray-900 !default;
 $form-file-button-color: $gray-300 !default;
-
-$form-range-track-bg: var(--#{$prefix}form-range-track-bg) !default;
-$form-range-track-box-shadow: var(--#{$prefix}form-range-track-box-shadow) !default;
-$form-range-thumb-bg: var(--#{$prefix}form-range-thumb-bg) !default;
-$form-range-thumb-box-shadow: var(--#{$prefix}form-range-thumb-box-shadow) !default;
-$form-range-thumb-focus-box-shadow: var(--#{$prefix}form-range-thumb-focus-box-shadow) !default;
-$form-range-thumb-active-bg: var(--#{$prefix}form-range-thumb-active-bg) !default;
-$form-range-thumb-disabled-bg: var(--#{$prefix}form-range-thumb-disabled-bg) !default;
 
 //*-----------------------------------------------
 //|   Z-index
@@ -382,7 +341,8 @@ $navbar-dark-hover-color: rgba($white, 0.9) !default;
 
 $navbar-padding-y: map_get($spacers, 2) !default;
 $navbar-padding-x: $spacer !default;
-$top-nav-height: var(--#{$prefix}top-nav-height) !default;
+$top-nav-height: 4.3125rem !default;
+$double-top-nav-height: 8.688rem !default;
 $standard-nav-height: 3.5625rem !default;
 
 $navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#9da9bb' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M0 6h30M0 14h30M0 22h30'/%3E%3C/svg%3E"),
@@ -410,6 +370,8 @@ $navbar-brand-font-weight: $font-weight-bolder !default;
 //|   Nav
 //-----------------------------------------------*/
 $link-color: $primary !default;
+$link-color-dark: map-get($theme-dark-colors, 'primary') !default;
+
 
 $nav-link-color: null;
 $nav-link-hover-color: null;
@@ -504,7 +466,6 @@ $card-bg: $white !default;
 $card-bg-dark: #121e2d !default; //- falcon custom variable
 $card-cap-color: null !default;
 $card-color: null !default;
-$card-title-color: $headings-color !default;
 
 // /*-----------------------------------------------
 //|   Tooltip
@@ -512,8 +473,6 @@ $card-title-color: $headings-color !default;
 
 $tooltip-padding-y: 0.5rem !default;
 $tooltip-font-size: map_get($font-sizes, '-1') !default;
-$tooltip-bg: $black !default;
-$tooltip-color: $white !default;
 
 //*-----------------------------------------------
 //|   Badge

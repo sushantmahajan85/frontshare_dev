@@ -36,17 +36,17 @@ mixin BackgroundGradientDemo
       .col-6.col-sm-4.col-lg-3
         +ColorPalette(val, index, 'bg-gradient')
 
-mixin SubtleColorsDemo
+mixin SoftColorsDemo
   .row.g-0
     each val, index in colors
       .col-6.col-sm-4.col-lg-3
-        .p-3(class=`bg-${val}-subtle` style='height: 180px')
+        .p-3(class=`bg-soft-${val}` style='height: 180px')
           code(class=`${val !== 'light' ? `text-${val}` : 'text-black'}`) .text-#{val}
           br
-          code(class=`${val !== 'light' ? `text-${val}` : 'text-black'}`) .bg-#{val}-subtle
+          code(class=`${val !== 'light' ? `text-${val}` : 'text-black'}`) .bg-soft-#{val}
 
 mixin BrandColorsDemo
   .row.g-0
     each val, index in ['facebook', 'google-plus', 'twitter', 'linkedin', 'youtube', 'github']
-      .col-6.col-sm-4.col-lg-3(data-bs-theme="light")
+      .col-6.col-sm-4.col-lg-3.light
         +ColorPalette(val, index)

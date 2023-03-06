@@ -23,7 +23,7 @@ block append content
         title:'World map',
         anchor:true
       }).h-100.position-relative
-        .position-absolute.z-2(style='right:16px')
+        .position-absolute.z-index-2(style='right:16px')
           button.btn.btn-falcon-default.btn-sm.mb-1.session-by-country-map-reset
             span.fas.fa-sync-alt.fs--1
         // Find the JS file for the following chart at: src/js/charts/echarts/session-by-country-map.js
@@ -38,7 +38,7 @@ block append content
         title:'Usa map',
         anchor:true
       }).h-100.position-relative
-        .position-absolute.z-2(style='right:16px')
+        .position-absolute.z-index-2(style='right:16px')
           button.btn.btn-falcon-default.btn-sm.mb-1.usa-map-reset
             span.fas.fa-sync-alt.fs--1
         // Find the JS file for the following chart at: src/js/charts/echarts/examples/map-usa.js

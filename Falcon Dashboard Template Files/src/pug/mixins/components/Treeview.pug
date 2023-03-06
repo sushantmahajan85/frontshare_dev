@@ -38,7 +38,7 @@ mixin SingleItem(config,index,stripe,treeviewId)
         = '\n\n'
         | #{config.name}
         if config.badge
-          span.badge.rounded-pill.badge-subtle-primary.ms-2=config.badge
+          span.badge.rounded-pill.badge-soft-primary.ms-2=config.badge
     ul.collapse.treeview-list(id=`${treeviewId}-${config.id}` data-show=`${config.show ? config.show : false}`)
       each item,ind in config.children
         if item.hasOwnProperty('children')
@@ -58,7 +58,7 @@ mixin SelectSingleItem(config,index,stripe,treeviewId)
           = '\n\n'
           | #{config.name}
           if config.badge
-            span.badge.rounded-pill.badge-subtle-primary.ms-2=config.badge
+            span.badge.rounded-pill.badge-soft-primary.ms-2=config.badge
     ul.collapse.treeview-list(id=`${treeviewId}-${config.id}` data-show=`${config.show ? config.show : false}`)
       each item,ind in config.children
         if item.hasOwnProperty('children')

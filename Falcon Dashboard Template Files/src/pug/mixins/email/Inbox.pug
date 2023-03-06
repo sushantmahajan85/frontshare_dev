@@ -228,7 +228,7 @@ mixin DropdownSettings(className)
         a(href='#!').dropdown-item Help
 
 mixin ActionButtons(read)
-  .btn-group.btn-group-sm.z-2(style="width: 10rem;")&attributes(attributes)
+  .btn-group.btn-group-sm.z-index-2(style="width: 10rem;")&attributes(attributes)
     button.btn.btn-light.hover-bg-200(type='button' data-bs-toggle="tooltip" data-bs-placement="top" title="Archive")
       span.fas.fa-archive
     button.btn.btn-light.hover-bg-200(type='button' data-bs-toggle="tooltip" data-bs-placement="top" title="Delete")
@@ -258,7 +258,7 @@ mixin EmailRow(config)
             .flex-1.ms-2
               a(href=`${CWD}${paths['email-detail']}` class=`${!config.read ? 'fw-bold' : ''}`).stretched-link.inbox-link=config.user
               if(config.badge)
-                span.badge.badge-subtle-success.badge-pill.ms-2=config.badge
+                span.badge.badge-soft-success.badge-pill.ms-2=config.badge
         .col
           a(href=`${CWD}${paths['email-detail']}`).d-block.inbox-link
             span(class=`${!config.read ? 'fw-bold' : ''}`)=config.title

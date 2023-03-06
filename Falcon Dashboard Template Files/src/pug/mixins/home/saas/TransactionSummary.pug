@@ -126,7 +126,7 @@ mixin TransactionSummary
               td.align-middle.ps-0.text-nowrap(class=index === tableRows.length - 1 && 'border-0')
                 +TransactionItem(row.col1)
               td.align-middle.px-4(class=index === tableRows.length - 1 && 'border-0' style='width:1%;')
-                span.badge.fs--1.w-100(class=`badge-subtle-${row.col2.color}`) #{row.col2.label}
+                span.badge.fs--1.w-100(class=`badge-soft-${row.col2.color}`) #{row.col2.label}
               td.align-middle.px-4.text-end.text-nowrap(class=index === tableRows.length - 1 && 'border-0' style='width:1%;')
                 h6.mb-0 #{row.col3.amount}
                 p.fs--2.mb-0 #{row.col3.date}

@@ -85,4 +85,4 @@ mixin ActivityRow(item)
     each activity,index in item.activity
       .col-4.position-relative
         img.w-100(src=`${CWD}assets/img/${activity.img}`, alt="...")
-        .badge.rounded-pill.position-absolute.top-100.start-50.translate-middle(class = `badge-subtle-${activity.color}`) #{activity.amount}
+        .badge.rounded-pill.position-absolute.top-100.start-50.translate-middle(class = `badge-soft-${activity.color}`) #{activity.amount}

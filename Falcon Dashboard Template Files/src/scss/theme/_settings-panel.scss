@@ -108,7 +108,7 @@
   @include media-breakpoint-down(sm) {
     transform: rotate(-90deg);
     outline: none;
-    .bg-primary-subtle {
+    .bg-soft-primary {
       background-color: transparent !important;
     }
     small {

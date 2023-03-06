@@ -41,9 +41,9 @@ mixin CardLmsStatistics
   .card&attributes(attributes)
     .card-body.px-xxl-0.pt-4
       .row.g-0
-        +LmsStatisticsItem(lmsStatistics.newLearners).border-end-md.border-bottom.border-bottom-xxl-0.pb-3.p-xxl-0.ps-md-0
-        +LmsStatisticsItem(lmsStatistics.newTrainers).border-end-xxl.border-bottom.border-bottom-xxl-0.pb-3.pt-4.pt-md-0.pe-md-0.p-xxl-0
-        +LmsStatisticsItem(lmsStatistics.newCourses).border-end-md.border-bottom.border-bottom-md-0.pb-3.pt-4.p-xxl-0.pb-md-0.ps-md-0
+        +LmsStatisticsItem(lmsStatistics.newLearners).border-md-end.border-bottom.border-xxl-bottom-0.pb-3.p-xxl-0.ps-md-0
+        +LmsStatisticsItem(lmsStatistics.newTrainers).border-xxl-end.border-bottom.border-xxl-0.pb-3.pt-4.pt-md-0.pe-md-0.p-xxl-0
+        +LmsStatisticsItem(lmsStatistics.newCourses).border-md-end.border-bottom.border-md-bottom-0.pb-3.pt-4.p-xxl-0.pb-md-0.ps-md-0
         +LmsStatisticsItem(lmsStatistics.refunds).pt-4.p-xxl-0.pb-0.pe-md-0
 
 mixin LmsStatisticsItem(item)
