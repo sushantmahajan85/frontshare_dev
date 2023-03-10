@@ -116,10 +116,14 @@ router.post(
 // );
 
 router.get("/signup", function (req, res) {
+  console.log(req.query);
   res.render("signup");
 });
 router.get("/billing", authController.isLoggedIn, function (req, res) {
   res.render("billing");
+});
+router.get("/invite", authController.isLoggedIn, function (req, res) {
+  res.render("invite");
 });
 router.get("/", bookingController.createBookingCheckout, function (req, res) {
   res.render("landing");

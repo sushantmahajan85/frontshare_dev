@@ -18,6 +18,7 @@ exports.signUp = catchAsync(async (req, res, next) => {
     password: req.body.password,
     email: req.body.email,
     passwordConfirm: req.body.passwordConfirm,
+    referredBy: req.body.referredBy,
   });
   // console.log(newUser._id);
   const token = signToken(newUser._id);
@@ -33,6 +34,7 @@ exports.signUp = catchAsync(async (req, res, next) => {
   if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
 
   res.cookie("jwt", token, cookieOptions);
+  // User.findOneAndUpdate({ email: email }, { referredBy: req.query.ref });
   res.status(201).json({
     status: "success",
     token,
@@ -175,6 +177,7 @@ exports.login = async (req, res, next) => {
     //////////////////////////////////////////////////////////////////////////////////////////////////
 
     res.cookie("jwt", token, cookieOptions);
+    console.log(req.query);
     res.status(200).json({
       status: "success",
       token,

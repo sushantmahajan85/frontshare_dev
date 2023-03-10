@@ -93,6 +93,10 @@ const userSchema = new mongoose.Schema(
     c2: [Object],
     c3: [Object],
     plan: { type: String, default: "basic" },
+    referredBy: {
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
+    },
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
