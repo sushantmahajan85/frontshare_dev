@@ -209,6 +209,7 @@ var blocks = {
 $(document).on("click", ".add-block-btn", (e) => {
   e.preventDefault();
   console.log(c1, c2, c3);
+
   blocks[e.target.dataset.block]++;
   console.log(blocks[e.target.dataset.block]);
 

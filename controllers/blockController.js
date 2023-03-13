@@ -19,7 +19,7 @@ exports.updateCanvas = catchAsync(async (req, res, next) => {
     const { block } = c;
     // console.log(block, "blk");
     if (block == "sociallinks") {
-      createSocialLink(req, 1, Date.now());
+      this.createSocialLink(req, 1, Date.now());
     } else if (block == "customlink") {
       this.createCustomLink(req, 1, Date.now());
     } else if (block == "customtext") {
@@ -34,7 +34,7 @@ exports.updateCanvas = catchAsync(async (req, res, next) => {
     const { block } = c;
 
     if (block == "sociallinks") {
-      createSocialLink(req, 2, Date.now());
+      this.createSocialLink(req, 2, Date.now());
     } else if (block == "customlink") {
       await this.createCustomLink(req, 2, Date.now());
     } else if (block == "customtext") {
@@ -49,7 +49,7 @@ exports.updateCanvas = catchAsync(async (req, res, next) => {
     const { block } = c;
 
     if (block == "sociallinks") {
-      createSocialLink(req, 3, Date.now());
+      this.createSocialLink(req, 3, Date.now());
     } else if (block == "customlink") {
       await this.createCustomLink(req, 3, Date.now());
     } else if (block == "customtext") {
@@ -67,7 +67,7 @@ exports.updateCanvas = catchAsync(async (req, res, next) => {
   res.status(200).json({ status: "success" });
 });
 
-const createSocialLink = catchAsync(async (req, col, createdAt) => {
+exports.createSocialLink = catchAsync(async (req, col, createdAt) => {
   // console.log(createdAt);
   const socialLinkDoc = await SocialLink.create({
     createdAt: createdAt,
