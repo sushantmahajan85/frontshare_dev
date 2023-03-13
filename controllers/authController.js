@@ -19,6 +19,7 @@ exports.signUp = catchAsync(async (req, res, next) => {
     email: req.body.email,
     passwordConfirm: req.body.passwordConfirm,
     referredBy: req.body.referredBy,
+    createdAt: Date.now().toLocaleDateString(),
   });
   // console.log(newUser._id);
   const token = signToken(newUser._id);

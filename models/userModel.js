@@ -97,6 +97,9 @@ const userSchema = new mongoose.Schema(
       type: mongoose.Schema.ObjectId,
       ref: "User",
     },
+    createdAt: String,
+    balance: { type: Number, default: 0 },
+    spent: { type: Number, default: 0 },
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );

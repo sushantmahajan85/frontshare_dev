@@ -125,6 +125,15 @@ router.get("/billing", authController.isLoggedIn, function (req, res) {
 router.get("/invite", authController.isLoggedIn, function (req, res) {
   res.render("invite");
 });
+router.get("/analytics", authController.isLoggedIn, async function (req, res) {
+  const users = await User.find({ referredBy: req.logged });
+  const prousers = await User.find({ referredBy: req.logged, plan: "pro" });
+  let balance = 30 * prousers.length;
+  console.log(balance);
+  await User.findByIdAndUpdate(req.logged, { balance: balance });
+  console.log(users);
+  res.render("analytics", { users: users, balance: balance });
+});
 router.get("/", bookingController.createBookingCheckout, function (req, res) {
   res.render("landing");
 });

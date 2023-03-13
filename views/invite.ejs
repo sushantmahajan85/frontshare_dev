@@ -78,15 +78,24 @@
               </h4>
               <div class="form-row my-4">
                 <div class="col-xl-4">
-                  <button class="btn btn-falcon-default btn-block mb-2 mb-xl-0">
-                    <img
-                      src="../assets/img/logos/gmail.png"
-                      width="20"
-                      alt=""
-                    /><span class="font-weight-medium ml-2"
-                      >Invite from Gmail</span
+                  <a
+                    class="gmail"
+                    href="https://mail.google.com/mail/?view=cm&amp;fs=1&to&su=Share Gmail&body=localhost:4000/signup?ref=<%=user._id%>"
+                    target="_blank"
+                    onClick="window.open(this.href,this.target,'width=500,height=500,top=210,left=360'); return false;"
+                  >
+                    <button
+                      class="btn btn-falcon-default btn-block mb-2 mb-xl-0"
                     >
-                  </button>
+                      <img
+                        src="../assets/img/logos/gmail.png"
+                        width="20"
+                        alt=""
+                      /><span class="font-weight-medium ml-2"
+                        >Invite from Gmail</span
+                      >
+                    </button>
+                  </a>
                 </div>
                 <div class="col-xl-4">
                   <input
@@ -142,16 +151,25 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="col-xl-4">
-                  <button class="btn btn-falcon-default btn-block mb-2 mb-xl-0">
-                    <span
-                      class="fab fa-facebook-square text-facebook"
-                      data-fa-transform="grow-2"
-                    ></span
-                    ><span class="font-weight-medium ml-2"
-                      >Share on Facebook</span
+                  <a
+                    title="Facebook"
+                    href="https://www.facebook.com/sharer.php?u=google.com"
+                    target="_blank"
+                  >
+                    <button
+                      class="btn btn-falcon-default btn-block mb-2 mb-xl-0"
                     >
-                  </button>
+                      <span
+                        class="fab fa-facebook-square text-facebook"
+                        data-fa-transform="grow-2"
+                      ></span
+                      ><span class="font-weight-medium ml-2"
+                        >Share on Facebook</span
+                      >
+                    </button>
+                  </a>
                 </div>
               </div>
               <p class="mb-2 fs--1">
