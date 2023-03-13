@@ -263,7 +263,7 @@
               </button>
             </div>
             <!-- Social Links -->
-            <form
+            <!-- <form
               style="
                 width: 100%;
                 background-color: #f9fafd;
@@ -476,14 +476,304 @@
               >
                 Save
               </button>
-            </form>
+            </form> -->
           </div>
+        </div>
+      </div>
+
+      <div class="form-popup-bg">
+        <div class="form-container">
+          <button id="btnCloseForm" class="close-button">X</button>
+          <h1 style="color: white">Properties</h1>
+          <p>For more information. Please complete this form.</p>
+
+          <form
+            style="
+              width: 100%;
+              background-color: #f9fafd;
+              padding: 2rem;
+              margin: 1rem auto !important;
+              border-radius: 2rem;
+              display: none;
+            "
+            id="socialLinkForm"
+          >
+            <div class="card-header" style="background-color: #f9fafd">
+              <h5 class="mb-0">Social Links</h5>
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control rounded-pill"
+                id="instagram"
+                type="text"
+                placeholder="Instagram Link"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control rounded-pill"
+                id="facebook"
+                type="text"
+                placeholder="Facebook Link"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control rounded-pill"
+                id="twitter"
+                type="text"
+                placeholder="Twitter Link"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control rounded-pill"
+                id="tiktok"
+                type="text"
+                placeholder="TikTok Link"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control rounded-pill"
+                id="snapchat"
+                type="text"
+                placeholder="Snapchat Link"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control rounded-pill"
+                id="youtube"
+                type="text"
+                placeholder="Youtube Link"
+              />
+            </div>
+            <button
+              class="btn btn-primary rounded-pill add-block-btn"
+              style="margin: 0 auto; width: 100%"
+              type="submit"
+              name="submit"
+              data-block="sociallinks"
+            >
+              Save
+            </button>
+          </form>
+          <form
+            style="
+              width: 100%;
+              background-color: #f9fafd;
+              padding: 2rem;
+              margin: 1rem auto !important;
+              border-radius: 2rem;
+              display: none;
+            "
+            id="customLinkForm"
+          >
+            <div class="card-header" style="background-color: #f9fafd">
+              <h5 class="mb-0">Custom Link</h5>
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control rounded-pill"
+                id="url"
+                type="text"
+                placeholder="Custom Link"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control rounded-pill"
+                id="title"
+                type="text"
+                placeholder="Title"
+              />
+            </div>
+            <textarea
+              class="form-control rounded-sm mb-2"
+              id="description"
+              rows="3"
+              placeholder="Description"
+            >
+            </textarea>
+            <button
+              class="btn btn-primary rounded-pill add-block-btn"
+              style="margin: 0 auto; width: 100%"
+              type="submit"
+              name="submit"
+              data-block="customlink"
+            >
+              Save
+            </button>
+          </form>
+          <form
+            style="
+              width: 100%;
+              background-color: #f9fafd;
+              padding: 2rem;
+              margin: 1rem auto !important;
+              border-radius: 2rem;
+              display: none;
+            "
+            id="customTextForm"
+          >
+            <div class="card-header">
+              <h5 class="mb-0">Custom Text</h5>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1"
+                >Add any custom text you wish to display on your page</label
+              >
+              <textarea class="form-control" id="customText" rows="5">
+              </textarea>
+            </div>
+
+            <button
+              class="btn btn-primary rounded-pill add-block-btn"
+              style="margin: 0 auto; width: 100%"
+              type="submit"
+              name="submit"
+              data-block="customtext"
+            >
+              Save
+            </button>
+          </form>
+          <form
+            style="
+              width: 100%;
+              background-color: #f9fafd;
+              padding: 2rem;
+              margin: 1rem auto !important;
+              border-radius: 2rem;
+              display: none;
+            "
+            id="videoPreviewForm"
+          >
+            <div class="card-header" style="background-color: #f9fafd">
+              <h5 class="mb-0">Video Preview</h5>
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control rounded-pill"
+                id="vidLink"
+                type="text"
+                placeholder="Video Link"
+              />
+            </div>
+            <button
+              class="btn btn-primary rounded-pill add-block-btn"
+              style="margin: 0 auto; width: 100%"
+              type="submit"
+              name="submit"
+              data-block="videopreview"
+            >
+              Save
+            </button>
+          </form>
+
+          <form
+            style="
+              width: 100%;
+              background-color: #f9fafd;
+              padding: 2rem;
+              margin: 1rem auto !important;
+              border-radius: 2rem;
+              display: none;
+            "
+            id="newsLetterForm"
+          >
+            <div style="margin: 1rem 1.5rem">
+              <h5 class="mb-0">Newsletter</h5>
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control rounded-pill"
+                id="newsLetterTitle"
+                type="text"
+                placeholder="Title"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control rounded-pill"
+                id="btnText"
+                type="text"
+                placeholder="Button Text"
+              />
+            </div>
+            <button
+              class="btn btn-primary rounded-pill add-block-btn"
+              style="margin: 0 auto; width: 100%"
+              type="submit"
+              name="submit"
+              data-block="newsletter"
+            >
+              Save
+            </button>
+          </form>
         </div>
       </div>
     </main>
 
     <%- include('partials/rightsidebar.ejs') %>
+    <script>
+      function closeForm() {
+        $(".form-popup-bg").removeClass("is-visible");
+      }
 
+      $(document).ready(function ($) {
+        /* Contact Form Interactions */
+        $(".btnOpenForm").on("click", function (event) {
+          event.preventDefault();
+          // console.log("hiiiiiiiiiiii");
+          console.log(event.target.dataset, "jiiiiiiiii");
+          if (event.target.dataset.block == "sociallinks") {
+            document.getElementById("socialLinkForm").style.display = "block";
+            document.getElementById("customLinkForm").style.display = "none";
+            document.getElementById("customTextForm").style.display = "none";
+            document.getElementById("videoPreviewForm").style.display = "none";
+            document.getElementById("newsLetterForm").style.display = "none";
+          } else if (event.target.dataset.block == "customlink") {
+            document.getElementById("customLinkForm").style.display = "block";
+            document.getElementById("socialLinkForm").style.display = "none";
+            document.getElementById("customTextForm").style.display = "none";
+            document.getElementById("videoPreviewForm").style.display = "none";
+            document.getElementById("newsLetterForm").style.display = "none";
+          } else if (event.target.dataset.block == "customtext") {
+            document.getElementById("customTextForm").style.display = "block";
+            document.getElementById("socialLinkForm").style.display = "none";
+            document.getElementById("customLinkForm").style.display = "none";
+            document.getElementById("videoPreviewForm").style.display = "none";
+            document.getElementById("newsLetterForm").style.display = "none";
+          } else if (event.target.dataset.block == "videopreview") {
+            document.getElementById("videoPreviewForm").style.display = "block";
+            document.getElementById("socialLinkForm").style.display = "none";
+            document.getElementById("customLinkForm").style.display = "none";
+            document.getElementById("customTextForm").style.display = "none";
+            document.getElementById("newsLetterForm").style.display = "none";
+          } else if (event.target.dataset.block == "newsletter") {
+            document.getElementById("newsLetterForm").style.display = "block";
+            document.getElementById("socialLinkForm").style.display = "none";
+            document.getElementById("customLinkForm").style.display = "none";
+            document.getElementById("customTextForm").style.display = "none";
+            document.getElementById("videoPreviewForm").style.display = "none";
+          }
+
+          $(".form-popup-bg").addClass("is-visible");
+        });
+
+        //close popup when clicking x or off popup
+        $(".form-popup-bg").on("click", function (event) {
+          if (
+            $(event.target).is(".form-popup-bg") ||
+            $(event.target).is("#btnCloseForm")
+          ) {
+            event.preventDefault();
+            $(this).removeClass("is-visible");
+          }
+        });
+      });
+    </script>
     <script>
       $(function () {
         $(".generate-qr").click(function () {
