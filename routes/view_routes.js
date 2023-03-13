@@ -5,6 +5,7 @@ const catchAsync = require("../utils/catchAsync");
 var router = express.Router();
 // var Deal = require("../models/dealModel");
 var User = require("../models/userModel");
+var Booking = require("../models/bookingModel");
 const SocialLink = require("../models/socialLinkModel");
 const CustomText = require("../models/customTextModel");
 const CustomLink = require("../models/customLinkModel");
@@ -119,8 +120,20 @@ router.get("/signup", function (req, res) {
   console.log(req.query);
   res.render("signup");
 });
-router.get("/billing", authController.isLoggedIn, function (req, res) {
-  res.render("billing");
+router.get("/billing", authController.isLoggedIn, async function (req, res) {
+  const prousers = await User.find({ referredBy: req.logged, plan: "pro" });
+  let ids = [];
+  prousers.forEach((prouser) => {
+    ids.push(prouser._id);
+  });
+  const prices = await Booking.find({ user: { $in: ids } });
+  let balance = 0;
+  prices.forEach((x) => {
+    balance += x.price * 0.3;
+  });
+
+  console.log(balance);
+  res.render("billing", { balance: balance });
 });
 router.get("/invite", authController.isLoggedIn, function (req, res) {
   res.render("invite");
@@ -128,7 +141,16 @@ router.get("/invite", authController.isLoggedIn, function (req, res) {
 router.get("/analytics", authController.isLoggedIn, async function (req, res) {
   const users = await User.find({ referredBy: req.logged });
   const prousers = await User.find({ referredBy: req.logged, plan: "pro" });
-  let balance = 30 * prousers.length;
+  let ids = [];
+  prousers.forEach((prouser) => {
+    ids.push(prouser._id);
+  });
+  const prices = await Booking.find({ user: { $in: ids } });
+  let balance = 0;
+  prices.forEach((x) => {
+    balance += x.price * 0.3;
+  });
+
   console.log(balance);
   await User.findByIdAndUpdate(req.logged, { balance: balance });
   console.log(users);

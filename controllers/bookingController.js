@@ -66,6 +66,26 @@ exports.createBookingCheckout = catchAsync(async (req, res, next) => {
 
   if (!user && !price) return next();
   await Booking.create({ user, price });
+  const prousers = await User.find({ referredBy: req.logged, plan: "pro" });
+  let ids = [];
+  prousers.forEach((prouser) => {
+    ids.push(prouser._id);
+  });
+  const prices = await Booking.find({ user: { $in: ids } });
+  let balance = 0;
+  prices.forEach((x) => {
+    balance += x.price * 0.3;
+  });
+  const u = await User.findById(user);
+  let spent = u.spent;
+  if (localStorage.getItem("wallet") == 1) {
+    if (price > balance) {
+      spent += balance;
+    } else {
+      spent += price;
+    }
+    await User.findByIdAndUpdate(user, { spent: spent });
+  }
   await User.findByIdAndUpdate(user, { plan: "pro" });
   res.redirect(req.originalUrl.split("?")[0]);
 });
