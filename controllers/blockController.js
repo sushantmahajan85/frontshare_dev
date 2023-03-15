@@ -15,60 +15,73 @@ var col3 = [];
 exports.updateCanvas = catchAsync(async (req, res, next) => {
   const { c1, c2, c3 } = req.body;
   // drag start here
-  c1.forEach(async (c) => {
-    const { block } = c;
-    // console.log(block, "blk");
-    if (block == "sociallinks") {
-      this.createSocialLink(req, 1, Date.now());
-    } else if (block == "customlink") {
-      this.createCustomLink(req, 1, Date.now());
-    } else if (block == "customtext") {
-      this.createCustomText(req, 1, Date.now());
-    } else if (block == "videopreview") {
-      this.createVideoPreview(req, 1, Date.now());
-    } else if (block == "newsletter") {
-      this.createNewsLetter(req, 1, Date.now());
-    }
-  });
-  c2.forEach(async (c) => {
-    const { block } = c;
+  setTimeout(() => {
+    c1.forEach(async (c) => {
+      const { block } = c;
+      // console.log(block, "blk");
+      if (block == "sociallinks") {
+        this.createSocialLink(req, 1, Date.now());
+      } else if (block == "customlink") {
+        this.createCustomLink(req, 1, Date.now());
+      } else if (block == "customtext") {
+        this.createCustomText(req, 1, Date.now());
+      } else if (block == "videopreview") {
+        this.createVideoPreview(req, 1, Date.now());
+      } else if (block == "newsletter") {
+        this.createNewsLetter(req, 1, Date.now());
+      }
+    });
+  }, 500);
+  setTimeout(() => {
+    c2.forEach(async (c) => {
+      const { block } = c;
 
-    if (block == "sociallinks") {
-      this.createSocialLink(req, 2, Date.now());
-    } else if (block == "customlink") {
-      await this.createCustomLink(req, 2, Date.now());
-    } else if (block == "customtext") {
-      this.createCustomText(req, 2, Date.now());
-    } else if (block == "videopreview") {
-      this.createVideoPreview(req, 2, Date.now());
-    } else if (block == "newsletter") {
-      this.createNewsLetter(req, 2, Date.now());
-    }
-  });
-  c3.forEach(async (c) => {
-    const { block } = c;
+      if (block == "sociallinks") {
+        this.createSocialLink(req, 2, Date.now());
+      } else if (block == "customlink") {
+        await this.createCustomLink(req, 2, Date.now());
+      } else if (block == "customtext") {
+        this.createCustomText(req, 2, Date.now());
+      } else if (block == "videopreview") {
+        this.createVideoPreview(req, 2, Date.now());
+      } else if (block == "newsletter") {
+        this.createNewsLetter(req, 2, Date.now());
+      }
+    });
+  }, 1000);
 
-    if (block == "sociallinks") {
-      this.createSocialLink(req, 3, Date.now());
-    } else if (block == "customlink") {
-      await this.createCustomLink(req, 3, Date.now());
-    } else if (block == "customtext") {
-      this.createCustomText(req, 3, Date.now());
-    } else if (block == "videopreview") {
-      this.createVideoPreview(req, 3, Date.now());
-    } else if (block == "newsletter") {
-      this.createNewsLetter(req, 3, Date.now());
-    }
-  });
+  setTimeout(() => {
+    c3.forEach(async (c) => {
+      const { block } = c;
 
-  col1 = [];
-  col2 = [];
-  col3 = [];
-  res.status(200).json({ status: "success" });
+      if (block == "sociallinks") {
+        this.createSocialLink(req, 3, Date.now());
+      } else if (block == "customlink") {
+        await this.createCustomLink(req, 3, Date.now());
+      } else if (block == "customtext") {
+        this.createCustomText(req, 3, Date.now());
+      } else if (block == "videopreview") {
+        this.createVideoPreview(req, 3, Date.now());
+      } else if (block == "newsletter") {
+        this.createNewsLetter(req, 3, Date.now());
+      }
+    });
+  }, 1500);
+  setTimeout(() => {
+    col1 = [];
+    col2 = [];
+    col3 = [];
+
+    res.status(200).json({ status: "success" });
+
+    console.log(col1, col2, col3, "check empty");
+  }, 2000);
+
+  console.log(col1, col2, col3, "check empty");
 });
 
 exports.createSocialLink = catchAsync(async (req, col, createdAt) => {
-  // console.log(createdAt);
+  console.log(createdAt);
   const socialLinkDoc = await SocialLink.create({
     createdAt: createdAt,
   });
@@ -84,7 +97,7 @@ exports.createSocialLink = catchAsync(async (req, col, createdAt) => {
   }
 
   // console.log(col1, "col1_slink");
-  // console.log(col2, "col2_slink");
+  console.log(col2, "col2_slink");
   // console.log(col3, "col3_slink");
   const doc = await User.findByIdAndUpdate(
     req.logged.id,
@@ -104,8 +117,9 @@ exports.createSocialLink = catchAsync(async (req, col, createdAt) => {
 });
 
 exports.createCustomText = catchAsync(async (req, col, createdAt) => {
-  // console.log(createdAt);
+  console.log(createdAt);
   const customTextDoc = await CustomText.create({ createdAt: createdAt });
+
   if (col == 1) {
     col1.push(customTextDoc);
   }
@@ -115,7 +129,7 @@ exports.createCustomText = catchAsync(async (req, col, createdAt) => {
   if (col == 3) {
     col3.push(customTextDoc);
   }
-  // console.log(col2, "colllllllllllnjjlll");
+  console.log(col2, "colllllllllllnjjlll");
   const doc = await User.findByIdAndUpdate(
     req.logged.id,
     { $push: { custom_text: customTextDoc.id }, c1: col1, c2: col2, c3: col3 },

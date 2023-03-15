@@ -20,9 +20,21 @@ const videoPreviewSchema = new mongoose.Schema(
     htmlContent: {
       type: String,
       default: `<div class="kanban-item" data-block="videopreview-1">
-      <div class="card kanban-item-card hover-actions-trigger" data-toggle="modal" data-target="#kanban-modal-1">
+      <div
+        class="card kanban-item-card hover-actions-trigger"
+        data-toggle="modal"
+        data-target="#kanban-modal-1"
+      >
         <div class="card-body position-relative">
-          <p class="mb-0 font-weight-medium text-sans-serif">This is a video preview Block<br>Try dragging it around</p>
+          <div class="ratio ratio-1x1">
+            <iframe
+              src="https://www.youtube.com/embed/SycDH3NSJUU"
+              class="w-100 h-100 rounded-sm"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>`,

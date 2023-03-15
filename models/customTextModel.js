@@ -23,9 +23,23 @@ const customTextSchema = new mongoose.Schema(
     htmlContent: {
       type: String,
       default: `<div class="kanban-item" data-block="customtext-1">
-      <div class="card kanban-item-card hover-actions-trigger" data-toggle="modal" data-target="#kanban-modal-1">
+      <div
+        class="card kanban-item-card hover-actions-trigger"
+        data-toggle="modal"
+        data-target="#kanban-modal-1"
+      >
         <div class="card-body position-relative">
-          <p class="mb-0 font-weight-medium text-sans-serif">This is a Custom Text Block<br>Try dragging it around</p>
+          <div class="text_area">
+            <p
+              class="text_paragraph text-center text-break text-capitalize fs-0.25 fw-normal text-gray-800"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Consectetur dignissimos incidunt inventore
+              soluta facere neque, enim alias. Ad fugit amet
+              culpa dolorum corrupti. Facilis temporesequi
+              doloremque soluta sint aliquid
+            </p>
+          </div>
         </div>
       </div>
     </div>`,
