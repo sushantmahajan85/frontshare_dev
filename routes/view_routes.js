@@ -131,7 +131,7 @@ router.get("/billing", authController.isLoggedIn, async function (req, res) {
   prices.forEach((x) => {
     balance += x.price * 0.3;
   });
-
+  balance -= req.logged.spent;
   console.log(balance);
   res.render("billing", { balance: balance });
 });
@@ -151,6 +151,7 @@ router.get("/analytics", authController.isLoggedIn, async function (req, res) {
     balance += x.price * 0.3;
   });
 
+  balance -= req.logged.spent;
   console.log(balance);
   await User.findByIdAndUpdate(req.logged, { balance: balance });
   console.log(users);

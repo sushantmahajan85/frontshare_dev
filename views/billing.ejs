@@ -154,9 +154,11 @@
           document.getElementById("paymentForm").submit();
         } else {
           let price = localStorage.getItem("price");
+          let balance = <%= balance %> - 0;
+          let wallet = localStorage.getItem("wallet");
           console.log("booking");
           e.target.textContent = "Processing...";
-          bookplan(price);
+          bookplan(price, balance, wallet);
         }
       });
     </script>
