@@ -72,6 +72,23 @@
           <div class="h-100 card">
             <div class="card-header">
               <h5 class="mb-0">Billing Details</h5>
+              <button class="btn btn-falcon-success btn-sm" type="button">
+                <span class="ms-1">Balance: $<%= balance %></span>
+              </button>
+              <div class="d-flex mt-2">
+                <!-- <label class="mr-2 mb-0" for="customSwitch1">Monthly</label> -->
+                <div class="custom-control custom-switch">
+                  <input
+                    class="custom-control-input"
+                    id="customSwitch1"
+                    type="checkbox"
+                    onchange="changePrice()"
+                  />
+                  <label class="custom-control-label" for="customSwitch1"
+                    >Use wallet balance</label
+                  >
+                </div>
+              </div>
             </div>
             <div class="card-body bg-light">
               <form id="paymentForm" method="post">
@@ -142,6 +159,28 @@
           bookplan(price);
         }
       });
+    </script>
+    <script>
+      let price = localStorage.getItem("price");
+      console.log(price);
+      if(localStorage.getItem("wallet") == 1){
+        let check = document.getElementById("customSwitch1");
+        check.checked = true;
+      }
+      function changePrice() {
+        let check = document.getElementById("customSwitch1");
+        if (!check.checked) {
+          let newprice = localStorage.getItem("price") - 0 + <%= balance %>;
+          localStorage.setItem("price", newprice);
+          localStorage.setItem("wallet", 0);
+          console.log(localStorage.getItem("price"));
+        } else {
+          let newprice = localStorage.getItem("price") - (price > <%= balance %> ? <%= balance %> : price);
+          localStorage.setItem("price", newprice);
+          localStorage.setItem("wallet", 1);
+          console.log(localStorage.getItem("price"));
+        }
+      }
     </script>
     <!-- ===============================================-->
     <!--    JavaScripts-->
