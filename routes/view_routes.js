@@ -160,8 +160,8 @@ router.get("/analytics", authController.isLoggedIn, async function (req, res) {
 router.get("/", bookingController.createBookingCheckout, function (req, res) {
   res.render("landing");
 });
-router.get("/pricing", authController.isLoggedIn, function (req, res) {
-  res.render("pricing");
+router.get("/plans", authController.isLoggedIn, function (req, res) {
+  res.render("plans");
 });
 router.get("/login", function (req, res) {
   res.render("login");
@@ -170,7 +170,7 @@ router.get("/index", function (req, res) {
   res.render("index");
 });
 
-router.get("/profile", authController.isLoggedIn, function (req, res) {
+router.get("/canvas", authController.isLoggedIn, function (req, res) {
   // console.log(req.logged);
 
   let c1elements = req.logged.c1;
@@ -199,7 +199,7 @@ router.get("/profile", authController.isLoggedIn, function (req, res) {
     pro = true;
   }
 
-  res.render("profile", { c1elements, c2elements, c3elements, pro });
+  res.render("canvas", { c1elements, c2elements, c3elements, pro });
 });
 
 router.get(
