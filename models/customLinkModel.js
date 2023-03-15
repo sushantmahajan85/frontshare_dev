@@ -31,9 +31,33 @@ const customLinkSchema = new mongoose.Schema(
     htmlContent: {
       type: String,
       default: `<div class="kanban-item" data-block="customlink-1">
-      <div class="card kanban-item-card hover-actions-trigger" data-toggle="modal" data-target="#kanban-modal-1">
+      <div
+        class="card kanban-item-card hover-actions-trigger"
+        data-toggle="modal"
+        data-target="#kanban-modal-1"
+      >
         <div class="card-body position-relative">
-          <p class="mb-0 font-weight-medium text-sans-serif">This is a Custom Link Block<br>Try dragging it around</p>
+          <div class="page-item-wrap relative">
+            <div
+              class="page-item flex-both-center absolute"
+            ></div>
+            <a
+              target="_blank"
+              rel="noopener nofollow"
+              class="page-item-each"
+              href="https://www.pinterest.com/elkadilb"
+              data-id="331952"
+              data-type="page_item"
+            >
+              <h5 class="text-center pt-3">
+                Custom Link Title
+              </h5>
+              <p class="text-center pb-3 text-dark">
+                Lorem ipsum dolor, sit amet consectetur
+                adipisici
+              </p>
+            </a>
+          </div>
         </div>
       </div>
     </div>`,
