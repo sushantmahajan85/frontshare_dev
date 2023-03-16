@@ -13,13 +13,15 @@ const signToken = (id) =>
   });
 
 exports.signUp = catchAsync(async (req, res, next) => {
+  let datetest = new Date(Date.now()).toLocaleString();
+  datetest = datetest.split(",")[0];
   const newUser = await User.create({
     name: req.body.name,
     password: req.body.password,
     email: req.body.email,
     passwordConfirm: req.body.passwordConfirm,
     referredBy: req.body.referredBy,
-    createdAt: Date.now().toLocaleDateString(),
+    createdAt: datetest,
   });
   // console.log(newUser._id);
   const token = signToken(newUser._id);
